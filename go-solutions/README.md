@@ -1,4 +1,10 @@
-#141. Linked List Cycle
+# 073. Set Matrix Zeroes
+
+    Medium 
+
+[go to solution](./073-set-matrix-zeroes.go)
+
+# 141. Linked List Cycle
 
     Easy 
 
