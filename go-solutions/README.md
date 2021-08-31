@@ -1,9 +1,20 @@
+#141. Linked List Cycle
+
+    Easy 
+
+[go to solution](./141-linked-list-cycle.go)
+
 # 238. Product of Array Except Self
 
     Medium
 
 [go to solution](./238-product-of-array-except-self.go)
 
+# 287. Find the Duplicate Number
+
+    Medium
+
+[go to solution](./287-find-the-duplicate-number.go)
 
 # 442. Find All Duplicates in an Array
 
