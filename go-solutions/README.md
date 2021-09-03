@@ -10,6 +10,14 @@
 
 [go to solution](./073-set-matrix-zeroes.go)
 
+## 0079. Word Search
+
+    Medium
+
+[Backtracking]
+
+[go to solution](./0079-word-search.go)
+
 # 141. Linked List Cycle
 
     Easy 
