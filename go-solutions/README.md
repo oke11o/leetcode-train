@@ -32,6 +32,12 @@
 
 Результат так себе. Но работает
 
+# 0206. Reverse Linked List
+
+    Easy
+
+[go to solution](./0206-reverse-linked-list.go)
+
 # 238. Product of Array Except Self
 
     Medium
