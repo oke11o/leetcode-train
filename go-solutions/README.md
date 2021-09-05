@@ -38,6 +38,12 @@
 
 [go to solution](./0206-reverse-linked-list.go)
 
+# 0234. Palindrome Linked List
+
+    Easy
+
+[go to solution](./0234-palindrome-linked-list.go)
+
 # 238. Product of Array Except Self
 
     Medium
