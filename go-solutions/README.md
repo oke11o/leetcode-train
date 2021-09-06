@@ -79,6 +79,14 @@
 
 [go to solution](./442-find-all-duplicates-in-an-array.go)
 
+# 0448. Find All Numbers Disappeared in an Array. Find All Duplicates in an Array
+
+    Easy
+
+*Tags:* [Arrays]
+
+[go to solution](./0448-find-all-numbers-disappeared-in-an-array.go)
+
 # 0784. Letter Case Permutation
 
     Medium
