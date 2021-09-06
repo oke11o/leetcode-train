@@ -1,3 +1,7 @@
+# Get random task
+
+[run](./get-random-task/get-random-task.go)
+
 # 0054. Spiral Matrix
 
     Medium
@@ -17,7 +21,6 @@
 **Tags**: [Backtracking]
 
 [go to solution](./0078-subsets.go)
-
 
 # 0079. Word Search
 
@@ -65,7 +68,10 @@
 
     Medium
 
-[go to solution](./238-product-of-array-except-self.go)
+*Tags:* [Arrays]
+
+[task](https://leetcode.com/problems/product-of-array-except-self/)
+- [go to solution](./238-product-of-array-except-self.go)
 
 # 287. Find the Duplicate Number
 
