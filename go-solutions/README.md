@@ -2,6 +2,13 @@
 
 [run](./get-random-task/get-random-task.go)
 
+# 0046. Permutations
+
+    Medium
+**Tags**: [Backtracking]
+
+[go to solution](./0046-permutations.go)
+
 # 0054. Spiral Matrix
 
     Medium
@@ -17,7 +24,6 @@
 # 0078. Subsets
 
     Medium
-
 **Tags**: [Backtracking]
 
 [go to solution](./0078-subsets.go)
@@ -25,7 +31,6 @@
 # 0079. Word Search
 
     Medium
-
 **Tags**: [Backtracking]
 
 [go to solution](./0079-word-search.go)
@@ -33,7 +38,6 @@
 ## 0090. Subsets II
 
     Medium
-
 **Tags**: [Backtracking]
 
 [go to solution](./0079-word-search.go)
@@ -67,7 +71,6 @@
 # 238. Product of Array Except Self
 
     Medium
-
 *Tags:* [Arrays]
 
 [task](https://leetcode.com/problems/product-of-array-except-self/)
@@ -88,7 +91,6 @@
 # 0448. Find All Numbers Disappeared in an Array. Find All Duplicates in an Array
 
     Easy
-
 *Tags:* [Arrays]
 
 [go to solution](./0448-find-all-numbers-disappeared-in-an-array.go)

@@ -10,6 +10,7 @@ import (
 func main() {
 	rand.Seed(time.Now().UnixMicro())
 	m := map[string]int{
+		"0046": 0,
 		"0054": 0,
 		"0073": 0,
 		"0078": 0,
