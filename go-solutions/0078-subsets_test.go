@@ -19,7 +19,8 @@ func Test_subsets(t *testing.T) {
 		{
 			name: "",
 			nums: []int{9, 0, 3, 5, 7},
-			want: [][]int{{},
+			want: [][]int{
+				{},
 				{9},
 				{0}, {0, 9},
 				{3}, {3, 9}, {0, 3}, {0, 3, 9},

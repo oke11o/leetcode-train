@@ -5,6 +5,7 @@
 # 0046. Permutations
 
     Medium
+
 **Tags:** [Backtracking]
 
 [go to solution](./0046-permutations.go)
@@ -12,6 +13,7 @@
 # 0047. Permutations II
 
     Medium
+
 **Tags:** [Backtracking]
 
 **Comment:** Need work
@@ -33,13 +35,18 @@
 # 0078. Subsets
 
     Medium
+
 **Tags:** [Backtracking]
 
-[go to solution](./0078-subsets.go)
+**Links:**
+
+- [go to solution](./0078-subsets.go)
+- [leetcode](https://leetcode.com/problems/subsets/)
 
 # 0079. Word Search
 
     Medium
+
 **Tags:** [Backtracking]
 
 [go to solution](./0079-word-search.go)
@@ -47,6 +54,7 @@
 ## 0090. Subsets II
 
     Medium
+
 **Tags:** [Backtracking]
 
 [go to solution](./0079-word-search.go)
@@ -80,9 +88,11 @@
 # 238. Product of Array Except Self
 
     Medium
+
 *Tags:* [Arrays]
 
 [task](https://leetcode.com/problems/product-of-array-except-self/)
+
 - [go to solution](./238-product-of-array-except-self.go)
 
 # 287. Find the Duplicate Number
@@ -100,6 +110,7 @@
 # 0448. Find All Numbers Disappeared in an Array. Find All Duplicates in an Array
 
     Easy
+
 *Tags:* [Arrays]
 
 [go to solution](./0448-find-all-numbers-disappeared-in-an-array.go)
