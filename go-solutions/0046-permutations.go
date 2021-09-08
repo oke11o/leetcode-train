@@ -1,18 +1,18 @@
 package go_solutions
 
-var result [][]int
+var resultPermute [][]int
 
 func permute(nums []int) [][]int {
-	result = make([][]int, 0)
+	resultPermute = make([][]int, 0)
 	backtrack(0, nums)
-	return result
+	return resultPermute
 }
 
 func backtrack(current int, nums []int) {
 	if current == len(nums) {
 		item := make([]int, len(nums))
 		copy(item, nums)
-		result = append(result, item)
+		resultPermute = append(resultPermute, item)
 		return
 	}
 	for i := current; i < len(nums); i++ {
