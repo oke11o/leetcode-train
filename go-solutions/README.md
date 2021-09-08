@@ -69,9 +69,25 @@
 
     Medium
 
-[go to solution](./153-find-minimum-in-rotated-sorted-array.go)
+**Comment:** Результат так себе. Но работает
 
-Результат так себе. Но работает
+**Links:**
+
+- [go to solution](./153-find-minimum-in-rotated-sorted-array.go)
+
+
+# 0198. House Robber
+
+    Medium
+
+**Tags:** [Dynamic Programming]
+
+**Comment:** Need understand
+
+**Links:**
+
+- [go to solution](./0198-house-robber.go)
+- [leetcode](https://leetcode.com/problems/house-robber/)
 
 # 0206. Reverse Linked List
 
