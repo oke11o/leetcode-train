@@ -5,9 +5,18 @@
 # 0046. Permutations
 
     Medium
-**Tags**: [Backtracking]
+**Tags:** [Backtracking]
 
 [go to solution](./0046-permutations.go)
+
+# 0047. Permutations II
+
+    Medium
+**Tags:** [Backtracking]
+
+**Comment:** Need work
+
+[go to solution](./0047-permutations-ii.go)
 
 # 0054. Spiral Matrix
 
@@ -24,21 +33,21 @@
 # 0078. Subsets
 
     Medium
-**Tags**: [Backtracking]
+**Tags:** [Backtracking]
 
 [go to solution](./0078-subsets.go)
 
 # 0079. Word Search
 
     Medium
-**Tags**: [Backtracking]
+**Tags:** [Backtracking]
 
 [go to solution](./0079-word-search.go)
 
 ## 0090. Subsets II
 
     Medium
-**Tags**: [Backtracking]
+**Tags:** [Backtracking]
 
 [go to solution](./0079-word-search.go)
 
