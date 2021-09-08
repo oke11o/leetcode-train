@@ -18,6 +18,11 @@ func Test_rob(t *testing.T) {
 		},
 		{
 			name: "",
+			nums: []int{2, 1, 1, 2, 3, 3},
+			want: 7,
+		},
+		{
+			name: "",
 			nums: []int{1, 2, 3, 1},
 			want: 4,
 		},
