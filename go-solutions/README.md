@@ -51,13 +51,26 @@
 
 [go to solution](./0079-word-search.go)
 
-## 0090. Subsets II
+# 0090. Subsets II
 
     Medium
 
 **Tags:** [Backtracking]
 
 [go to solution](./0079-word-search.go)
+
+# 0098. Validate Binary Search Tree
+
+    Medium
+
+**Comment:** -
+
+**Tags:** [DFS]
+
+**Links:**
+
+- [go to solution](./0098-validate-binary-search-tree.go)
+- [leetcode](https://leetcode.com/problems/validate-binary-search-tree/)
 
 # 141. Linked List Cycle
 
@@ -74,7 +87,6 @@
 **Links:**
 
 - [go to solution](./153-find-minimum-in-rotated-sorted-array.go)
-
 
 # 0198. House Robber
 
