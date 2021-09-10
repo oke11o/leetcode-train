@@ -1,20 +1,19 @@
 package go_solutions
 
-func isValidBST(node *TreeNode) bool {
+func isValidBSTTraverseAndCheck(node *TreeNode, min, max int) bool {
 	if node == nil {
+		return true
+	}
+	if node.Val <= min || node.Val >= max {
 		return false
 	}
-	if node.Left != nil && node.Right != nil {
-		if !(node.Left.Val < node.Val && node.Val < node.Right.Val) {
-			return false
-		}
-		return isValidBST(node.Left) && isValidBST(node.Right)
-	}
-	if node.Left == nil && node.Right != nil {
-		if !(node.Val < node.Right.Val) {
+	return isValidBSTTraverseAndCheck(node.Left, min, node.Val) && isValidBSTTraverseAndCheck(node.Right, node.Val, max)
+}
 
-		}
-		return isValidBST(node.Right)
-	}
-	return isValidBST(node.Left)
+func isValidBST(node *TreeNode) bool {
+	intSize := 32 << (^uint(0) >> 63) // 32 or 64
+	MaxInt := 1<<(intSize-1) - 1
+	MinInt := -1 << (intSize - 1)
+
+	return isValidBSTTraverseAndCheck(node, MinInt, MaxInt)
 }

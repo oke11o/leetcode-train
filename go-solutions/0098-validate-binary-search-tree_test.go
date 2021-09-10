@@ -5,13 +5,18 @@ import (
 	"testing"
 )
 
+// TODO:
 func Test_isValidBST(t *testing.T) {
 	tests := []struct {
 		name string
 		root *TreeNode
 		want bool
 	}{
-		{},
+		{
+			name: "",
+			root: nil,
+			want: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

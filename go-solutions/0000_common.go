@@ -1,5 +1,7 @@
 package go_solutions
 
+const nilTreeNodeVal = -1
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
@@ -21,4 +23,8 @@ func tree2slice(in *TreeNode) []int {
 
 func createTreeNodeFromSlice(in []int) *TreeNode {
 	return nil
+}
+
+func sprintTreeNode(node *TreeNode) string {
+	return ""
 }
