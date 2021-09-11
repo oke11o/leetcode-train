@@ -4,12 +4,13 @@ import (
 	"bufio"
 	"errors"
 	"fmt"
+	"io/ioutil"
 	"os"
 	"strconv"
 	"strings"
 )
 
-const defaultFileName = "sample_input.txt"
+const defaultFileName = "gold_mine_chapter_1_input.txt"
 
 func main() {
 	if err := run(os.Args, os.Stdout, os.Stderr); err != nil {
@@ -24,10 +25,9 @@ func run(args []string, stdout *os.File, stderr *os.File) error {
 	var out strings.Builder
 	for i, inn := range in.Inputs {
 		o := solve(inn)
-		out.WriteString(fmt.Sprintf("Case #%d: %d\n", i, o))
+		out.WriteString(fmt.Sprintf("Case #%d: %d\n", i+1, o))
 	}
-
-	return err
+	return ioutil.WriteFile("gold_mine_chapter_1_result.txt", []byte(out.String()), 0644)
 }
 
 func solve(input inputItem) int {
