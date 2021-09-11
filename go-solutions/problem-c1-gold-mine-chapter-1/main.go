@@ -20,11 +20,70 @@ func main() {
 }
 
 func run(args []string, stdout *os.File, stderr *os.File) error {
-
 	in, err := readInput(getInputFilename(args))
-	_ = in
+	var out strings.Builder
+	for i, inn := range in.Inputs {
+		o := solve(inn)
+		out.WriteString(fmt.Sprintf("Case #%d: %d\n", i, o))
+	}
 
 	return err
+}
+
+func solve(input inputItem) int {
+	n := input.T
+	adj := make(map[int][]int, n)
+	dp := make([]int, n)
+	seen := make([]bool, n)
+	for i, v := range input.Pairs {
+		adj[v[0]] = append(adj[v[0]], v[1])
+		adj[v[1]] = append(adj[v[1]], v[0])
+		dp[i] = 0
+		seen[i] = false
+	}
+
+	stack := make([]int, 1, 1)
+
+	for len(stack) != 0 {
+		node := stack[len(stack)-1]
+		if !seen[node] {
+			seen[node] = true
+			for _, ad := range adj[node] {
+				if !seen[ad] {
+					stack = append(stack, ad)
+				}
+			}
+		} else {
+			stack = stack[: len(stack)-1 : len(stack)-1]
+			seen[node] = false
+			child_max := 0
+			for _, ad := range adj[node] {
+				if !seen[ad] {
+					if child_max < dp[ad] {
+						child_max = dp[ad]
+					}
+				}
+			}
+			dp[node] = child_max + input.Values[node]
+		}
+	}
+
+	if len(adj[0]) <= 1 {
+		return dp[0]
+	}
+	var max1, max2 int
+
+	for _, ad := range adj[0] {
+		if dp[ad] > max2 {
+			if dp[ad] > max1 {
+				max2 = max1
+				max1 = dp[ad]
+			} else {
+				max2 = dp[ad]
+			}
+		}
+	}
+	return max1 + max2 + input.Values[0]
 }
 
 func getInputFilename(args []string) string {
@@ -86,7 +145,7 @@ func readInput(filename string) (commonInput, error) {
 			if j == t {
 				item.Values = ints
 			} else if len(ints) == 2 {
-				item.Pairs = append(item.Pairs, [2]int{ints[0], ints[1]})
+				item.Pairs = append(item.Pairs, [2]int{ints[0] - 1, ints[1] - 1})
 			} else {
 				return result, fmt.Errorf("invalid input: invalid int pair: %s", v)
 			}
