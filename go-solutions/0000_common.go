@@ -1,6 +1,8 @@
 package go_solutions
 
-const nilTreeNodeVal = -1
+import "math"
+
+const nilTreeNodeVal = math.MinInt
 
 type TreeNode struct {
 	Val   int
@@ -8,17 +10,34 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func tree2slice(in *TreeNode) []int {
-	var slFn = func() {
-
+func binTree2sliceRec(idx int, node *TreeNode, result []int) []int {
+	for len(result) <= idx {
+		result = append(result, nilTreeNodeVal)
 	}
-	_ = slFn
+	val := nilTreeNodeVal
+	var left, right *TreeNode
+	if node != nil {
+		val = node.Val
+		left = node.Left
+		right = node.Right
+	}
+	result[idx] = val
+	if left != nil {
+		result = binTree2sliceRec(idx*2+1, left, result)
+	}
+	if right != nil {
+		result = binTree2sliceRec(idx*2+2, right, result)
+	}
+
+	return result
+}
+
+func binTree2slice(in *TreeNode) []int {
 	if in == nil {
 		return nil
 	}
-	result := []int{1}
 
-	return result
+	return binTree2sliceRec(0, in, nil)
 }
 
 func createTreeNodeFromSlice(in []int) *TreeNode {
