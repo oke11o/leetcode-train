@@ -22,6 +22,9 @@ func main() {
 
 func run(args []string, stdout *os.File, stderr *os.File) error {
 	in, err := readInput(getInputFilename(args))
+	if err != nil {
+		return err
+	}
 	var out strings.Builder
 	for i, inn := range in.Inputs {
 		o := solve(inn)
