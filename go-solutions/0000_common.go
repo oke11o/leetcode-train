@@ -40,8 +40,23 @@ func binTree2slice(in *TreeNode) []int {
 	return binTree2sliceRec(0, in, nil)
 }
 
-func createTreeNodeFromSlice(in []int) *TreeNode {
-	return nil
+func createTreeNodeFromSlice(in []int, idx int) *TreeNode {
+	if len(in) == 0 {
+		return nil
+	}
+	if len(in) <= idx {
+		return nil
+	}
+	val := in[idx]
+	if val == nilTreeNodeVal {
+		return nil
+	}
+
+	node := &TreeNode{Val: in[idx]}
+	node.Left = createTreeNodeFromSlice(in, idx*2+1)
+	node.Right = createTreeNodeFromSlice(in, idx*2+2)
+
+	return node
 }
 
 func sprintTreeNode(node *TreeNode) string {

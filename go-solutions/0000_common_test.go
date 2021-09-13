@@ -104,22 +104,30 @@ func Test_tree2slice(t *testing.T) {
 		})
 	}
 }
+
 func Test_createTreeNodeFromSlice(t *testing.T) {
 	tests := []struct {
 		name string
 		in   []int
-		want bool
 	}{
 		{
 			name: "",
-			in:   nil,
-			want: false,
+			in:   []int{1, 2, 3},
+		},
+		{
+			name: "",
+			in:   []int{1, 2, 3, 4, 5, 6},
+		},
+		{
+			name: "",
+			in:   []int{1, 2, 3, nilTreeNodeVal, 4, nilTreeNodeVal, 5, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, 6, 7},
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := createTreeNodeFromSlice(tt.in)
-			require.Equal(t, tt.want, got)
+			got := createTreeNodeFromSlice(tt.in, 0)
+			gotSlice := binTree2slice(got)
+			require.Equal(t, tt.in, gotSlice)
 		})
 	}
 }
