@@ -129,6 +129,20 @@
 
 [go to solution](./287-find-the-duplicate-number.go)
 
+# 0340. Longest Substring with At Most K Distinct Characters
+
+    Medium
+
+**Comment:** Similar as *0904. Fruit Into Baskets*
+
+**Tags:** [Sliding Window]
+
+**Links:**
+
+- [Go solution](./0340-longest-substring-with-at-most-k-distinct-characters.go)
+- [Problem](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)
+- [Problem Lint Code](https://www.lintcode.com/problem/386/)
+
 # 442. Find All Duplicates in an Array
 
     Medium
