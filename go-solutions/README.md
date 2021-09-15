@@ -124,6 +124,19 @@
 - [go to solution](./0198-house-robber.go)
 - [leetcode](https://leetcode.com/problems/house-robber/)
 
+# 0202. Happy Number
+
+    Medium
+
+**Tags:** [Hash Table, Math, Two Pointers]
+
+**Comment:** 
+
+**Links:**
+
+- [go to solution](./0202-happy-number.go)
+- [leetcode](https://leetcode.com/problems/happy-number/)
+
 # 0206. Reverse Linked List
 
     Easy
