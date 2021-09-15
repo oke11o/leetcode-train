@@ -106,13 +106,13 @@
 - [go to solution](./0100-same-tree.go)
 - [leetcode](https://leetcode.com/problems/same-tree/)
 
-# 141. Linked List Cycle
+# 0141. Linked List Cycle
 
     Easy 
 
-[go to solution](./141-linked-list-cycle.go)
+[go to solution](./0141-linked-list-cycle.go)
 
-# 153. Find Minimum in Rotated Sorted Array
+# 0153. Find Minimum in Rotated Sorted Array
 
     Medium
 
@@ -120,7 +120,7 @@
 
 **Links:**
 
-- [go to solution](./153-find-minimum-in-rotated-sorted-array.go)
+- [go to solution](./0153-find-minimum-in-rotated-sorted-array.go)
 
 # 0198. House Robber
 
@@ -216,19 +216,6 @@
 
 [go to solution](./0876-middle-of-the-linked-list.go)
 
-# 0917. Reverse Only Letters
-
-    Easy
-
-**Comments:** -
-
-**Tags:** []
-
-**Links:**
-
-- [go to solution](./0917-reverse-only-letters.go)
-- [leetcode](https://leetcode.com/problems/reverse-only-letters/)
-
 # 0904. Fruit Into Baskets
 
     Medium
@@ -241,6 +228,19 @@
 
 - [go to solution](./0904-fruit-into-baskets.go)
 - [leetcode](https://leetcode.com/problems/fruit-into-baskets/)
+
+# 0917. Reverse Only Letters
+
+    Easy
+
+**Comments:** -
+
+**Tags:** []
+
+**Links:**
+
+- [go to solution](./0917-reverse-only-letters.go)
+- [leetcode](https://leetcode.com/problems/reverse-only-letters/)
 
 # 0978. Longest Turbulent Subarray
 
