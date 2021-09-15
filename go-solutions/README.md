@@ -31,6 +31,17 @@
 - [go to solution](./0054-spiral-matrix.go)
 - [leetcode](https://leetcode.com/problems/spiral-matrix/)
 
+# 0056. Merge Intervals
+
+    Medium
+
+**Tags:** [Array, Sorting]
+
+**Links:**
+
+- [go to solution](./0056-merge-intervals.go)
+- [leetcode](https://leetcode.com/problems/merge-intervals/)
+
 # 0073. Set Matrix Zeroes
 
     Medium 
