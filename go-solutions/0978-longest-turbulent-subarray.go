@@ -1,6 +1,38 @@
 package go_solutions
 
 func maxTurbulenceSize(arr []int) int {
+	length := len(arr)
+	if length == 1 {
+		return 1
+	}
+	up := 1
+	down := 1
+	ans := 1
+	for i := 1; i < length; i++ {
+		if arr[i] > arr[i-1] {
+			up = down + 1
+		}
+		if arr[i] < arr[i-1] {
+			down = up + 1
+		}
+		if arr[i] <= arr[i-1] {
+			up = 1
+		}
+		if arr[i] >= arr[i-1] {
+			down = 1
+		}
+		if ans < up {
+			ans = up
+		}
+		if ans < down {
+			ans = down
+		}
+	}
+
+	return ans
+}
+
+func maxTurbulenceSize_oldBadSolution(arr []int) int {
 	if len(arr) == 1 {
 		return 1
 	}
