@@ -11,9 +11,6 @@ func maxTurbulenceSize(arr []int) int {
 	)
 
 	var isOpposite = func(prev, cur string) bool {
-		//if prev == "" && cur != "" {
-		//	return true
-		//}
 		if prev == up && cur == down {
 			return true
 		}
@@ -37,19 +34,20 @@ func maxTurbulenceSize(arr []int) int {
 	prevDir := ""
 	for i := 1; i < len(arr); i++ {
 		curDir := getDir(arr[i-1], arr[i])
-		if isOpposite(prevDir, curDir) {
+		if prevDir == "" && curDir == "" {
+			counter = 0
+		} else if isOpposite(prevDir, curDir) {
 			counter++
 		} else {
-			counter++
-			if result < counter {
-				result = counter
+			if result < counter+1 {
+				result = counter + 1
 			}
 			counter = 1
 		}
 		prevDir = curDir
 	}
-	if result < counter {
-		result = counter
+	if result < counter+1 {
+		result = counter + 1
 	}
 	return result
 }

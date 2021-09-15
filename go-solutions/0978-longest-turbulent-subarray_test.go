@@ -18,6 +18,11 @@ func Test_maxTurbulenceSize(t *testing.T) {
 		},
 		{
 			name: "",
+			arr:  []int{9, 4, 2, 10},
+			want: 3,
+		},
+		{
+			name: "",
 			arr:  []int{9, 4, 2, 10, 7, 8, 8, 1, 9},
 			want: 5,
 		},
