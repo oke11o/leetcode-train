@@ -19,8 +19,8 @@ func totalFruit(fruits []int) int {
 			if distinct[leftVal] == 0 {
 				delete(distinct, leftVal)
 			}
-			newResult = right - left + 1
 			left++
+			newResult = right - left
 		}
 		if result < newResult {
 			result = newResult
