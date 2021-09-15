@@ -34,6 +34,7 @@ func Test_sumSquareDigits(t *testing.T) {
 		})
 	}
 }
+
 func Test_isHappy(t *testing.T) {
 	tests := []struct {
 		name string

@@ -11,6 +11,16 @@ func sumSquareDigits(n int) int {
 }
 
 func isHappy(n int) bool {
+	fast := sumSquareDigits(sumSquareDigits(n))
+	slow := sumSquareDigits(n)
+	for fast != 1 && fast != slow {
+		fast = sumSquareDigits(sumSquareDigits(fast))
+		slow = sumSquareDigits(slow)
+	}
+	return fast == 1
+}
+
+func isHappy2(n int) bool {
 	dict := make(map[int]struct{})
 	for {
 		dict[n] = struct{}{}
