@@ -260,6 +260,19 @@
 - [go to solution](./0287-find-the-duplicate-number.go)
 - [leetcode](https://leetcode.com/problems/find-the-duplicate-number/)
 
+# 0303. Range Sum Query - Immutable
+
+    Easy
+
+**Comment:**
+
+**Tags:** [Array, Design, Prefix Sum]
+
+**Links:**
+
+- [Go solution](./0303-range-sum-query-immutable.go)
+- [Problem](https://leetcode.com/problems/range-sum-query-immutable/)
+
 # 0340. Longest Substring with At Most K Distinct Characters
 
     Medium
