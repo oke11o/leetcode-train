@@ -188,21 +188,27 @@
 
 [go to solution](./0234-palindrome-linked-list.go)
 
-# 238. Product of Array Except Self
+# 0238. Product of Array Except Self
 
     Medium
 
-*Tags:* [Arrays]
+**Tags:** [Array, Prefix Sum]
 
-[task](https://leetcode.com/problems/product-of-array-except-self/)
+**Links:**
 
-- [go to solution](./238-product-of-array-except-self.go)
+- [go to solution](./0238-product-of-array-except-self.go)
+- [leetcode](https://leetcode.com/problems/product-of-array-except-self/)
 
-# 287. Find the Duplicate Number
+# 0287. Find the Duplicate Number
 
     Medium
 
-[go to solution](./287-find-the-duplicate-number.go)
+**Tags:** [Array, Prefix Sum]
+
+**Links:**
+
+- [go to solution](./0287-find-the-duplicate-number.go)
+- [leetcode](https://leetcode.com/problems/find-the-duplicate-number/)
 
 # 0340. Longest Substring with At Most K Distinct Characters
 
@@ -250,7 +256,7 @@
 
 **Comments:** Similar as *0340. Longest Substring with At Most K Distinct Characters*
 
-**Tags:** [Sliding Window]
+**Tags:** [Array, Hash Table, Sliding Window]
 
 **Links:**
 
@@ -263,7 +269,7 @@
 
 **Comments:** -
 
-**Tags:** []
+**Tags:** [Two Pointers, String]
 
 **Links:**
 
