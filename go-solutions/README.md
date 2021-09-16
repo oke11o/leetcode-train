@@ -46,6 +46,17 @@
 - [go to solution](./0056-merge-intervals.go)
 - [leetcode](https://leetcode.com/problems/merge-intervals/)
 
+# 0070. Climbing Stairs
+
+    Easy
+
+**Tags:** [Math, Dynamic Programming, Memoization]
+
+**Links:**
+
+- [go to solution](./0070-climbing-stairs.go)
+- [leetcode](https://leetcode.com/problems/climbing-stairs/)
+
 # 0073. Set Matrix Zeroes
 
     Medium 
