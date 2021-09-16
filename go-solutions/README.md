@@ -1,3 +1,7 @@
+# All tasks
+
+[Link](https://seanprashad.com/leetcode-patterns/)
+
 # Get random task
 
 [run](./get-random-task/get-random-task.go)
@@ -106,6 +110,19 @@
 - [go to solution](./0100-same-tree.go)
 - [leetcode](https://leetcode.com/problems/same-tree/)
 
+# 0136. Single Number
+
+    Easy
+
+**Comment:** Just XOR all array items
+
+**Tags:** [Array, Bit Manipulation]
+
+**Links:**
+
+- [go to solution](./0136-single-number.go)
+- [leetcode](https://leetcode.com/problems/single-number/)
+
 # 0141. Linked List Cycle
 
     Easy 
@@ -141,7 +158,7 @@
 
 **Tags:** [Hash Table, Math, Two Pointers]
 
-**Comment:** 
+**Comment:**
 
 **Links:**
 
@@ -246,7 +263,7 @@
 
     Medium
 
-**Comments:** 
+**Comments:**
 
 **Tags:** [Array, Dynamic Programming, Sliding Window]
 
@@ -259,7 +276,7 @@
 
     Easy
 
-**Comments:** 
+**Comments:**
 
 **Tags:** [Hash Table, String, Counting]
 
