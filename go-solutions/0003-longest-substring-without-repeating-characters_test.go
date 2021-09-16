@@ -5,41 +5,36 @@ import (
 	"testing"
 )
 
-func Test_lengthOfLongestSubstringKDistinct(t *testing.T) {
+func Test_lengthOfLongestSubstring(t *testing.T) {
 	tests := []struct {
 		name string
 		s    string
-		k    int
 		want int
 	}{
 		{
 			name: "",
-			s:    "eceba",
-			k:    3,
-			want: 4,
-		},
-		{
-			name: "",
-			s:    "eceba",
-			k:    2,
+			s:    "abcabcbb",
 			want: 3,
 		},
 		{
 			name: "",
-			s:    "WORLD",
-			k:    4,
-			want: 4,
+			s:    "bbbbb",
+			want: 1,
 		},
 		{
 			name: "",
-			s:    "assddfffdasdffdfasfasdfadffdfwertnbv",
-			k:    4,
-			want: 29,
+			s:    "pwwkew",
+			want: 3,
+		},
+		{
+			name: "",
+			s:    "",
+			want: 0,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := lengthOfLongestSubstringKDistinct(tt.s, tt.k)
+			got := lengthOfLongestSubstring(tt.s)
 			require.Equal(t, tt.want, got)
 		})
 	}
