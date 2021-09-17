@@ -226,6 +226,19 @@
 - [go to solution](./0202-happy-number.go)
 - [leetcode](https://leetcode.com/problems/happy-number/)
 
+# 0203. Remove Linked List Elements
+
+    Easy
+
+**Tags:** [Hash Table, Math, Two Pointers, Fake node result]
+
+**Comment:**
+
+**Links:**
+
+- [go to solution](./0203-remove-linked-list-elements.go)
+- [leetcode](https://leetcode.com/problems/remove-linked-list-elements/)
+
 # 0206. Reverse Linked List
 
     Easy
