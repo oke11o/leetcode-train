@@ -124,6 +124,17 @@
 
 [go to solution](./0079-word-search.go)
 
+# 0083. Remove Duplicates from Sorted List
+
+    Easy
+
+**Tags:** []
+
+**Links:**
+
+- [go to solution](./0083-remove-duplicates-from-sorted-list.go)
+- [leetcode](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
+
 # 0090. Subsets II
 
     Medium
