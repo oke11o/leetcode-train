@@ -32,6 +32,19 @@
 - [go to solution](./0003-longest-substring-without-repeating-characters.go)
 - [leetcode](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 
+# 0021. Merge Two Sorted Lists
+
+    Easy
+
+**Comment:**
+
+**Tags:** [Linked List, Recursion]
+
+**Links:**
+
+- [go to solution](./0021-merge-two-sorted-lists.go)
+- [leetcode](https://leetcode.com/problems/merge-two-sorted-lists/)
+
 # 0046. Permutations
 
     Medium
