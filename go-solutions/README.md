@@ -287,6 +287,19 @@
 - [Problem](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)
 - [Problem Lint Code](https://www.lintcode.com/problem/386/)
 
+# 0350. Intersection of Two Arrays II
+
+    Easy
+
+**Comment:** 
+
+**Tags:** [Array, Hash Table, Two Pointers, Binary Search, Sorting]
+
+**Links:**
+
+- [Go solution](./0350-intersection-of-two-arrays-ii.go)
+- [Problem](https://leetcode.com/problems/intersection-of-two-arrays-ii/)
+
 # 442. Find All Duplicates in an Array
 
     Medium
