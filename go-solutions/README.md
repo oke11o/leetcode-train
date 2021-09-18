@@ -286,6 +286,18 @@
 - [go to solution](./0238-product-of-array-except-self.go)
 - [leetcode](https://leetcode.com/problems/product-of-array-except-self/)
 
+# 0252. Meeting Rooms
+
+    Easy
+
+**Tags:** [Array, Sorting, Intervals]
+
+**Links:**
+
+- [go solution](./0252-meeting-rooms.go)
+- [leetcode](https://leetcode.com/problems/meeting-rooms/)
+- [lintcode](https://www.lintcode.com/problem/920/)
+
 # 0282. Expression Add Operators
 
     Hard
@@ -294,7 +306,8 @@
 
 **Links:**
 
-- [go to solution](./0282-expression-add-operators.go)
+- [python solution](../python-solutions/02xx/0282-expression-add-operators.py)
+- [go solution](./0282-expression-add-operators.go)
 - [leetcode](https://leetcode.com/problems/expression-add-operators/)
 
 # 0287. Find the Duplicate Number
@@ -352,7 +365,7 @@
 
     Easy
 
-**Comment:** 
+**Comment:**
 
 **Tags:** [Array, Hash Table, Two Pointers, Binary Search, Sorting]
 
