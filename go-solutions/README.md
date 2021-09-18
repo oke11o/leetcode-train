@@ -384,9 +384,20 @@
 
     Easy
 
-*Tags:* [Arrays]
+*Tags:* [Array]
 
 [go to solution](./0448-find-all-numbers-disappeared-in-an-array.go)
+
+# 0704. Binary Search
+
+    Easy
+
+**Tags:** [Array, Binary Search]
+
+**Links:**
+
+- [go solution](./0704-binary-search.go)
+- [leetcode](https://leetcode.com/problems/binary-search/)
 
 # 0784. Letter Case Permutation
 
