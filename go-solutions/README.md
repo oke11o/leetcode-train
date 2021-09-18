@@ -286,6 +286,17 @@
 - [go to solution](./0238-product-of-array-except-self.go)
 - [leetcode](https://leetcode.com/problems/product-of-array-except-self/)
 
+# 0282. Expression Add Operators
+
+    Hard
+
+**Tags:** [Math, String, Backtracing]
+
+**Links:**
+
+- [go to solution](./0282-expression-add-operators.go)
+- [leetcode](https://leetcode.com/problems/expression-add-operators/)
+
 # 0287. Find the Duplicate Number
 
     Medium
