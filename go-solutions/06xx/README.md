@@ -5,7 +5,7 @@
 
 **Comments:**
 
-**Tags:** [Tree, BFS, Breadth-First Search, DFS, Depth-First Search, Binary Tree, ]
+**Tags:** [Tree, BFS, Breadth-First Search, DFS, Depth-First Search, Binary Tree]
 
 **Links:**
 
