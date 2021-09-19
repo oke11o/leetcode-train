@@ -1,17 +1,18 @@
 package go_solutions
 
 func search(nums []int, target int) int {
-	left := 0
-	right := len(nums) - 1
-	for left <= right {
-		idx := left + (right-left)/2
-		if nums[idx] == target {
-			return idx
-		} else if nums[idx] < target {
-			left = idx + 1
+	left := -1
+	right := len(nums)
+	for (right - left) > 1 {
+		idx := (right + left) / 2
+		if nums[idx] <= target {
+			left = idx
 		} else {
-			right = idx - 1
+			right = idx
 		}
+	}
+	if left != -1 && nums[left] == target {
+		return left
 	}
 	return -1
 }
