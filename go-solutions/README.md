@@ -182,6 +182,22 @@
 - [go to solution](./0100-same-tree.go)
 - [leetcode](https://leetcode.com/problems/same-tree/)
 
+# 0115. Distinct Subsequences
+
+    Hard
+
+**Comment:** 
+Follow to pictures 
+- [babgbag](./01xx/0115/babgbag.png)
+- [rabbbit](01xx/0115/rabbbit.png)
+
+**Tags:** [String, Dynamic Programming]
+
+**Links:**
+
+- [go to solution](./0115-distinct-subsequences.go)
+- [leetcode](https://leetcode.com/problems/distinct-subsequences/)
+
 # 0121. Best Time to Buy and Sell Stock
 
     Easy
