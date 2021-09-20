@@ -20,7 +20,7 @@ func diameterOfBinaryTree(root *TreeNode) int {
 		}
 		rightOK := false
 		if node.Right != nil {
-			_, rightOK = m[*node.Left]
+			_, rightOK = m[*node.Right]
 		}
 		if node.Left != nil && !leftOK {
 			stack = append(stack, node.Left)
@@ -33,7 +33,7 @@ func diameterOfBinaryTree(root *TreeNode) int {
 				leftDepth = m[*node.Left]
 			}
 			rightDepth := 0
-			if node.Left != nil {
+			if node.Right != nil {
 				rightDepth = m[*node.Right]
 			}
 
@@ -51,5 +51,5 @@ func diameterOfBinaryTree(root *TreeNode) int {
 		}
 	}
 
-	return diameter + 1
+	return diameter
 }

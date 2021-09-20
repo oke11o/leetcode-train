@@ -81,6 +81,7 @@ func createTreeNodeFromSlice(in []int) *TreeNode {
 			nodeList[nodeIdx].Left = node
 		} else {
 			nodeList[nodeIdx].Right = node
+
 			nodeIdx++
 			for nodeIdx < len(nodeList)-1 && nodeList[nodeIdx] == nil {
 				nodeIdx++
