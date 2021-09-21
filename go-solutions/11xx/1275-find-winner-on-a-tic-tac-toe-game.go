@@ -2,29 +2,33 @@ package _1xx
 
 func tictactoe(moves [][]int) string {
 	dashboard := [][]int{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
+	raws := []int{0, 0, 0}
+	cols := []int{0, 0, 0}
+	mainDiagonal := 0
+	backDiagonal := 0
 	for stepIdx, step := range moves {
-		val := int(0)
+		var val int
 		if stepIdx%2 == 0 {
 			val = 1 // A
 		} else {
 			val = 10 // B
 		}
-		dashboard[step[0]][step[1]] = val
+		i, j := step[0], step[1]
+		dashboard[i][j] = val
+		raws[i] += dashboard[i][j]
+		cols[j] += dashboard[i][j]
+		if i == j {
+			mainDiagonal += dashboard[i][j]
+		}
+		if j+i == 2 {
+			backDiagonal += dashboard[i][j]
+		}
 	}
-	diag := []int{dashboard[0][0] + dashboard[1][1] + dashboard[2][2], dashboard[2][0] + dashboard[1][1] + dashboard[0][2]}
-	if diag[0] == 3 || diag[1] == 3 {
+	if mainDiagonal == 3 || backDiagonal == 3 {
 		return "A"
 	}
-	if diag[0] == 30 || diag[1] == 30 {
+	if mainDiagonal == 30 || backDiagonal == 30 {
 		return "B"
-	}
-	raws := []int{0, 0, 0}
-	cols := []int{0, 0, 0}
-	for i := 0; i < 3; i++ {
-		for j := 0; j < 3; j++ {
-			raws[i] += dashboard[i][j]
-			cols[j] += dashboard[i][j]
-		}
 	}
 	for _, di := range [][]int{raws, cols} {
 		for _, v := range di {
