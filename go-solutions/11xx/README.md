@@ -1,3 +1,16 @@
+# 1137. N-th Tribonacci Number
+
+    Easy
+
+**Comments:**
+
+**Tags:** [Math, Dynamic Programming, Memoization]
+
+**Links:**
+
+- [go solution](./1137-n-th-tribonacci-number.go)
+- [leetcode](https://leetcode.com/problems/n-th-tribonacci-number/)
+
 # 1275. Find Winner on a Tic Tac Toe Game
 
     Easy
