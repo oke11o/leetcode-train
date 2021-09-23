@@ -2,20 +2,16 @@ package _2xx
 
 func maxLength(arr []string) int {
 
-	binWords := make([]int, 0, len(arr))
-	for i := 0; i < len(arr); i++ {
-		binWord, dubExists := maxLength_binWords(arr[i])
-		if !dubExists {
-			binWords = append(binWords, binWord)
-		}
-	}
-
 	result := 0
 	stack := []int{0}
 	resLen := len(stack)
-	for i := 0; i < resLen; i++ {
-		inRes := stack[i]
-		for _, binWord := range binWords {
+	for i := 0; i < len(arr); i++ {
+		binWord, dubExists := maxLength_binWords(arr[i])
+		if dubExists {
+			continue
+		}
+		for i := 0; i < resLen; i++ {
+			inRes := stack[i]
 			isUniq := inRes & binWord
 			if isUniq != 0 {
 				continue
@@ -27,6 +23,7 @@ func maxLength(arr []string) int {
 			if result < binCnt {
 				result = binCnt
 			}
+
 		}
 	}
 
