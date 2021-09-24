@@ -21,3 +21,15 @@
 **Links:**
 - [go solution](./0543-diameter-of-binary-tree.go)
 - [leetcode](https://leetcode.com/problems/diameter-of-binary-tree/)
+
+# 0572. Subtree of Another Tree
+
+    Easy
+
+**Comments:**
+
+**Tags:** [Tree, BFS, Breadth-First Search, DFS, Depth-First Search, Binary Tree]
+
+**Links:**
+- [go solution](./0572-subtree-of-another-tree.go)
+- [leetcode](https://leetcode.com/problems/subtree-of-another-tree/)

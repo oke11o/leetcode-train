@@ -2,7 +2,7 @@ package _5xx
 
 import "math"
 
-const nilTreeNodeVal = math.MinInt
+const null = math.MinInt
 
 type TreeNode struct {
 	Val   int
@@ -12,9 +12,9 @@ type TreeNode struct {
 
 func binTree2sliceRec(idx int, node *TreeNode, result []int) []int {
 	for len(result) <= idx {
-		result = append(result, nilTreeNodeVal)
+		result = append(result, null)
 	}
-	val := nilTreeNodeVal
+	val := null
 	var left, right *TreeNode
 	if node != nil {
 		val = node.Val
@@ -43,7 +43,7 @@ func binTree2slice(root *TreeNode) []int {
 		node := queue[0]
 		queue = queue[1:]
 		if node == nil {
-			result = append(result, nilTreeNodeVal)
+			result = append(result, null)
 		} else {
 			result = append(result, node.Val)
 			queue = append(queue, node.Left)
@@ -52,7 +52,7 @@ func binTree2slice(root *TreeNode) []int {
 	}
 	lastNull := len(result) - 1
 	for ; lastNull >= 0; lastNull-- {
-		if result[lastNull] != nilTreeNodeVal {
+		if result[lastNull] != null {
 			break
 		}
 	}
@@ -73,7 +73,7 @@ func createTreeNodeFromSlice(in []int) *TreeNode {
 	for i := 1; i < len(in); i++ {
 		val := in[i]
 		var node *TreeNode
-		if val != nilTreeNodeVal {
+		if val != null {
 			node = &TreeNode{Val: val}
 		}
 		nodeList = append(nodeList, node)

@@ -61,7 +61,7 @@ func Test_tree2slice(t *testing.T) {
 					Right: nil,
 				},
 			},
-			want: []int{1, 2, 3, nilTreeNodeVal, 4},
+			want: []int{1, 2, 3, null, 4},
 		},
 		{
 			name: "",
@@ -94,7 +94,7 @@ func Test_tree2slice(t *testing.T) {
 					},
 				},
 			},
-			want: []int{1, 2, 3, nilTreeNodeVal, 4, nilTreeNodeVal, 5, nilTreeNodeVal, nilTreeNodeVal, 6, 7},
+			want: []int{1, 2, 3, null, 4, null, 5, null, null, 6, 7},
 		},
 	}
 	for _, tt := range tests {
@@ -120,7 +120,7 @@ func Test_createTreeNodeFromSlice(t *testing.T) {
 		},
 		{
 			name: "",
-			in:   []int{1, 2, 3, nilTreeNodeVal, 4, nilTreeNodeVal, 5, nilTreeNodeVal, nilTreeNodeVal, 6, 7},
+			in:   []int{1, 2, 3, null, 4, null, 5, null, null, 6, 7},
 		},
 	}
 	for _, tt := range tests {

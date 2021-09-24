@@ -23,7 +23,7 @@ func Test_diameterOfBinaryTree(t *testing.T) {
 		},
 		{
 			name: "",
-			tree: []int{1, 4, 3, 2, 5, nilTreeNodeVal, 8, nilTreeNodeVal, nilTreeNodeVal, 6, nilTreeNodeVal, 7, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, 0, 9},
+			tree: []int{1, 4, 3, 2, 5, null, 8, null, null, 6, null, 7, null, null, null, 0, 9},
 			want: 7,
 		},
 	}

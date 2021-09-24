@@ -29,6 +29,12 @@ var sameTreeTests = []struct {
 		q:    []int{1, 1, 2},
 		want: false,
 	},
+	{
+		name: "",
+		p:    []int{1, null, 1, null, 1, null, 1, null, 1, null, 1, 2},
+		q:    []int{1, null, 1, null, 1, null, 1, null, 1, null, 1, 2},
+		want: true,
+	},
 }
 
 func Test_isSameTree(t *testing.T) {
