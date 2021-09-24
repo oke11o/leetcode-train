@@ -30,3 +30,18 @@ func isSameTree(p *TreeNode, q *TreeNode) bool {
 	}
 	return true
 }
+
+// 0100. Same Tree (Recursion)
+func isSameTree_Rec(p *TreeNode, q *TreeNode) bool {
+	if p == nil && q == nil {
+		return true
+	}
+	if p == nil || q == nil {
+		return false
+	}
+	if p.Val != q.Val {
+		return false
+	}
+
+	return isSameTree_Rec(p.Left, q.Left) && isSameTree_Rec(p.Right, q.Right)
+}
