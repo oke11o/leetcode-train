@@ -1,3 +1,17 @@
+
+# 0104. Maximum Depth of Binary Tree
+
+    Easy
+
+**Comments:**
+
+**Tags:** [Tree, BFS, Breadth-First Search, DFS, Depth-First Search, Binary Tree]
+
+**Links:**
+
+- [go solution](./0104-maximum-depth-of-binary-tree.go)
+- [leetcode](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+
 # 0111. Minimum Depth of Binary Tree
 
     Easy

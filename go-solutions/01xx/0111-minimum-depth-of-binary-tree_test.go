@@ -24,7 +24,7 @@ func Test_minDepth(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := minDepth(createTreeNodeFromSlice(tt.root, 0))
+			got := minDepth(createTreeNodeFromSlice(tt.root))
 			require.Equal(t, tt.want, got)
 		})
 	}

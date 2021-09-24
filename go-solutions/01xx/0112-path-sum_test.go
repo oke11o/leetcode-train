@@ -33,7 +33,7 @@ func Test_hasPathSum(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := hasPathSum(createTreeNodeFromSlice(tt.root, 0), tt.targetSum)
+			got := hasPathSum(createTreeNodeFromSlice(tt.root), tt.targetSum)
 			require.Equal(t, tt.want, got)
 		})
 	}
