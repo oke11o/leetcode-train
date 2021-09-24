@@ -1,13 +1,6 @@
-package go_solutions
+package _1xx
 
-/**
- * Definition for a binary tree node.
- * type TreeNode struct {
- *     Val int
- *     Left *TreeNode
- *     Right *TreeNode
- * }
- */
+// 0100. Same Tree
 func isSameTree(p *TreeNode, q *TreeNode) bool {
 	var popQueue = func(queue []*TreeNode) (*TreeNode, []*TreeNode) {
 		if len(queue) == 0 {

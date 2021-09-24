@@ -13,12 +13,12 @@ func Test_maxDepth(t *testing.T) {
 	}{
 		{
 			name: "",
-			tree: []int{3, 9, 20, nilTreeNodeVal, nilTreeNodeVal, 15, 7},
+			tree: []int{3, 9, 20, null, null, 15, 7},
 			want: 3,
 		},
 		{
 			name: "",
-			tree: []int{1, nilTreeNodeVal, 2},
+			tree: []int{1, null, 2},
 			want: 2,
 		},
 		{

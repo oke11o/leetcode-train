@@ -13,12 +13,12 @@ func Test_minDepth(t *testing.T) {
 	}{
 		{
 			name: "",
-			root: []int{3, 9, 20, nilTreeNodeVal, nilTreeNodeVal, 15, 7},
+			root: []int{3, 9, 20, null, null, 15, 7},
 			want: 2,
 		},
 		{
 			name: "",
-			root: []int{2, nilTreeNodeVal, 3, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, 4, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, 5},
+			root: []int{2, null, 3, null, 4, null, 5},
 			want: 4,
 		},
 	}

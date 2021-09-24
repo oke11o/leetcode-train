@@ -1,4 +1,18 @@
 
+# 0100. Same Tree
+
+    Easy
+
+**Comment:** -
+
+**Tags:** [DFS]
+
+**Links:**
+
+- [go to solution](./0100-same-tree.go)
+- [leetcode](https://leetcode.com/problems/same-tree/)
+
+
 # 0104. Maximum Depth of Binary Tree
 
     Easy

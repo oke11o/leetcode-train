@@ -14,7 +14,7 @@ func Test_hasPathSum(t *testing.T) {
 	}{
 		{
 			name:      "",
-			root:      []int{5, 4, 8, 11, nilTreeNodeVal, 13, 4, 7, 2, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, 1},
+			root:      []int{5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1},
 			targetSum: 22,
 			want:      true,
 		},

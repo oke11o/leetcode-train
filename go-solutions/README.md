@@ -169,19 +169,6 @@
 - [go to solution](./0098-validate-binary-search-tree.go)
 - [leetcode](https://leetcode.com/problems/validate-binary-search-tree/)
 
-# 0100. Same Tree
-
-    Easy
-
-**Comment:** -
-
-**Tags:** [DFS]
-
-**Links:**
-
-- [go to solution](./0100-same-tree.go)
-- [leetcode](https://leetcode.com/problems/same-tree/)
-
 # 0115. Distinct Subsequences
 
     Hard
