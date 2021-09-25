@@ -1,4 +1,17 @@
 
+# 0918. Maximum Sum Circular Subarray
+
+    Medium
+
+**Tags:** [Array, Divide and Conquer, Dynamic Programming, Queue, Monotonic Queue]
+
+**Links:**
+
+- [go solution](./0918-maximum-sum-circular-subarray.go)
+- [leetcode](https://leetcode.com/problems/maximum-sum-circular-subarray/)
+
+
+
 # 0977. Squares of a Sorted Array
 
     Easy
