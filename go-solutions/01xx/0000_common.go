@@ -2,7 +2,7 @@ package _1xx
 
 import "math"
 
-const null = math.MinInt
+const null = math.MinInt32
 
 type TreeNode struct {
 	Val   int

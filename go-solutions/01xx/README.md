@@ -3,8 +3,6 @@
 
     Easy
 
-**Comment:** -
-
 **Tags:** [DFS]
 
 **Links:**
@@ -17,8 +15,6 @@
 
     Easy
 
-**Comments:**
-
 **Tags:** [Tree, BFS, Breadth-First Search, DFS, Depth-First Search, Binary Tree]
 
 **Links:**
@@ -29,8 +25,6 @@
 # 0111. Minimum Depth of Binary Tree
 
     Easy
-
-**Comments:**
 
 **Tags:** [Tree, BFS, Breadth-First Search, DFS, Depth-First Search, Binary Tree]
 
@@ -43,12 +37,21 @@
 
     Easy
 
-**Comments:**
-
 **Tags:** [Tree, DFS, Depth-First Search, Binary Tree]
 
 **Links:**
 
 - [go solution](./0112-path-sum.go)
 - [leetcode](https://leetcode.com/problems/path-sum/)
+
+# 0169. Majority Element
+
+    Easy
+
+**Tags:** [Tree, DFS, Depth-First Search, Binary Tree]
+
+**Links:**
+
+- [go solution](./0169-majority-element.go)
+- [leetcode](https://leetcode.com/problems/majority-element/)
 
