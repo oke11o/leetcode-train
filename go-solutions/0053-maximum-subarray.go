@@ -1,20 +1,21 @@
 package go_solutions
 
+// 0053. Maximum Subarray
 func maxSubArray(nums []int) int {
 	result := nums[0]
-	curSum := nums[0]
+	dp := make([]int, len(nums))
+	dp[0] = nums[0]
 	for i := 1; i < len(nums); i++ {
 		num := nums[i]
 
-		newSum := curSum + num
-		if newSum > num {
-			curSum = newSum
-		} else {
-			curSum = num
+		dp[i] = num
+		candidateSum := dp[i-1] + num
+		if candidateSum > num {
+			dp[i] = candidateSum
 		}
 
-		if result < curSum {
-			result = curSum
+		if result < dp[i] {
+			result = dp[i]
 		}
 	}
 	return result

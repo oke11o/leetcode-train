@@ -2,7 +2,7 @@ package go_solutions
 
 import "math"
 
-const nilTreeNodeVal = math.MinInt
+const nilTreeNodeVal = math.MinInt32
 
 type TreeNode struct {
 	Val   int
