@@ -48,6 +48,9 @@
 
     Easy
 
+**Similar:**
+- [0229. Majority Element II](../02xx/0229-majority-element-ii.go)
+
 **Tags:** [Tree, DFS, Depth-First Search, Binary Tree]
 
 **Links:**

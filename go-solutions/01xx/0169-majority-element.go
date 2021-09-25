@@ -1,5 +1,6 @@
 package _1xx
 
+// 0169. Majority Element
 func majorityElement(nums []int) int {
 	result := 0
 	vote := 0
