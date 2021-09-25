@@ -1,4 +1,4 @@
-package go_solutions
+package _0xx
 
 // 0053. Maximum Subarray
 func maxSubArray(nums []int) int {
