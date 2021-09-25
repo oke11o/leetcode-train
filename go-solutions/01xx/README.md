@@ -75,8 +75,6 @@
 
 **Tags:** [Dynamic Programming]
 
-**Comment:** Need understand
-
 **Links:**
 
 - [go to solution](./0198-house-robber.go)
