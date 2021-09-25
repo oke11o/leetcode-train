@@ -216,19 +216,6 @@ Follow to pictures
 
 - [go to solution](./0153-find-minimum-in-rotated-sorted-array.go)
 
-# 0198. House Robber
-
-    Medium
-
-**Tags:** [Dynamic Programming]
-
-**Comment:** Need understand
-
-**Links:**
-
-- [go to solution](./0198-house-robber.go)
-- [leetcode](https://leetcode.com/problems/house-robber/)
-
 # 0202. Happy Number
 
     Medium

@@ -69,3 +69,16 @@
 - [go solution](./0169-majority-element.go)
 - [leetcode](https://leetcode.com/problems/majority-element/)
 
+# 0198. House Robber
+
+    Medium
+
+**Tags:** [Dynamic Programming]
+
+**Comment:** Need understand
+
+**Links:**
+
+- [go to solution](./0198-house-robber.go)
+- [leetcode](https://leetcode.com/problems/house-robber/)
+

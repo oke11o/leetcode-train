@@ -1,4 +1,4 @@
-package go_solutions
+package _1xx
 
 func rob(nums []int) int {
 	var max = func(i, j int) int {
