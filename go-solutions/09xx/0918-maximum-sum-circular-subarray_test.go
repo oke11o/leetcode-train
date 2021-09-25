@@ -13,6 +13,17 @@ func Test_maxSubarraySumCircular(t *testing.T) {
 		explanation string
 	}{
 		{
+			name:        "",
+			nums:        []int{-2, -3, -1},
+			want:        -1,
+			explanation: "Subarray [-1] has maximum sum -1",
+		},
+		{
+			name: "",
+			nums: []int{5, -3, 5},
+			want: 10,
+		},
+		{
 			name: "",
 			nums: []int{5, 6, 1, 4, 8, -8, 7, -5, 3},
 			want: 29,
@@ -55,12 +66,6 @@ func Test_maxSubarraySumCircular(t *testing.T) {
 			nums:        []int{3, -2, 2, -3},
 			want:        3,
 			explanation: "Subarray [3] and [3,-2,2] both have maximum sum 3",
-		},
-		{
-			name:        "",
-			nums:        []int{-2, -3, -1},
-			want:        -1,
-			explanation: "Subarray [-1] has maximum sum -1",
 		},
 	}
 	for _, tt := range tests {

@@ -2,52 +2,42 @@ package _9xx
 
 // 0918. Maximum Sum Circular Subarray
 func maxSubarraySumCircular(nums []int) int {
-	length := len(nums)
 
-	tmpResult := -9999999
-	minIdx := 0
-	min := 99999999999999
-	dpMin := make([]int, length)
-	dpMin[0] = nums[0]
-	for i := 1; i < length; i++ {
-		newSum := nums[i] + dpMin[i-1]
+	// Case 1: get the maximum sum using standard kadane' s algorithm
+	maxKadane := kadane(nums)
+
+	// Case 2: Now find the maximum sum that includes corner elements.
+	maxWrap := 0
+	for i := 0; i < len(nums); i++ {
+		maxWrap += nums[i]
+		nums[i] = 0 - nums[i]
+	}
+
+	// max sum with corner elements will be:
+	// array-sum - (-max subarray sum of inverted array)
+	maxWrap = maxWrap + kadane(nums)
+	if maxWrap == 0 {
+		return maxKadane
+	}
+	if maxWrap > maxKadane {
+		return maxWrap
+	}
+	return maxKadane
+}
+
+func kadane(nums []int) int {
+	result := nums[0]
+	curSum := nums[0]
+	for i := 1; i < len(nums); i++ {
+		newSum := curSum + nums[i]
 		if newSum > nums[i] {
-			dpMin[i] = newSum
+			curSum = newSum
 		} else {
-			dpMin[i] = nums[i]
+			curSum = nums[i]
 		}
-		if min > dpMin[i] {
-			min = dpMin[i]
-			minIdx = i
-		}
-		if tmpResult < dpMin[i] {
-			tmpResult = dpMin[i]
+		if result < curSum {
+			result = curSum
 		}
 	}
-
-	result := -99999999
-	dp := make([]int, length)
-	for i := minIdx + 1; i < length+minIdx+1; i++ {
-		curIdx := i % length
-		prevIdx := (i - 1) % length
-		num := nums[curIdx]
-
-		newSum := dp[prevIdx] + num
-		if newSum > num {
-			dp[curIdx] = newSum
-		} else {
-			dp[curIdx] = num
-		}
-
-		if result < dp[curIdx] {
-			result = dp[curIdx]
-		}
-
-	}
-
-	if tmpResult > result {
-		return tmpResult
-	}
-
 	return result
 }

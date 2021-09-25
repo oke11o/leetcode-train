@@ -9,6 +9,7 @@
 
 - [go solution](./0918-maximum-sum-circular-subarray.go)
 - [leetcode](https://leetcode.com/problems/maximum-sum-circular-subarray/)
+- [solution description](https://www.geeksforgeeks.org/maximum-contiguous-circular-sum/)
 
 
 
