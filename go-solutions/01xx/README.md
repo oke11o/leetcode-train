@@ -22,6 +22,17 @@
 - [go solution](./0104-maximum-depth-of-binary-tree.go)
 - [leetcode](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 
+# 0108. Convert Sorted Array to Binary Search Tree
+
+    Easy
+
+**Tags:** [Array, Divide and Conquer, Tree, Binary Search Tree, Binary Tree]
+
+**Links:**
+
+- [go solution](./0108-convert-sorted-array-to-binary-search-tree.go)
+- [leetcode](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)
+
 # 0111. Minimum Depth of Binary Tree
 
     Easy
