@@ -2,9 +2,17 @@
 
 [Link](https://seanprashad.com/leetcode-patterns/)
 
-# Get random task
+# 0740. Delete and Earn
 
-[run](../get-random-task/get-random-task.go)
+    Medium
+
+**Tags:** [Array, Hash Table, Dynamic Programming]
+
+**Links:**
+
+- [go solution](./0740-delete-and-earn.go)
+- [leetcode](https://leetcode.com/problems/delete-and-earn/)
+
 
 # 0744. Find Smallest Letter Greater Than Target
 
