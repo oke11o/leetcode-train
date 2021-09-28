@@ -1,4 +1,14 @@
 
+# 0922. Sort Array By Parity II
+
+    Easy
+
+**Links:**
+
+- [go solution](./0922-sort-array-by-parity-ii.go)
+- [leetcode](https://leetcode.com/problems/sort-array-by-parity-ii/)
+
+
 # 0918. Maximum Sum Circular Subarray
 
     Medium
