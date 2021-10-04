@@ -39,7 +39,7 @@ func Test_islandPerimeter(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := islandPerimeter_simpleCounting(tt.grid)
+			got := islandPerimeter_dfs(tt.grid)
 			require.Equal(t, tt.want, got)
 		})
 	}

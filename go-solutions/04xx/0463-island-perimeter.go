@@ -56,3 +56,67 @@ func islandPerimeter_simpleCounting(grid [][]int) int {
 	}
 	return count
 }
+
+func islandPerimeter_dfs(grid [][]int) int {
+	if len(grid) == 0 {
+		return 0
+	}
+	p := newIslandPerimeterDFSer(grid)
+	return p.islandPerimeter()
+}
+
+type islandPerimeterDFSer struct {
+	grid    [][]int
+	visited [][]bool
+	rowLen  int // that 's ok
+	colLen  int // column
+	res     int // Island perimeter
+	dirx    []int
+	diry    []int
+
+	// global variable
+}
+
+func newIslandPerimeterDFSer(grid [][]int) *islandPerimeterDFSer {
+	p := islandPerimeterDFSer{
+		grid:   grid,
+		rowLen: len(grid),
+		colLen: len(grid[0]),
+	}
+	p.visited = make([][]bool, p.rowLen)
+	for i := 0; i < p.rowLen; i++ {
+		p.visited[i] = make([]bool, p.colLen)
+	}
+	p.dirx = []int{-1, 1, 0, 0}
+	p.diry = []int{0, 0, -1, 1}
+	return &p
+}
+
+func (p *islandPerimeterDFSer) islandPerimeter() int {
+	for i := 0; i < p.rowLen; i++ {
+		for j := 0; j < p.colLen; j++ {
+			if p.grid[i][j] == 1 && !p.visited[i][j] {
+				p.dfs(i, j)
+			}
+		}
+	}
+	return p.res
+}
+
+func (p *islandPerimeterDFSer) dfs(x, y int) {
+	p.visited[x][y] = true // sign
+	for i := 0; i < 4; i++ {
+		xx := x + p.dirx[i]
+		yy := y + p.diry[i]
+		// If the current location is land, and the "new location" extended from the current location is a "puddle"
+		// or "new location" beyond the boundary, an edge will be contributed to the perimeter
+		if xx < 0 || xx >= p.rowLen || yy < 0 || yy >= p.colLen || p.grid[xx][yy] == 0 {
+			p.res++
+			continue
+		}
+		if p.visited[xx][yy] { // An edge is not contributed to the perimeter
+			continue
+		}
+		p.dfs(xx, yy)
+	}
+}
