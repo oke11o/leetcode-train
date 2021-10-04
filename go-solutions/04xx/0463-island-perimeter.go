@@ -120,3 +120,47 @@ func (p *islandPerimeterDFSer) dfs(x, y int) {
 		p.dfs(xx, yy)
 	}
 }
+
+func islandPerimeter_bfs(grid [][]int) int {
+	bfs := [][2]int{}
+	dir := [4][2]int{{1, 0}, {0, 1}, {-1, 0}, {0, -1}}
+	n := len(grid)
+	if n == 0 {
+		return 0
+	}
+	m := len(grid[0])
+	found := false
+	for i := 0; i < n; i++ {
+		for j := 0; j < m; j++ {
+			if grid[i][j] == 1 {
+				bfs = append(bfs, [2]int{i, j})
+				found = true
+			}
+		}
+		if found {
+			break
+		}
+	}
+
+	count := 0
+	for len(bfs) != 0 {
+		q := bfs[0]
+		bfs = bfs[1:]
+		cx := q[0]
+		cy := q[1]
+		if grid[cx][cy] == 0 {
+			continue
+		}
+		count += 4
+		grid[cx][cy] = 0
+		for i := 0; i < 4; i++ {
+			nx := cx + dir[i][0]
+			ny := cy + dir[i][1]
+			if nx >= 0 && nx < n && ny >= 0 && ny < m && grid[nx][ny] == 1 {
+				bfs = append(bfs, [2]int{nx, ny})
+				count -= 2
+			}
+		}
+	}
+	return count
+}

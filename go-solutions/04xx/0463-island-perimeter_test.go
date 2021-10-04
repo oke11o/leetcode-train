@@ -7,9 +7,10 @@ import (
 
 func Test_islandPerimeter(t *testing.T) {
 	tests := []struct {
-		name string
-		grid [][]int
-		want int
+		name        string
+		grid        [][]int
+		want        int
+		explanation string
 	}{
 		{
 			name: "",
@@ -17,14 +18,16 @@ func Test_islandPerimeter(t *testing.T) {
 			want: 16,
 		},
 		{
-			name: "",
-			grid: [][]int{{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}},
-			want: 16,
+			name:        "",
+			grid:        [][]int{{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}},
+			want:        16,
+			explanation: "not work for brs",
 		},
 		{
-			name: "",
-			grid: [][]int{{1, 0, 1, 1}, {0, 0, 1, 0}, {0, 1, 1, 1}, {1, 0, 0, 1}},
-			want: 24,
+			name:        "",
+			grid:        [][]int{{1, 0, 1, 1}, {0, 0, 1, 0}, {0, 1, 1, 1}, {1, 0, 0, 1}},
+			want:        24,
+			explanation: "not work for brs",
 		},
 		{
 			name: "",
@@ -39,7 +42,7 @@ func Test_islandPerimeter(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := islandPerimeter_dfs(tt.grid)
+			got := islandPerimeter_bfs(tt.grid)
 			require.Equal(t, tt.want, got)
 		})
 	}
