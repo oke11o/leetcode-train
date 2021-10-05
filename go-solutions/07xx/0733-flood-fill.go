@@ -1,6 +1,43 @@
 package _7xx
 
-// 0733. Flood Fill
+// 0733. Flood Fill (BFS)
+func floodFill_bfs(image [][]int, sr int, sc int, newColor int) [][]int {
+	rowLen := len(image)
+	colLen := len(image[0])
+	visited := make([][]bool, rowLen)
+	for i := 0; i < rowLen; i++ {
+		visited[i] = make([]bool, colLen)
+	}
+
+	oldColor := image[sr][sc]
+	bfs := [][2]int{{sr, sc}}
+	for len(bfs) > 0 {
+		cur := bfs[0]
+		bfs = bfs[1:]
+		curRow := cur[0]
+		if curRow < 0 || curRow >= rowLen {
+			continue
+		}
+		curCol := cur[1]
+		if curCol < 0 || curCol >= colLen {
+			continue
+		}
+		if visited[curRow][curCol] {
+			continue
+		}
+		if image[curRow][curCol] == oldColor {
+			image[curRow][curCol] = newColor
+			bfs = append(bfs, [2]int{curRow - 1, curCol})
+			bfs = append(bfs, [2]int{curRow + 1, curCol})
+			bfs = append(bfs, [2]int{curRow, curCol - 1})
+			bfs = append(bfs, [2]int{curRow, curCol + 1})
+		}
+		visited[curRow][curCol] = true
+	}
+	return image
+}
+
+// 0733. Flood Fill (DFS)
 func floodFill(image [][]int, sr int, sc int, newColor int) [][]int {
 	f := newFloodFillDFS(image, sr, sc, newColor)
 	return f.fill()
