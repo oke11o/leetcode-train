@@ -1,4 +1,15 @@
 
+# 0045. Jump Game II
+
+    Medium
+
+**Tags:** [Array, Dynamic Programming, Greedy]
+
+**Links:**
+
+- [go to solution](./0045-jump-game-ii.go)
+- [leetcode](https://leetcode.com/problems/jump-game-ii/)
+
 # 0048. Rotate Image
 
     Medium
