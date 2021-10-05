@@ -21,3 +21,14 @@
 - [go to solution](./0053-maximum-subarray.go)
 - [leetcode](https://leetcode.com/problems/maximum-subarray/)
 
+# 0055. Jump Game
+
+    Easy
+
+**Tags:** [Array, Dynamic Programming, Greedy]
+
+**Links:**
+
+- [go to solution](./0055-jump-game.go)
+- [leetcode](https://leetcode.com/problems/jump-game/)
+
