@@ -32,18 +32,12 @@ func (this *Trie) Insert(word string) {
 		if c, ok := parent.childrenExists(s); ok {
 			parent = c
 		} else {
-			break
+			n := &node{val: rune(word[j])}
+			parent.children = append(parent.children, n)
+			parent = n
 		}
 	}
-	if j+1 == len(word) {
-		parent.isFinal = true
-		return
-	}
-	for ; j < len(word); j++ {
-		n := &node{val: rune(word[j])}
-		parent.children = append(parent.children, n)
-		parent = n
-	}
+
 	parent.isFinal = true
 
 }
