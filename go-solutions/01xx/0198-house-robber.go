@@ -1,5 +1,9 @@
 package _1xx
 
+// 0198. House Robber
+// Состоянии динамики
+// Значение динамики
+// Переход
 func rob(nums []int) int {
 	dp := make([]int, len(nums)+2)
 	for i, num := range nums {
