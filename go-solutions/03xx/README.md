@@ -3,6 +3,8 @@
 
     Medium
 
+**Great explanation**: [youtube](https://www.youtube.com/watch?v=nHR8ytpzz7c)
+
 **Links:**
 
 - [go solution](./0337-house-robber-iii.go)
