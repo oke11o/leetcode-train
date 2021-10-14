@@ -2,10 +2,15 @@ package _2xx
 
 const MaxInt32 = 1<<31 - 1
 
+var cache = make(map[int]int)
+
 // 0279. Perfect Squares
 func numSquares(n int) int {
 	if n < 4 {
 		return n
+	}
+	if v, ok := cache[n]; ok {
+		return v
 	}
 	mins := []int{}
 	i := 1
@@ -20,7 +25,9 @@ func numSquares(n int) int {
 		i++
 	}
 
-	return min(mins)
+	res := min(mins)
+	cache[n] = res
+	return res
 }
 
 func min(nums []int) int {
