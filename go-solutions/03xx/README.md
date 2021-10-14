@@ -3,12 +3,11 @@
 
     Medium
 
-**Great explanation**: [youtube](https://www.youtube.com/watch?v=nHR8ytpzz7c)
-
 **Links:**
 
 - [go solution](./0337-house-robber-iii.go)
 - [leetcode](https://leetcode.com/problems/house-robber-iii/)
+- [youtube](https://www.youtube.com/watch?v=nHR8ytpzz7c)
 
 **Relatives**:
 - [0198. House Robber](../01xx/0198-house-robber.go)

@@ -67,3 +67,4 @@
 
 - [go solution](./0279-perfect-squares.go)
 - [leetcode](https://leetcode.com/problems/perfect-squares/)
+- [youtube](https://www.youtube.com/watch?v=HLZLwjzIVGo)
