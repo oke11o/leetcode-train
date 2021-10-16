@@ -66,6 +66,17 @@
 - [go to solution](./0121-best-time-to-buy-and-sell-stock.go)
 - [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 
+# 0122. Best Time to Buy and Sell Stock II
+
+    Medium
+
+**Tags:** [Array, Dynamic Programming, Greedy]
+
+**Links:**
+
+- [go to solution](./0122-best-time-to-buy-and-sell-stock-ii.go)
+- [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
+
 # 0169. Majority Element
 
     Easy
