@@ -1,4 +1,4 @@
-package go_solutions
+package _1xx
 
 func maxProfit(prices []int) int {
 	if len(prices) == 0 {

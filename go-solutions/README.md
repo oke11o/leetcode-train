@@ -174,19 +174,6 @@ Follow to pictures
 - [go to solution](./0115-distinct-subsequences.go)
 - [leetcode](https://leetcode.com/problems/distinct-subsequences/)
 
-# 0121. Best Time to Buy and Sell Stock
-
-    Easy
-
-**Comment:** -
-
-**Tags:** [Array, Dynamic Programming]
-
-**Links:**
-
-- [go to solution](./0121-best-time-to-buy-and-sell-stock.go)
-- [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
-
 # 0136. Single Number
 
     Easy

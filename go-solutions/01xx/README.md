@@ -55,6 +55,17 @@
 - [go solution](./0112-path-sum.go)
 - [leetcode](https://leetcode.com/problems/path-sum/)
 
+# 0121. Best Time to Buy and Sell Stock
+
+    Easy
+
+**Tags:** [Array, Dynamic Programming]
+
+**Links:**
+
+- [go to solution](./0121-best-time-to-buy-and-sell-stock.go)
+- [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+
 # 0169. Majority Element
 
     Easy
