@@ -1,58 +1,61 @@
 package _1xx
 
 // 1110. Delete Nodes And Return Forest
-func delNodes(root *TreeNode, to_delete []int) []*TreeNode {
-	var treeInSlice = func(node *TreeNode, list []int) bool {
-		if node == nil {
-			return false
-		}
-		for _, val := range list {
-			if node.Val == val {
-				return true
-			}
-		}
-		return false
+func delNodes(root *TreeNode, toDelete []int) []*TreeNode {
+	result := []*TreeNode{}
+	mapa := make(map[int]struct{}, len(toDelete))
+	for _, v := range toDelete {
+		mapa[v] = struct{}{}
 	}
-	if treeInSlice(root, to_delete) {
-		return []*TreeNode{nil, root}
-	}
-
 	queue := []*TreeNode{root}
-	orphans := []*TreeNode{}
+	result = append(result, root)
+
+	// Эти две мапы нужны для удаления нод из результата
+	inResutValues := map[int]int{root.Val: 0}
+	toSkipIdxs := map[int]struct{}{}
+
 	for len(queue) > 0 {
 		node := queue[0]
 		queue = queue[1:]
+		if _, ok := mapa[node.Val]; ok {
+			// так как этого ребенка добавили в результат чуть ниже, то тут делаем проверку, что может его все таки стоит удалить?
+			if idx, ok2 := inResutValues[node.Val]; ok2 {
+				toSkipIdxs[idx] = struct{}{}
+			}
+			if node.Left != nil {
+				result = append(result, node.Left)
+				inResutValues[node.Left.Val] = len(result) - 1
+			}
+			if node.Right != nil {
+				result = append(result, node.Right)
+				inResutValues[node.Right.Val] = len(result) - 1
+			}
+		}
+
+		// тут мы добавляем детей в обход и удаляем из детей текущей
+		// в результат детей добавляем выше
 		if node.Left != nil {
-			if treeInSlice(node.Left, to_delete) {
-				if node.Left.Left != nil && !treeInSlice(node.Left.Left, to_delete) {
-					orphans = append(orphans, node.Left.Left)
-				}
-				if node.Left.Right != nil && !treeInSlice(node.Left.Right, to_delete) {
-					orphans = append(orphans, node.Left.Right)
-				}
+			queue = append(queue, node.Left)
+			if _, ok := mapa[node.Left.Val]; ok {
 				node.Left = nil
-			} else {
-				queue = append(queue, node.Left)
 			}
 		}
 		if node.Right != nil {
-			if treeInSlice(node.Right, to_delete) {
-				if node.Right.Left != nil && !treeInSlice(node.Right.Left, to_delete) {
-					orphans = append(orphans, node.Right.Left)
-				}
-				if node.Right.Right != nil && !treeInSlice(node.Right.Right, to_delete) {
-					orphans = append(orphans, node.Right.Right)
-				}
+			queue = append(queue, node.Right)
+			if _, ok := mapa[node.Right.Val]; ok {
 				node.Right = nil
-			} else {
-				queue = append(queue, node.Right)
 			}
 		}
 	}
-
-	result := []*TreeNode{root}
-	if len(orphans) > 0 {
-		result = append(result, orphans...)
+	if len(toSkipIdxs) == 0 {
+		return result
 	}
-	return result
+	res := make([]*TreeNode, 0, len(result)-len(toSkipIdxs))
+	for i, v := range result {
+		if _, ok := toSkipIdxs[i]; !ok {
+			res = append(res, v)
+		}
+	}
+
+	return res
 }
