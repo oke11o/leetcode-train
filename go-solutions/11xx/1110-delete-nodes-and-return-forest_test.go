@@ -25,16 +25,22 @@ func Test_delNodes(t *testing.T) {
 			want:      [][]int{{1, 2, 4}},
 		},
 		{
-			name:      "",
+			name:      "Root doesn't pass. Child pass full",
+			root:      []int{1, 2, 3, null, null, null, 4},
+			to_delete: []int{2, 1},
+			want:      [][]int{{3, null, 4}},
+		},
+		{
+			name:      "У ребенка на удаление есть еще дети на удаление",
 			root:      []int{1, 2, null, 4, 3},
 			to_delete: []int{2, 3},
 			want:      [][]int{{1}, {4}},
 		},
 		{
-			name:      "",
-			root:      []int{1, 2, 3, null, null, null, 4},
-			to_delete: []int{2, 1},
-			want:      [][]int{{3, null, 4}},
+			name:      "У ребенка на удаление есть еще дети на удаление (HARD)",
+			root:      []int{1, 2, null, 4, 3, 5, 6, 7, 8, null, null, null, null, 9, 10},
+			to_delete: []int{2, 7},
+			want:      [][]int{{1}, {4, 5, 6}, {3, null, 8}, {9}, {10}},
 		},
 	}
 	for _, tt := range tests {
