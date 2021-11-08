@@ -11,10 +11,25 @@
 - [leetcode](https://leetcode.com/problems/valid-parentheses/)
 
 **Next problems:**
-- [22 Medium](https://leetcode.com/problems/generate-parentheses/)
+- [22 Medium (v)](https://leetcode.com/problems/generate-parentheses/)
 - [1003 Medium](https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/)
 - [32 Hard](https://leetcode.com/problems/longest-valid-parentheses/)
 - [301 Hard](https://leetcode.com/problems/remove-invalid-parentheses/)
+
+# 0022. Generate Parentheses
+
+    Medium
+
+**Tags:** [String, Dynamic Programming, Backtracking]
+
+**Links:**
+
+- [solution](./0022-generate-parentheses.go)
+- [leetcode](https://leetcode.com/problems/generate-parentheses/)
+
+**Next problems**
+
+- [17 Medium](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
 
 # 0045. Jump Game II
 
