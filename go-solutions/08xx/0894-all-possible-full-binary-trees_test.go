@@ -29,7 +29,7 @@ func Test_allPossibleFBT(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := allPossibleFBT(tt.n)
+			got := allPossibleFBT_withCache(tt.n)
 			res := make([][]int, 0, len(got))
 			for _, g := range got {
 				res = append(res, binTree2slice(g))
