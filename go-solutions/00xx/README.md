@@ -1,4 +1,21 @@
 
+# 0020. Valid Parentheses
+
+    Easy
+
+**Tags:** [String, Stack]
+
+**Links:**
+
+- [solution](./0020-valid-parentheses.go)
+- [leetcode](https://leetcode.com/problems/valid-parentheses/)
+
+**Next problems:**
+- [22 Medium](https://leetcode.com/problems/generate-parentheses/)
+- [1003 Medium](https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/)
+- [32 Hard](https://leetcode.com/problems/longest-valid-parentheses/)
+- [301 Hard](https://leetcode.com/problems/remove-invalid-parentheses/)
+
 # 0045. Jump Game II
 
     Medium
