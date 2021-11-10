@@ -2,6 +2,9 @@ package sum_of_subsets
 
 var result [][]int
 
+/**
+ * https://youtu.be/kyLxTdsT8ws
+ */
 func sumOfSubsets(in []int, sum int) [][]int {
 	totalSum := 0
 	for _, v := range in {
@@ -16,21 +19,25 @@ func sumOfSubsets(in []int, sum int) [][]int {
 	return result
 }
 
-func backtrack(in []int, from int, needed, curSum int, current []int) {
-	if needed == curSum {
+func backtrack(in []int, from int, needSum, prevSum int, current []int) {
+	if needSum == prevSum {
 		result = append(result, current)
 		return
 	}
 
 	for i := from; i < len(in); i++ {
-		newVal := in[i]
-		newSum := newVal + curSum
-		if newSum > needed {
-			continue
+		if boundFunc(in[i], needSum, prevSum) {
+			tmp := make([]int, len(current))
+			copy(tmp, current)
+			tmp = append(tmp, in[i])
+			backtrack(in, i+1, needSum, prevSum+in[i], tmp)
 		}
-		tmp := make([]int, len(current))
-		copy(tmp, current)
-		tmp = append(tmp, newVal)
-		backtrack(in, i+1, needed, newSum, tmp)
 	}
+}
+
+func boundFunc(val, needSum, prevSum int) bool {
+	if val+prevSum > needSum {
+		return false
+	}
+	return true
 }
