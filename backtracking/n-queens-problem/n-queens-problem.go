@@ -8,12 +8,12 @@ var result [][]int
 func queensProblems(n int) [][]int {
 	result = make([][]int, 0)
 
-	backtrack(0, 0, make([]int, n))
+	backtrack(0, make([]int, n))
 	return result
 }
 
 // Состояние = какую королеву можно поставить на какую клетку?
-func backtrack(row int, col int, current []int) {
+func backtrack(row int, current []int) {
 	if row == len(current) {
 		result = append(result, current)
 		return
@@ -25,7 +25,7 @@ func backtrack(row int, col int, current []int) {
 			tmp := make([]int, len(current))
 			copy(tmp, current)
 			tmp[row] = i
-			backtrack(row+1, i, tmp)
+			backtrack(row+1, tmp)
 		}
 	}
 	a := 1
