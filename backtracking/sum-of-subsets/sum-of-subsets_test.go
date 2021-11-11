@@ -24,6 +24,12 @@ func Test_sumOfSubsets(t *testing.T) {
 			sum:  30,
 			want: [][]int{{5, 10, 15}, {5, 12, 13}, {12, 18}},
 		},
+		{
+			name: "",
+			in:   []int{2, 3, 6, 7},
+			sum:  7,
+			want: [][]int{{7}}, //{2,2,3},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
