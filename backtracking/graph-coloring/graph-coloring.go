@@ -8,25 +8,27 @@ var result []string
 //
 func graphColoring(in Graph) []string {
 
-	for _, c := range "RGB" {
-		backtrack(in, 0, c, make([]rune, len(in)), "")
-	}
+	backtrack(in, 0, make([]rune, len(in)), "")
 
-	return nil
+	return result
 }
 
-func backtrack(in Graph, idx int, curCol rune, curState []rune, current string) {
-	current += string(curCol)
+// R = 82
+// G = 71
+func backtrack(in Graph, idx int, curState []rune, current string) {
 	if len(current) == len(in) {
 		result = append(result, current)
 		return
 	}
 
-	for i := idx; i < len(in); i++ {
-		if !boundFunc(in, i, curCol, curState) {
+	for _, c := range "RGB" {
+		if !boundFunc(in, idx, c, curState) {
 			continue
 		}
-		//curState[i] = cur
+		newState := make([]rune, len(curState))
+		copy(newState, curState)
+		newState[idx] = c
+		backtrack(in, idx+1, newState, current+string(c))
 	}
 	a := 1
 	_ = a

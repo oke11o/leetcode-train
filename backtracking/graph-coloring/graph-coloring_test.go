@@ -13,8 +13,21 @@ func Test_graphColoring(t *testing.T) {
 	}{
 		{
 			name: "",
+			in:   Graph{0: {1, 2, 3}, 1: {0, 3, 4}, 2: {0, 3, 4}, 3: {0, 1, 2}, 4: {1, 2}},
+			want: []string{
+				"RGGBR", "RGGBB", "RBBGR", "RBBGG",
+				"GRRBG", "GRRBB", "GBBRR", "GBBRG",
+				"BRRGG", "BRRGB", "BGGRR", "BGGRB",
+			},
+		},
+		{
+			name: "",
 			in:   Graph{0: {1, 2}, 1: {0, 3}, 2: {0, 3}, 3: {1, 2}},
-			want: []string{"RGRG", "RGRB", "RGBG", "RBRG", "RBRB"},
+			want: []string{
+				"RGGR", "RGGB", "RGBR", "RBGR", "RBBR", "RBBG",
+				"GRRG", "GRRB", "GRBG", "GBRG", "GBBR", "GBBG",
+				"BRRG", "BRRB", "BRGB", "BGRB", "BGGR", "BGGB",
+			},
 		},
 	}
 	for _, tt := range tests {
