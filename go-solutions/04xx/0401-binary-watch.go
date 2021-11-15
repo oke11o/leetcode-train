@@ -56,7 +56,7 @@ func watch2string(current int16) string {
 
 // h1. Solution 2
 
-var countBitsCache = map[int]int{0: 0, 1: 1, 2: 1, 3: 2}
+var countBitsCache = []int{0: 0, 1: 1, 2: 1, 3: 2}
 
 func readBinaryWatch2(turnedOn int) []string {
 	result := []string{}
@@ -72,12 +72,11 @@ func readBinaryWatch2(turnedOn int) []string {
 }
 
 func countBits(in int) int {
-	v, ok := countBitsCache[in]
-	if ok {
-		return v
+	if len(countBitsCache) >= in {
+		return countBitsCache[in]
 	}
-	for v = 4; v <= in; v++ {
-		countBitsCache[v] = countBitsCache[v>>1] + v%2
+	for i := len(countBitsCache); i <= in; i++ {
+		countBitsCache = append(countBitsCache, countBitsCache[i>>1]+i%2)
 	}
 
 	return countBitsCache[in]

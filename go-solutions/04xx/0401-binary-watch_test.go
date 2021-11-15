@@ -102,7 +102,7 @@ func Test_countBits(t *testing.T) {
 		},
 		{
 			name:    "",
-			current: 3,
+			current: 6,
 			want:    2,
 		},
 		{
