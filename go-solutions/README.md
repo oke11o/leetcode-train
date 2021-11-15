@@ -300,19 +300,6 @@ Follow to pictures
 - [Go solution](./0303-range-sum-query-immutable.go)
 - [Problem](https://leetcode.com/problems/range-sum-query-immutable/)
 
-# 0338. Counting Bits
-
-    Easy
-
-**Comment:**
-
-**Tags:** [Dynamic Programming, Bit Manipulation]
-
-**Links:**
-
-- [Go solution](./0338-counting-bits.go)
-- [Problem](https://leetcode.com/problems/counting-bits/)
-
 # 0340. Longest Substring with At Most K Distinct Characters
 
     Medium

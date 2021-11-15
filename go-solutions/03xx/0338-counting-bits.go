@@ -1,4 +1,4 @@
-package go_solutions
+package _3xx
 
 func countBits(n int) []int {
 	if n == 0 {
