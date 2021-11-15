@@ -102,3 +102,11 @@
 - [go to solution](./0198-house-robber.go)
 - [leetcode](https://leetcode.com/problems/house-robber/)
 
+# 0191. Number of 1 Bits
+
+    Easy
+
+**Links:**
+
+- [solution](./0191-number-of-1-bits.go)
+- [leetcode](https://leetcode.com/problems/number-of-1-bits/)
