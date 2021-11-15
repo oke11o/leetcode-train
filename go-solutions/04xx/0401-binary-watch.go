@@ -53,3 +53,32 @@ func readBinaryWatchBacktrack(turnedOn int, level int, current int16) {
 func watch2string(current int16) string {
 	return fmt.Sprintf("%d:%02d", current/64, current%64)
 }
+
+// h1. Solution 2
+
+var countBitsCache = map[int]int{0: 0, 1: 1, 2: 1, 3: 2}
+
+func readBinaryWatch2(turnedOn int) []string {
+	result := []string{}
+	for min := 59; min >= 0; min-- {
+		for hour := 0; hour < 12; hour++ {
+			if countBits(min)+countBits(hour) == turnedOn {
+				result = append(result, fmt.Sprintf("%d:%02d", hour, min))
+			}
+		}
+	}
+
+	return result
+}
+
+func countBits(in int) int {
+	v, ok := countBitsCache[in]
+	if ok {
+		return v
+	}
+	for v = 4; v <= in; v++ {
+		countBitsCache[v] = countBitsCache[v>>1] + v%2
+	}
+
+	return countBitsCache[in]
+}

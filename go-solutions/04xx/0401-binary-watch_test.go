@@ -39,7 +39,7 @@ func Test_readBinaryWatch(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := readBinaryWatch(tt.turnedOn)
+			got := readBinaryWatch2(tt.turnedOn)
 			require.ElementsMatch(t, tt.want, got)
 		})
 	}
@@ -78,4 +78,44 @@ func Test_watch2string(t *testing.T) {
 			require.Equal(t, tt.want, got)
 		})
 	}
+}
+func Test_countBits(t *testing.T) {
+	tests := []struct {
+		name    string
+		current int
+		want    int
+	}{
+		{
+			name:    "",
+			current: 0,
+			want:    0,
+		},
+		{
+			name:    "",
+			current: 1,
+			want:    1,
+		},
+		{
+			name:    "",
+			current: 2,
+			want:    1,
+		},
+		{
+			name:    "",
+			current: 3,
+			want:    2,
+		},
+		{
+			name:    "",
+			current: 7,
+			want:    3,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got := countBits(tt.current)
+			require.Equal(t, tt.want, got)
+		})
+	}
+
 }
