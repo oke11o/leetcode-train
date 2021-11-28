@@ -11,5 +11,8 @@ func search(nums []int, target int) int {
 			left = idx
 		}
 	}
-	return left
+	if left != -1 && nums[left] == target {
+		return left
+	}
+	return -1
 }
