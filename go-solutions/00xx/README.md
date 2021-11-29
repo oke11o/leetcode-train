@@ -90,3 +90,14 @@
 - [go to solution](./0055-jump-game.go)
 - [leetcode](https://leetcode.com/problems/jump-game/)
 
+
+# 0088. Merge Sorted Array
+
+    Easy
+
+**Tags:** [Array, Two Pointer, Sorting]
+
+**Links:**
+
+- [go solution](./0088-merge-sorted-array.go)
+- [leetcode](https://leetcode.com/problems/merge-sorted-array/)

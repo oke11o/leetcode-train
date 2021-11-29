@@ -91,6 +91,17 @@
 - [go solution](./0169-majority-element.go)
 - [leetcode](https://leetcode.com/problems/majority-element/)
 
+# 0189. Rotate Array
+
+    Medium
+
+**Tags:** [Array, Math, Two Pointers]
+
+**Links:**
+
+- [go solution](./0189-rotate-array.go)
+- [leetcode](https://leetcode.com/problems/rotate-array/)
+
 # 0198. House Robber
 
     Medium

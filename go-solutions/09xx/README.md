@@ -1,14 +1,4 @@
 
-# 0922. Sort Array By Parity II
-
-    Easy
-
-**Links:**
-
-- [go solution](./0922-sort-array-by-parity-ii.go)
-- [leetcode](https://leetcode.com/problems/sort-array-by-parity-ii/)
-
-
 # 0918. Maximum Sum Circular Subarray
 
     Medium
@@ -20,6 +10,16 @@
 - [go solution](./0918-maximum-sum-circular-subarray.go)
 - [leetcode](https://leetcode.com/problems/maximum-sum-circular-subarray/)
 - [solution description](https://www.geeksforgeeks.org/maximum-contiguous-circular-sum/)
+
+
+# 0922. Sort Array By Parity II
+
+    Easy
+
+**Links:**
+
+- [go solution](./0922-sort-array-by-parity-ii.go)
+- [leetcode](https://leetcode.com/problems/sort-array-by-parity-ii/)
 
 
 
