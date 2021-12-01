@@ -68,3 +68,12 @@
 - [go solution](./0279-perfect-squares.go)
 - [leetcode](https://leetcode.com/problems/perfect-squares/)
 - [youtube](https://www.youtube.com/watch?v=HLZLwjzIVGo)
+
+# 0283. Move Zeroes
+
+    Medium
+
+**Links:**
+
+- [go solution](./0283-move-zeroes.go)
+- [leetcode](https://leetcode.com/problems/move-zeroes/)
