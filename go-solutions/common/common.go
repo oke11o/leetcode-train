@@ -18,3 +18,11 @@ func BuildList(list []int) *ListNode {
 	}
 	return root
 }
+func List2Slice(head *ListNode) []int {
+	var result []int
+	for head != nil {
+		result = append(result, head.Val)
+		head = head.Next
+	}
+	return result
+}
