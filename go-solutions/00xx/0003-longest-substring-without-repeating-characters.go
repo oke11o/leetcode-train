@@ -1,5 +1,10 @@
-package go_solutions
+package _0xx
 
+// 0003. Longest Substring Without Repeating Characters
+// Medium
+// Similar 0340. Longest Substring with At Most K Distinct Characters*
+// Hash Table, String, Sliding Window
+// https://leetcode.com/problems/longest-substring-without-repeating-characters/
 func lengthOfLongestSubstring(input string) int {
 	if len(input) == 0 {
 		return 0

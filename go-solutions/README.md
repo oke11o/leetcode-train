@@ -19,19 +19,6 @@
 - [go to solution](./0002-add-two-numbers.go)
 - [leetcode](https://leetcode.com/problems/add-two-numbers/)
 
-# 0003. Longest Substring Without Repeating Characters
-
-    Medium
-
-**Comment:** Similar *0340. Longest Substring with At Most K Distinct Characters*
-
-**Tags:** [Hash Table, String, Sliding Window]
-
-**Links:**
-
-- [go to solution](./0003-longest-substring-without-repeating-characters.go)
-- [leetcode](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
-
 # 0021. Merge Two Sorted Lists
 
     Easy
