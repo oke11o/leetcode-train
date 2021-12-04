@@ -1,4 +1,15 @@
 
+# 0019. Remove Nth Node From End of List
+
+    Medium  
+
+**Tags:** [Linked List, Two Pointers]
+
+**Links:**
+
+- [go solution](./0019-remove-nth-node-from-end-of-list.go)
+- [leetcode](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
+
 # 0020. Valid Parentheses
 
     Easy
@@ -42,7 +53,7 @@
 - [go to solution](./0039-combination-sum.go)
 - [leetcode](https://leetcode.com/problems/combination-sum/)
 - [youtube](https://youtu.be/kyLxTdsT8ws)
-- [](backtracking/sum-of-subsets/sum-of-subsets.go)
+- [backtracking](../../backtracking/sum-of-subsets/sum-of-subsets.go)
 
 
 
