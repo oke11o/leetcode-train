@@ -2,7 +2,7 @@ package _5xx
 
 import "math"
 
-const null = math.MinInt
+const null = math.MinInt32
 
 type TreeNode struct {
 	Val   int
@@ -90,8 +90,4 @@ func createTreeNodeFromSlice(in []int) *TreeNode {
 	}
 
 	return root
-}
-
-func sprintTreeNode(node *TreeNode) string {
-	return ""
 }

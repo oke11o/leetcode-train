@@ -22,6 +22,18 @@
 - [go solution](./0543-diameter-of-binary-tree.go)
 - [leetcode](https://leetcode.com/problems/diameter-of-binary-tree/)
 
+# 0567. Permutation in String
+
+    Medium
+
+**Tags:** [Hash Table, Two Pointers, String, Sliding Window]
+
+**Links:** 
+
+- [go solution](./0567-permutation-in-string.go)
+- [leetcode](https://leetcode.com/problems/permutation-in-string/)
+
+
 # 0572. Subtree of Another Tree
 
     Easy
