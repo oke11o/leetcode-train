@@ -36,10 +36,16 @@ func Test_checkInclusion(t *testing.T) {
 			s2:   "dcda",
 			want: true,
 		},
+		{
+			name: "",
+			s1:   "abc",
+			s2:   "bbbca",
+			want: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := checkInclusion(tt.s1, tt.s2)
+			got := checkInclusion_Optimized(tt.s1, tt.s2)
 			require.Equal(t, tt.want, got)
 		})
 	}
