@@ -5,10 +5,6 @@ import (
 	"testing"
 )
 
-// 0695. Max Area of Island
-// Medium
-// Array, Matrix, BFS,DFS
-// https://leetcode.com/problems/max-area-of-island/
 func Test_maxAreaOfIsland(t *testing.T) {
 	tests := []struct {
 		name string
