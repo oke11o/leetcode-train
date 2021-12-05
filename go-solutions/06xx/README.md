@@ -25,3 +25,15 @@
 
 - [go solution](./0637-average-of-levels-in-binary-tree.go)
 - [leetcode](https://leetcode.com/problems/average-of-levels-in-binary-tree/)
+
+# 0695. Max Area of Island
+
+    Medium
+
+**Tags:** [Array, Matrix, BFS,DFS]
+
+**Links:**
+
+- [go solution](./0695-max-area-of-island.go)
+- [leetcode](https://leetcode.com/problems/max-area-of-island/)
+

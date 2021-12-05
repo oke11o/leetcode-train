@@ -2,7 +2,7 @@ package _6xx
 
 import "math"
 
-const nilTreeNodeVal = math.MinInt
+const nilTreeNodeVal = math.MinInt32
 
 type TreeNode struct {
 	Val   int
@@ -10,6 +10,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// nolint
 func binTree2sliceRec(idx int, node *TreeNode, result []int) []int {
 	for len(result) <= idx {
 		result = append(result, nilTreeNodeVal)
@@ -90,8 +91,4 @@ func createTreeNodeFromSlice(in []int) *TreeNode {
 	}
 
 	return root
-}
-
-func sprintTreeNode(node *TreeNode) string {
-	return ""
 }
