@@ -55,6 +55,31 @@
 - [go solution](./0112-path-sum.go)
 - [leetcode](https://leetcode.com/problems/path-sum/)
 
+# 0116. Populating Next Right Pointers in Each Node
+
+    Medium
+
+**Tags:** [Tree, DFS, BFS, Binary Tree]
+
+**Links:**
+
+- [go solution](./0116-populating-next-right-pointers-in-each-node.go)
+- [leetcode](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)
+- [youtube](https://www.youtube.com/watch?v=t2XlsZ1PEy4&ab_channel=CleanCoder)
+
+
+# 0117. Populating Next Right Pointers in Each Node II
+
+    Medium
+
+**Tags:** [Tree, DFS, BFS, Binary Tree]
+
+**Links:**
+
+- [go solution](./0117-populating-next-right-pointers-in-each-node-ii.go)
+- [leetcode](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)
+
+
 # 0121. Best Time to Buy and Sell Stock
 
     Easy
