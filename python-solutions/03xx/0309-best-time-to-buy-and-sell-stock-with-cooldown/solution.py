@@ -23,6 +23,9 @@ class Solution:
 
         return max(sell, cooldown)
 
+#################
+##### TESTS #####
+#################
 
 cases = [
     {
