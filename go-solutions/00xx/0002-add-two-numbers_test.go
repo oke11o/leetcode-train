@@ -1,6 +1,7 @@
-package go_solutions
+package _0xx
 
 import (
+	. "github.com/oke11o/leetcode-train/go-solutions"
 	"github.com/stretchr/testify/require"
 	"testing"
 )

@@ -6,19 +6,6 @@
 
 [run](./get-random-task/get-random-task.go)
 
-# 0002. Add Two Numbers
-
-    Medium
-
-**Comment:**
-
-**Tags:** [Linked List, Math, Recursion]
-
-**Links:**
-
-- [go to solution](./0002-add-two-numbers.go)
-- [leetcode](https://leetcode.com/problems/add-two-numbers/)
-
 # 0021. Merge Two Sorted Lists
 
     Easy

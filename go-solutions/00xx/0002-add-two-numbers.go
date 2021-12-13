@@ -1,4 +1,8 @@
-package go_solutions
+package _0xx
+
+import (
+	. "github.com/oke11o/leetcode-train/go-solutions"
+)
 
 /**
  * Definition for singly-linked list.
