@@ -61,7 +61,7 @@ func Test_tree2slice(t *testing.T) {
 					Right: nil,
 				},
 			},
-			want: []int{1, 2, 3, nilTreeNodeVal, 4},
+			want: []int{1, 2, 3, Null, 4},
 		},
 		{
 			name: "",
@@ -94,7 +94,7 @@ func Test_tree2slice(t *testing.T) {
 					},
 				},
 			},
-			want: []int{1, 2, 3, nilTreeNodeVal, 4, nilTreeNodeVal, 5, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, 6, 7},
+			want: []int{1, 2, 3, Null, 4, Null, 5, Null, Null, 6, 7},
 		},
 	}
 	for _, tt := range tests {
@@ -120,12 +120,12 @@ func Test_createTreeNodeFromSlice(t *testing.T) {
 		},
 		{
 			name: "",
-			in:   []int{1, 2, 3, nilTreeNodeVal, 4, nilTreeNodeVal, 5, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, nilTreeNodeVal, 6, 7},
+			in:   []int{1, 2, 3, Null, 4, Null, 5, Null, Null, 6, 7},
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := createTreeNodeFromSlice(tt.in, 0)
+			got := CreateTreeNodeFromSlice(tt.in)
 			gotSlice := binTree2slice(got)
 			require.Equal(t, tt.in, gotSlice)
 		})

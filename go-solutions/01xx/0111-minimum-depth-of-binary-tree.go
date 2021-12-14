@@ -1,5 +1,9 @@
 package _1xx
 
+import (
+	. "github.com/oke11o/leetcode-train/go-solutions"
+)
+
 // 0111. Minimum Depth of Binary Tree
 func minDepth(root *TreeNode) int {
 	if root == nil {

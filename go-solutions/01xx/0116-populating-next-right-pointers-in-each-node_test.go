@@ -7,7 +7,7 @@ import (
 )
 
 func Test_connect(t *testing.T) {
-	const null = math.MinInt32
+	const Null = math.MinInt32
 	var buildSlice = func(root *Node) []int {
 		result := make([]int, 0)
 		queue := make([]*Node, 0)
@@ -17,7 +17,7 @@ func Test_connect(t *testing.T) {
 			queue = queue[1:]
 			result = append(result, node.Val)
 			if len(queue) == 0 {
-				result = append(result, null)
+				result = append(result, Null)
 			}
 			if node.Left != nil && node.Right != nil {
 				queue = append(queue, node.Left)

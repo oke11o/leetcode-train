@@ -1,6 +1,7 @@
 package _1xx
 
 import (
+	. "github.com/oke11o/leetcode-train/go-solutions"
 	"github.com/stretchr/testify/require"
 	"testing"
 )
@@ -20,7 +21,7 @@ var sameTreeTests = []struct {
 	{
 		name: "",
 		p:    []int{1, 2},
-		q:    []int{1, null, 2},
+		q:    []int{1, Null, 2},
 		want: false,
 	},
 	{
@@ -31,8 +32,8 @@ var sameTreeTests = []struct {
 	},
 	{
 		name: "",
-		p:    []int{1, null, 1, null, 1, null, 1, null, 1, null, 1, 2},
-		q:    []int{1, null, 1, null, 1, null, 1, null, 1, null, 1, 2},
+		p:    []int{1, Null, 1, Null, 1, Null, 1, Null, 1, Null, 1, 2},
+		q:    []int{1, Null, 1, Null, 1, Null, 1, Null, 1, Null, 1, 2},
 		want: true,
 	},
 }
@@ -40,8 +41,8 @@ var sameTreeTests = []struct {
 func Test_isSameTree(t *testing.T) {
 	for _, tt := range sameTreeTests {
 		t.Run(tt.name, func(t *testing.T) {
-			p := createTreeNodeFromSlice(tt.p)
-			q := createTreeNodeFromSlice(tt.q)
+			p := CreateTreeNodeFromSlice(tt.p)
+			q := CreateTreeNodeFromSlice(tt.q)
 
 			got := isSameTree(p, q)
 			require.Equal(t, tt.want, got)
@@ -52,8 +53,8 @@ func Test_isSameTree(t *testing.T) {
 func Test_isSameTree_Rec(t *testing.T) {
 	for _, tt := range sameTreeTests {
 		t.Run(tt.name, func(t *testing.T) {
-			p := createTreeNodeFromSlice(tt.p)
-			q := createTreeNodeFromSlice(tt.q)
+			p := CreateTreeNodeFromSlice(tt.p)
+			q := CreateTreeNodeFromSlice(tt.q)
 
 			got := isSameTree_Rec(p, q)
 			require.Equal(t, tt.want, got)

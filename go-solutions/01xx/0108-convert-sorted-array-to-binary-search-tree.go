@@ -1,5 +1,9 @@
 package _1xx
 
+import (
+	. "github.com/oke11o/leetcode-train/go-solutions"
+)
+
 // 0108. Convert Sorted Array to Binary Search Tree
 func sortedArrayToBST(nums []int) *TreeNode {
 	if len(nums) == 0 {

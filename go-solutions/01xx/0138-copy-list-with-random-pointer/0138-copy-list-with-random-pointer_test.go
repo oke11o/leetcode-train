@@ -7,7 +7,7 @@ import (
 )
 
 func Test_copyRandomList(t *testing.T) {
-	const null = math.MinInt32
+	const Null = math.MinInt32
 
 	var nodex2list = func(h *Node) [][2]int {
 		result := [][2]int{}
@@ -15,7 +15,7 @@ func Test_copyRandomList(t *testing.T) {
 
 			v := [2]int{h.Val}
 			if h.Random == nil {
-				v[1] = null
+				v[1] = Null
 			} else {
 				v[1] = h.Random.Val
 			}

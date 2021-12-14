@@ -1,6 +1,7 @@
 package _1xx
 
 import (
+	. "github.com/oke11o/leetcode-train/go-solutions"
 	"github.com/stretchr/testify/require"
 	"testing"
 )
@@ -13,18 +14,18 @@ func Test_minDepth(t *testing.T) {
 	}{
 		{
 			name: "",
-			root: []int{3, 9, 20, null, null, 15, 7},
+			root: []int{3, 9, 20, Null, Null, 15, 7},
 			want: 2,
 		},
 		{
 			name: "",
-			root: []int{2, null, 3, null, 4, null, 5},
+			root: []int{2, Null, 3, Null, 4, Null, 5},
 			want: 4,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := minDepth(createTreeNodeFromSlice(tt.root))
+			got := minDepth(CreateTreeNodeFromSlice(tt.root))
 			require.Equal(t, tt.want, got)
 		})
 	}

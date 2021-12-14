@@ -1,6 +1,7 @@
 package _1xx
 
 import (
+	. "github.com/oke11o/leetcode-train/go-solutions"
 	"github.com/stretchr/testify/require"
 	"testing"
 )
@@ -14,7 +15,7 @@ func Test_sortedArrayToBST(t *testing.T) {
 		{
 			name: "",
 			nums: []int{-10, -3, 0, 5, 9},
-			want: []int{0, -3, 9, -10, null, 5},
+			want: []int{0, -3, 9, -10, Null, 5},
 		},
 		{
 			name: "",
@@ -25,7 +26,7 @@ func Test_sortedArrayToBST(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := sortedArrayToBST(tt.nums)
-			require.Equal(t, createTreeNodeFromSlice(tt.want), got)
+			require.Equal(t, CreateTreeNodeFromSlice(tt.want), got)
 		})
 	}
 }

@@ -1,5 +1,9 @@
 package _1xx
 
+import (
+	. "github.com/oke11o/leetcode-train/go-solutions"
+)
+
 // 0112. Path Sum
 func hasPathSum(node *TreeNode, targetSum int) bool {
 	if node == nil {

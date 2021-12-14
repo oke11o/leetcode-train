@@ -2,7 +2,7 @@ package go_solutions
 
 import "math"
 
-const nilTreeNodeVal = math.MinInt32
+const Null = math.MinInt32
 
 type TreeNode struct {
 	Val   int
@@ -12,9 +12,9 @@ type TreeNode struct {
 
 func binTree2sliceRec(idx int, node *TreeNode, result []int) []int {
 	for len(result) <= idx {
-		result = append(result, nilTreeNodeVal)
+		result = append(result, Null)
 	}
-	val := nilTreeNodeVal
+	val := Null
 	var left, right *TreeNode
 	if node != nil {
 		val = node.Val
@@ -32,31 +32,64 @@ func binTree2sliceRec(idx int, node *TreeNode, result []int) []int {
 	return result
 }
 
-func binTree2slice(in *TreeNode) []int {
-	if in == nil {
+func binTree2slice(root *TreeNode) []int {
+	if root == nil {
 		return nil
 	}
+	var result []int
 
-	return binTree2sliceRec(0, in, nil)
+	queue := []*TreeNode{root}
+	for len(queue) > 0 {
+		node := queue[0]
+		queue = queue[1:]
+		if node == nil {
+			result = append(result, Null)
+		} else {
+			result = append(result, node.Val)
+			queue = append(queue, node.Left)
+			queue = append(queue, node.Right)
+		}
+	}
+	lastNull := len(result) - 1
+	for ; lastNull >= 0; lastNull-- {
+		if result[lastNull] != Null {
+			break
+		}
+	}
+
+	return result[:lastNull+1]
 }
 
-func createTreeNodeFromSlice(in []int, idx int) *TreeNode {
+func CreateTreeNodeFromSlice(in []int) *TreeNode {
 	if len(in) == 0 {
 		return nil
 	}
-	if len(in) <= idx {
-		return nil
-	}
-	val := in[idx]
-	if val == nilTreeNodeVal {
-		return nil
+
+	root := &TreeNode{Val: in[0]}
+
+	nodeList := []*TreeNode{root}
+
+	nodeIdx := 0
+	for i := 1; i < len(in); i++ {
+		val := in[i]
+		var node *TreeNode
+		if val != Null {
+			node = &TreeNode{Val: val}
+		}
+		nodeList = append(nodeList, node)
+		if i%2 == 1 {
+			nodeList[nodeIdx].Left = node
+		} else {
+			nodeList[nodeIdx].Right = node
+
+			nodeIdx++
+			for nodeIdx < len(nodeList)-1 && nodeList[nodeIdx] == nil {
+				nodeIdx++
+			}
+		}
 	}
 
-	node := &TreeNode{Val: in[idx]}
-	node.Left = createTreeNodeFromSlice(in, idx*2+1)
-	node.Right = createTreeNodeFromSlice(in, idx*2+2)
-
-	return node
+	return root
 }
 
 func sprintTreeNode(node *TreeNode) string {

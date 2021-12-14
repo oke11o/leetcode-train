@@ -6,36 +6,31 @@ import (
 	"testing"
 )
 
-func Test_maxDepth(t *testing.T) {
+func Test_levelOrder(t *testing.T) {
 	tests := []struct {
 		name string
-		tree []int
-		want int
+		root []int
+		want [][]int
 	}{
 		{
 			name: "",
-			tree: []int{3, 9, 20, Null, Null, 15, 7},
-			want: 3,
+			root: []int{3, 9, 20, Null, Null, 15, 7},
+			want: [][]int{{3}, {9, 20}, {15, 7}},
 		},
 		{
 			name: "",
-			tree: []int{1, Null, 2},
-			want: 2,
+			root: []int{1},
+			want: [][]int{{1}},
 		},
 		{
 			name: "",
-			tree: []int{},
-			want: 0,
-		},
-		{
-			name: "",
-			tree: []int{0},
-			want: 1,
+			root: []int{},
+			want: [][]int{},
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := maxDepth(CreateTreeNodeFromSlice(tt.tree))
+			got := levelOrder(CreateTreeNodeFromSlice(tt.root))
 			require.Equal(t, tt.want, got)
 		})
 	}

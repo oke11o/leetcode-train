@@ -1,5 +1,9 @@
 package _1xx
 
+import (
+	. "github.com/oke11o/leetcode-train/go-solutions"
+)
+
 // 0100. Same Tree
 func isSameTree(p *TreeNode, q *TreeNode) bool {
 	var popQueue = func(queue []*TreeNode) (*TreeNode, []*TreeNode) {

@@ -1,6 +1,7 @@
 package _1xx
 
 import (
+	. "github.com/oke11o/leetcode-train/go-solutions"
 	"github.com/stretchr/testify/require"
 	"testing"
 )
@@ -14,7 +15,7 @@ func Test_hasPathSum(t *testing.T) {
 	}{
 		{
 			name:      "",
-			root:      []int{5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1},
+			root:      []int{5, 4, 8, 11, Null, 13, 4, 7, 2, Null, Null, Null, 1},
 			targetSum: 22,
 			want:      true,
 		},
@@ -33,7 +34,7 @@ func Test_hasPathSum(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := hasPathSum(createTreeNodeFromSlice(tt.root), tt.targetSum)
+			got := hasPathSum(CreateTreeNodeFromSlice(tt.root), tt.targetSum)
 			require.Equal(t, tt.want, got)
 		})
 	}
