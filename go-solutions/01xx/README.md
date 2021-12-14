@@ -1,4 +1,3 @@
-
 # 0100. Same Tree
 
     Easy
@@ -9,7 +8,6 @@
 
 - [go to solution](./0100-same-tree.go)
 - [leetcode](https://leetcode.com/problems/same-tree/)
-
 
 # 0104. Maximum Depth of Binary Tree
 
@@ -67,7 +65,6 @@
 - [leetcode](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)
 - [youtube](https://www.youtube.com/watch?v=t2XlsZ1PEy4&ab_channel=CleanCoder)
 
-
 # 0117. Populating Next Right Pointers in Each Node II
 
     Medium
@@ -78,7 +75,6 @@
 
 - [go solution](./0117-populating-next-right-pointers-in-each-node-ii.go)
 - [leetcode](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)
-
 
 # 0121. Best Time to Buy and Sell Stock
 
@@ -102,11 +98,19 @@
 - [go to solution](./0122-best-time-to-buy-and-sell-stock-ii.go)
 - [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
 
+# 0138. Copy List with Random Pointer
+
+**Links:**
+
+- [go solution](./0138-copy-list-with-random-pointer/0138-copy-list-with-random-pointer.go)
+- [leetcode](https://leetcode.com/problems/copy-list-with-random-pointer/)
+
 # 0169. Majority Element
 
     Easy
 
 **Similar:**
+
 - [0229. Majority Element II](../02xx/0229-majority-element-ii.go)
 
 **Tags:** [Tree, DFS, Depth-First Search, Binary Tree]
