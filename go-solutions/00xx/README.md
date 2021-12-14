@@ -140,3 +140,15 @@
 
 - [go solution](./0088-merge-sorted-array.go)
 - [leetcode](https://leetcode.com/problems/merge-sorted-array/)
+
+# 0098. Validate Binary Search Tree
+
+    Medium
+
+**Tags:** [DFS]
+
+**Links:**
+
+- [go to solution](./0098-validate-binary-search-tree.go)
+- [leetcode](https://leetcode.com/problems/validate-binary-search-tree/)
+

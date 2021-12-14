@@ -119,19 +119,6 @@
 
 [go to solution](./0079-word-search.go)
 
-# 0098. Validate Binary Search Tree
-
-    Medium
-
-**Comment:** -
-
-**Tags:** [DFS]
-
-**Links:**
-
-- [go to solution](./0098-validate-binary-search-tree.go)
-- [leetcode](https://leetcode.com/problems/validate-binary-search-tree/)
-
 # 0115. Distinct Subsequences
 
     Hard
