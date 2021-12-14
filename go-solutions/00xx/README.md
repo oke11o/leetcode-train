@@ -1,4 +1,3 @@
-
 # 0002. Add Two Numbers
 
     Medium
@@ -12,7 +11,6 @@
 - [go to solution](./0002-add-two-numbers.go)
 - [leetcode](https://leetcode.com/problems/add-two-numbers/)
 
-
 # 0003. Longest Substring Without Repeating Characters
 
     Medium
@@ -25,7 +23,6 @@
 
 - [go to solution](./0003-longest-substring-without-repeating-characters.go)
 - [leetcode](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
-
 
 # 0019. Remove Nth Node From End of List
 
@@ -50,6 +47,7 @@
 - [leetcode](https://leetcode.com/problems/valid-parentheses/)
 
 **Next problems:**
+
 - [22 Medium (v)](https://leetcode.com/problems/generate-parentheses/)
 - [1003 Medium](https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/)
 - [32 Hard](https://leetcode.com/problems/longest-valid-parentheses/)
@@ -82,8 +80,6 @@
 - [leetcode](https://leetcode.com/problems/combination-sum/)
 - [youtube](https://youtu.be/kyLxTdsT8ws)
 - [backtracking](../../backtracking/sum-of-subsets/sum-of-subsets.go)
-
-
 
 # 0045. Jump Game II
 
@@ -129,7 +125,6 @@
 - [go to solution](./0055-jump-game.go)
 - [leetcode](https://leetcode.com/problems/jump-game/)
 
-
 # 0088. Merge Sorted Array
 
     Easy
@@ -140,6 +135,17 @@
 
 - [go solution](./0088-merge-sorted-array.go)
 - [leetcode](https://leetcode.com/problems/merge-sorted-array/)
+
+# 0094. Binary Tree Inorder Traversal
+
+    Easy
+
+**Tags:** [Stack, Tree, DBS, Binary Tree]
+
+**Links:**
+
+- [go to solution](./0094-binary-tree-inorder-traversal.go)
+- [leetcode](https://leetcode.com/problems/binary-tree-inorder-traversal/)
 
 # 0098. Validate Binary Search Tree
 

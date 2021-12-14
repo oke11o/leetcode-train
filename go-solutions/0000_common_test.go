@@ -99,7 +99,7 @@ func Test_tree2slice(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := binTree2slice(tt.in)
+			got := BinTree2slice(tt.in)
 			require.Equal(t, tt.want, got)
 		})
 	}
@@ -126,7 +126,7 @@ func Test_createTreeNodeFromSlice(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := CreateTreeNodeFromSlice(tt.in)
-			gotSlice := binTree2slice(got)
+			gotSlice := BinTree2slice(got)
 			require.Equal(t, tt.in, gotSlice)
 		})
 	}

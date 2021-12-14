@@ -32,7 +32,7 @@ func binTree2sliceRec(idx int, node *TreeNode, result []int) []int {
 	return result
 }
 
-func binTree2slice(root *TreeNode) []int {
+func BinTree2slice(root *TreeNode) []int {
 	if root == nil {
 		return nil
 	}
