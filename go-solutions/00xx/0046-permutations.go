@@ -1,14 +1,17 @@
-package go_solutions
+package _0xx
 
 var resultPermute [][]int
 
+// 0046. Permutations
+// Medium
+// #backtracking
 func permute(nums []int) [][]int {
 	resultPermute = make([][]int, 0)
-	backtrack(0, nums)
+	permuteBacktrack(0, nums)
 	return resultPermute
 }
 
-func backtrack(current int, nums []int) {
+func permuteBacktrack(current int, nums []int) {
 	if current == len(nums) {
 		item := make([]int, len(nums))
 		copy(item, nums)
@@ -17,7 +20,7 @@ func backtrack(current int, nums []int) {
 	}
 	for i := current; i < len(nums); i++ {
 		nums[i], nums[current] = nums[current], nums[i]
-		backtrack(current+1, nums)
+		permuteBacktrack(current+1, nums)
 		nums[i], nums[current] = nums[current], nums[i]
 	}
 }

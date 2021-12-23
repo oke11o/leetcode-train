@@ -103,6 +103,25 @@
 - [go solution](./0048-rotate-image.go)
 - [leetcode](https://leetcode.com/problems/rotate-image/)
 
+# 0046. Permutations
+
+    Medium
+
+**Tags:** [Backtracking]
+
+[go to solution](./0046-permutations.go)
+
+# 0047. Permutations II
+
+    Medium
+
+**Tags:** [Backtracking]
+
+**Comment:** Need work
+
+[go to solution](./0047-permutations-ii.go)
+
+
 # 0053. Maximum Subarray
 
     Easy

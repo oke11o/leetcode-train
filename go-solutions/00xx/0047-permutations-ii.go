@@ -1,4 +1,4 @@
-package go_solutions
+package _0xx
 
 import "strconv"
 
@@ -11,6 +11,9 @@ func permuteUnique(nums []int) [][]int {
 	return resultPermuteUnique
 }
 
+// 0047. Permutations II
+// Medium
+// #backtracking
 func backtrackPermuteUnieque(current int, nums []int, doubles map[string]struct{}) {
 	if current == len(nums) {
 		var key string

@@ -19,24 +19,6 @@
 - [go to solution](./0021-merge-two-sorted-lists.go)
 - [leetcode](https://leetcode.com/problems/merge-two-sorted-lists/)
 
-# 0046. Permutations
-
-    Medium
-
-**Tags:** [Backtracking]
-
-[go to solution](./0046-permutations.go)
-
-# 0047. Permutations II
-
-    Medium
-
-**Tags:** [Backtracking]
-
-**Comment:** Need work
-
-[go to solution](./0047-permutations-ii.go)
-
 # 0054. Spiral Matrix
 
     Medium
