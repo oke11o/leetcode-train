@@ -63,6 +63,8 @@
 
 - [solution](./0022-generate-parentheses.go)
 - [leetcode](https://leetcode.com/problems/generate-parentheses/)
+- [educative](https://www.educative.io/m/all-possible-braces)
+- [crack-amazon](https://www.educative.io/blog/crack-amazon-coding-interview-questions)
 
 **Next problems**
 

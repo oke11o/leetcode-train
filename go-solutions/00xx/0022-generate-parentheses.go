@@ -5,8 +5,11 @@ var generateParenthesis_result []string
 /**
  * 0022. Generate Parentheses
  * Medium
+ * #amazon
  * String, Dynamic Programming, Backtracking
  * https://leetcode.com/problems/generate-parentheses/
+ * https://www.educative.io/m/all-possible-braces
+ * https://www.educative.io/blog/crack-amazon-coding-interview-questions
  */
 func generateParenthesis(n int) []string {
 	generateParenthesis_result = []string{}
