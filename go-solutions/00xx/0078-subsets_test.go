@@ -1,4 +1,4 @@
-package go_solutions
+package _0xx
 
 import (
 	"github.com/stretchr/testify/require"

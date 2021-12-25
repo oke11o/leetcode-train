@@ -144,6 +144,23 @@
 - [go to solution](./0055-jump-game.go)
 - [leetcode](https://leetcode.com/problems/jump-game/)
 
+# 0078. Subsets
+
+    Medium
+
+Find All Subsets
+
+**Companies:** [Amazon, #amazon]
+
+**Tags:** [Backtracking, #backtracking, #with_leetcode_solution]
+
+**Links:**
+
+- [go to solution](./0078-subsets.go)
+- [leetcode](https://leetcode.com/problems/subsets/)
+- [educative](https://www.educative.io/m/find-all-subsets)
+- [amazon cracking](https://www.educative.io/blog/crack-amazon-coding-interview-questions)
+
 # 0088. Merge Sorted Array
 
     Easy

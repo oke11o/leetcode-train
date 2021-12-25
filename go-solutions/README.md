@@ -63,17 +63,6 @@
 - [go to solution](./0073-set-matrix-zeroes.go)
 - [leetcode](https://leetcode.com/problems/set-matrix-zeroes/)
 
-# 0078. Subsets
-
-    Medium
-
-**Tags:** [Backtracking]
-
-**Links:**
-
-- [go to solution](./0078-subsets.go)
-- [leetcode](https://leetcode.com/problems/subsets/)
-
 # 0079. Word Search
 
     Medium
