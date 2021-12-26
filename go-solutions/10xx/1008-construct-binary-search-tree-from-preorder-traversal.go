@@ -1,5 +1,9 @@
 package _0xx
 
+import (
+	. "github.com/oke11o/leetcode-train/go-solutions"
+)
+
 // 1008. Construct Binary Search Tree from Preorder Traversal
 func bstFromPreorder(preorder []int) *TreeNode {
 	if len(preorder) == 0 {
