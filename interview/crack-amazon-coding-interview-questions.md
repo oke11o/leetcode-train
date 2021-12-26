@@ -84,3 +84,64 @@ Suppose we have coin denominations of [1, 2, 5] and the total amount is 7. We ca
 - [educative solution](https://www.educative.io/m/coin-changing-problem)
 - [my solution](../go-solutions/05xx/0518-coin-change-2.go)
 - [leetcode (0518. Coin Change 2)](https://leetcode.com/problems/coin-change-2/)
+
+## 10. Find Kth permutation
+
+Given a set of ‘n’ elements, find their Kth permutation. Consider the following set of elements:
+
+1, 2, 3
+
+Here we need to find the Kth permutation.
+
+123
+132
+213
+231
+312
+321
+
+- [educative solution](https://www.educative.io/m/find-permutation)
+- [my solution](../go-solutions/00xx/0046-permutations.go)
+- [my solution](../go-solutions/00xx/0047-permutations-ii.go)
+- [leetcode (46. Permutations)](https://leetcode.com/problems/permutations/)
+- [leetcode (47. Permutations II)](https://leetcode.com/problems/permutations-ii/)
+
+## 11. Find all subsets of a given set of integers
+
+We are given a set of integers and we have to find all the possible subsets of this set of integers. The following example elaborates on this further.
+
+Given set of integers:
+
+2, 3, 4
+
+All possile subsets for the given set of integers:
+
+"" , 2, 3, 2, 3, 4, 2, 4, 3, 4, 2, 3, 4,
+
+- [educative solution](https://www.educative.io/m/find-all-subsets)
+- [my solution](../go-solutions/00xx/0078-subsets.go)
+- [leetcode (0078. Subsets)](https://leetcode.com/problems/subsets/)
+
+## 12. Print balanced brace combinations
+
+Print all braces combinations for a given value n so that they are balanced. For this solution, we will be using recursion.
+
+- [educative solution](https://www.educative.io/m/all-possible-braces)
+- [my solution](../go-solutions/00xx/0022-generate-parentheses.go)
+- [leetcode (0022. Generate Parentheses)](https://leetcode.com/problems/generate-parentheses/)
+
+## 13. Clone a Directed Graph
+    
+Given the root node of a directed graph, clone this graph by creating its deep copy so that the cloned graph has the same vertices and edges as the original graph.
+
+Let’s look at the below graphs as an example. If the input graph is G = (V, E)G=(V,E) where V is set of vertices and E is set of edges, then the output graph (cloned graph) G’ = (V’, E’) such that V = V’ and E = E’. We are assuming that all vertices are reachable from the root vertex, i.e. we have a connected graph.
+
+![img_1.png](img_1.png)
+
+
+- [educative solution](https://www.educative.io/m/clone-directed-graph)
+
+**TODO**
+
+**UNSOLVED**
+

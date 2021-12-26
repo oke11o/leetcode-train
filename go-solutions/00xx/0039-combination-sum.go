@@ -10,12 +10,12 @@ import "sort"
  */
 func combinationSum(candidates []int, target int) [][]int {
 	sort.Ints(candidates)
-	result = make([][]int, 0)
+	combinationSumResult = make([][]int, 0)
 	backtrack(candidates, 0, target, 0, []int{})
-	return result
+	return combinationSumResult
 }
 
-var result [][]int
+var combinationSumResult [][]int
 
 func backtrack(in []int, from int, needSum, prevSum int, current []int) {
 	for i := from; i < len(in); i++ {
@@ -25,7 +25,7 @@ func backtrack(in []int, from int, needSum, prevSum int, current []int) {
 			tmp := make([]int, len(current))
 			copy(tmp, current)
 			tmp = append(tmp, val)
-			result = append(result, tmp)
+			combinationSumResult = append(combinationSumResult, tmp)
 			return
 		}
 		if newSum < needSum {

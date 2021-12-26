@@ -2,9 +2,11 @@ package _0xx
 
 var resultPermute [][]int
 
-// 0046. Permutations
-// Medium
-// #backtracking
+/**
+ * 0046. Permutations
+ * Medium
+ * #backtracking
+ */
 func permute(nums []int) [][]int {
 	resultPermute = make([][]int, 0)
 	permuteBacktrack(0, nums)

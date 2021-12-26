@@ -108,16 +108,6 @@
 - [go to solution](./0045-jump-game-ii.go)
 - [leetcode](https://leetcode.com/problems/jump-game-ii/)
 
-# 0048. Rotate Image
-
-    Medium
-
-**Tags:** [Array, Math, Matrix]
-
-**Links:**
-
-- [go solution](./0048-rotate-image.go)
-- [leetcode](https://leetcode.com/problems/rotate-image/)
 
 # 0046. Permutations
 
@@ -137,6 +127,16 @@
 
 [go to solution](./0047-permutations-ii.go)
 
+# 0048. Rotate Image
+
+    Medium
+
+**Tags:** [Array, Math, Matrix]
+
+**Links:**
+
+- [go solution](./0048-rotate-image.go)
+- [leetcode](https://leetcode.com/problems/rotate-image/)
 
 # 0053. Maximum Subarray
 
