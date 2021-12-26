@@ -62,6 +62,25 @@ Input string “applepeer” cannot be segmented into dictionary words.
 
 - [educative solution](https://www.educative.io/m/string-segmentation)
 
+**UNSOLVED**
 
 
+## 8. Reverse Words in a Sentence
+   
+Reverse the order of words in a given sentence (an array of characters).
 
+"Hello World" -> "World Hello"
+
+- [educative solution](https://www.educative.io/m/reverse-words-in-a-sentence)
+
+**UNSOLVED**
+
+## 9. How many ways can you make change with coins and a total amount
+   
+Suppose we have coin denominations of [1, 2, 5] and the total amount is 7. We can make changes in the following 6 ways:
+
+![img.png](img.png)
+
+- [educative solution](https://www.educative.io/m/coin-changing-problem)
+- [my solution](../go-solutions/05xx/0518-coin-change-2.go)
+- [leetcode (0518. Coin Change 2)](https://leetcode.com/problems/coin-change-2/)
