@@ -1,0 +1,67 @@
+# Cracking the top Amazon coding interview questions
+
+## 45 common Amazon coding interview questions
+
+## 1. Find the missing number in the array
+   
+You are given an array of positive numbers from 1 to n, such that all numbers from 1 to n are present except one number x. You have to find x. The input array is not sorted. Look at the below array and give it a try before checking the solution.
+
+- [educative solution](https://www.educative.io/m/find-the-missing-number)
+- [leetcode 268. Missing Number](https://leetcode.com/problems/missing-number/)
+
+## 2. Determine if the sum of two integers is equal to the given value
+   
+Given an array of integers and a value, determine if there are any two integers in the array whose sum is equal to the given value. Return true if the sum exists and return false if it does not. Consider this array and the target sums:
+
+- [educative solution](https://www.educative.io/m/sum-of-two-values)
+- [my solution (golang)](../go-solutions/amazon/find_sum_of_two.go)
+
+## 3. Merge two sorted linked lists
+
+Given two sorted linked lists, merge them so that the resulting linked list is also sorted. Consider two sorted linked lists and the merged list below them as an example.
+
+- [educative solution](https://www.educative.io/m/merge-two-sorted-linked-lists)
+- [leetcode 0021. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
+- [my solution (golang)](../go-solutions/00xx/0021-merge-two-sorted-lists.go)
+
+## 4. Copy linked list with arbitrary pointer
+
+You are given a linked list where the node has two pointers. The first is the regular next pointer. The second pointer is called arbitrary_pointer and it can point to any node in the linked list. Your job is to write code to make a deep copy of the given linked list. Here, deep copy means that any operations on the original list should not affect the copied list.
+
+- [educative solution](https://www.educative.io/m/copy-linked-list-with-arbitrary-pointer)
+- [leetcode 0138. Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
+- [my solution (golang)](../go-solutions/01xx/0138-copy-list-with-random-pointer/0138-copy-list-with-random-pointer.go)
+
+## 5. Level Order Traversal of Binary Tree
+
+Given the root of a binary tree, display the node values at each level. Node values for all levels should be displayed on separate lines. Let’s take a look at the below binary tree.
+
+- [educative solution](https://www.educative.io/m/level-order-traversal-binary-tree)
+
+Very simular but not exactly
+
+- [my solution](../go-solutions/00xx/0094-binary-tree-inorder-traversal.go)
+- [leetcode (94. Binary Tree Inorder Traversal)](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+
+## 6. Determine if a binary tree is a binary search tree
+   
+Given a Binary Tree, figure out whether it’s a Binary Search Tree. In a binary search tree, each node’s key value is smaller than the key value of all nodes in the right subtree, and is greater than the key values of all nodes in the left subtree. Below is an example of a binary tree that is a valid BST.
+
+- [educative solution](https://www.educative.io/m/is-binary-tree-a-binary-search-tree)
+- [my solution](../go-solutions/00xx/0098-validate-binary-search-tree.go)
+- [leetcode (0098. Validate Binary Search Tree)](https://leetcode.com/problems/validate-binary-search-tree/)
+
+## 7. String segmentation
+You are given a dictionary of words and a large input string. You have to find out whether the input string can be completely segmented into the words of a given dictionary. The following two examples elaborate on the problem further.
+
+Given a dictionary of words.
+
+Input string of “applepie” can be segmented into dictionary words.
+
+Input string “applepeer” cannot be segmented into dictionary words.
+
+- [educative solution](https://www.educative.io/m/string-segmentation)
+
+
+
+

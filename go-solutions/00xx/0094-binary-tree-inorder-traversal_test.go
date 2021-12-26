@@ -37,6 +37,11 @@ func Test_inorderTraversal(t *testing.T) {
 			root: []int{1, 2},
 			want: []int{2, 1},
 		},
+		{
+			name: "",
+			root: []int{10, 5, 20, 3, 7, 35},
+			want: []int{3, 5, 7, 10, 35, 20},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

@@ -6,19 +6,6 @@
 
 [run](./get-random-task/get-random-task.go)
 
-# 0021. Merge Two Sorted Lists
-
-    Easy
-
-**Comment:**
-
-**Tags:** [Linked List, Recursion]
-
-**Links:**
-
-- [go to solution](./0021-merge-two-sorted-lists.go)
-- [leetcode](https://leetcode.com/problems/merge-two-sorted-lists/)
-
 # 0054. Spiral Matrix
 
     Medium

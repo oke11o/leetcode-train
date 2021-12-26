@@ -53,6 +53,20 @@
 - [32 Hard](https://leetcode.com/problems/longest-valid-parentheses/)
 - [301 Hard](https://leetcode.com/problems/remove-invalid-parentheses/)
 
+
+# 0021. Merge Two Sorted Lists
+
+    Easy
+
+**Comment:**
+
+**Tags:** [Linked List, Recursion]
+
+**Links:**
+
+- [go to solution](./0021-merge-two-sorted-lists.go)
+- [leetcode](https://leetcode.com/problems/merge-two-sorted-lists/)
+
 # 0022. Generate Parentheses
 
     Medium

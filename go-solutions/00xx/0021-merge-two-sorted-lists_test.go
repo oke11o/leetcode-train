@@ -1,19 +1,20 @@
-package go_solutions
+package _0xx
 
 import (
+	"github.com/oke11o/leetcode-train/go-solutions"
 	"github.com/stretchr/testify/require"
 	"testing"
 )
 
 func Test_mergeTwoLists(t *testing.T) {
-	var buildList = func(list []int) *ListNode {
+	var buildList = func(list []int) *go_solutions.ListNode {
 		if len(list) == 0 {
 			return nil
 		}
-		root := &ListNode{Val: list[0]}
+		root := &go_solutions.ListNode{Val: list[0]}
 		prev := root
 		for i := 1; i < len(list); i++ {
-			node := &ListNode{Val: list[i]}
+			node := &go_solutions.ListNode{Val: list[i]}
 			prev.Next = node
 			prev = node
 		}
