@@ -145,3 +145,22 @@ Let’s look at the below graphs as an example. If the input graph is G = (V, E)
 
 **UNSOLVED**
 
+## 14. Find Low/High Index
+
+Given a sorted array of integers, return the low and high index of the given key. You must return -1 if the indexes are not found. The array length can be in the millions with many duplicates.
+
+In the following example, according to the key, the low and high indices would be:
+
+key: 1, low = 0 and high = 0
+key: 2, low = 1 and high = 1
+key: 5, low = 2 and high = 9
+key: 20, low = 10 and high = 10
+
+    1 2 5 5 5 5 5 5 5 5 20
+
+- [educative solution](https://www.educative.io/m/find-low-high-index)
+- [leetcode (34. Find First and Last Position of Element in Sorted Array)](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+
+**TODO**
+
+**UNSOLVED**
