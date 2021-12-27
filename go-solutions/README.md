@@ -112,15 +112,6 @@ Follow to pictures
 
 [go to solution](./0141-linked-list-cycle.go)
 
-# 0153. Find Minimum in Rotated Sorted Array
-
-    Medium
-
-**Comment:** Результат так себе. Но работает
-
-**Links:**
-
-- [go to solution](./0153-find-minimum-in-rotated-sorted-array.go)
 
 # 0202. Happy Number
 

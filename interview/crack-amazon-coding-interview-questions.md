@@ -160,6 +160,15 @@ key: 20, low = 10 and high = 10
 
 - [educative solution](https://www.educative.io/m/find-low-high-index)
 - [leetcode (34. Find First and Last Position of Element in Sorted Array)](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+- [my solution](../go-solutions/00xx/0034-find-first-and-last-position-of-element-in-sorted-array.go)
+
+## 15. Search Rotated Array
+
+Search for a given number in a sorted array, with unique elements, that has been rotated by some arbitrary number. Return -1 if the number does not exist. Assume that the array does not contain duplicates.
+
+![img_2.png](img_2.png)
+
+- [educative solution](https://www.educative.io/m/search-rotated-array)
 
 **TODO**
 
