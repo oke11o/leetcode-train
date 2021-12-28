@@ -52,7 +52,7 @@ func Test_search(t *testing.T) {
 			name:   "",
 			nums:   []int{0},
 			target: 0,
-			want:   -1,
+			want:   0,
 		},
 		{
 			name:   "",
