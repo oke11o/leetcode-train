@@ -169,6 +169,8 @@ Search for a given number in a sorted array, with unique elements, that has been
 ![img_2.png](img_2.png)
 
 - [educative solution](https://www.educative.io/m/search-rotated-array)
+- [my solution](../go-solutions/00xx/0033-search-in-rotated-sorted-array.go)
+- [my solution](../go-solutions/00xx/0081-search-in-rotated-sorted-array-ii.go)
 
 **TODO**
 
