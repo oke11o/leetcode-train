@@ -9,17 +9,26 @@ package _0xx
  * Reference:
  * - 0153. Find Minimum in Rotated Sorted Array
  * - 0033. Search in Rotated Sorted Array
-
- * UNSOLVED, TODO
+ *
+ * Next challenges
+ * - https://leetcode.com/problems/flatten-2d-vector/
+ * - https://leetcode.com/problems/shortest-completing-word/
+ * - https://leetcode.com/problems/unique-email-addresses/
  */
 func search81(nums []int, target int) bool {
 	if len(nums) == 0 {
 		return false
 	}
-	lastIdx := len(nums) - 1
-	inFirstPart := true
-	if target < nums[0] {
-		inFirstPart = false
+	endIdx := len(nums) - 1
+	state := 0 // 0 - undedined, 1 - inLeftPart, 2 - inRightPart
+
+	var startIdx int
+	if nums[endIdx] == nums[startIdx] {
+		state = 0
+	} else if target < nums[startIdx] {
+		state = 2
+	} else {
+		state = 1
 	}
 
 	left := -1
@@ -30,16 +39,21 @@ func search81(nums []int, target int) bool {
 		if v == target {
 			return true
 		}
-		tmpLeft := left
-		if tmpLeft == -1 {
-			tmpLeft = 0
-		}
-		if v == nums[tmpLeft] {
-			left++
+		if state == 0 {
+			if nums[endIdx] == nums[startIdx] {
+				left++
+				startIdx = left
+			} else {
+				if target < nums[startIdx] {
+					state = 2
+				} else {
+					state = 1
+				}
+			}
 			continue
 		}
-		if inFirstPart {
-			if v < nums[0] {
+		if state == 1 {
+			if v < nums[startIdx] {
 				right = i
 			} else if v > target {
 				right = i
@@ -47,7 +61,7 @@ func search81(nums []int, target int) bool {
 				left = i
 			}
 		} else {
-			if v > nums[lastIdx] {
+			if v > nums[endIdx] {
 				left = i
 			} else if v > target {
 				right = i
@@ -59,5 +73,5 @@ func search81(nums []int, target int) bool {
 	if left != -1 && nums[left] != target {
 		return false
 	}
-	return true
+	return left != -1
 }

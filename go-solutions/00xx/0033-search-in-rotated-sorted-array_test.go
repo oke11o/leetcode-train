@@ -1,8 +1,9 @@
 package _0xx
 
 import (
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 func Test_search(t *testing.T) {
@@ -12,6 +13,12 @@ func Test_search(t *testing.T) {
 		target int
 		want   int
 	}{
+		{
+			name:   "",
+			nums:   []int{1, 3},
+			target: 0,
+			want:   -1,
+		},
 		{
 			name:   "",
 			nums:   []int{4, 5, 6, 7, 0, 1, 2},

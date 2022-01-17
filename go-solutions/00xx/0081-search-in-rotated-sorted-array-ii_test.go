@@ -15,6 +15,36 @@ func Test_search81(t *testing.T) {
 	}{
 		{
 			name:   "",
+			nums:   []int{0, 1, 1, 2, 0, 0},
+			target: 2,
+			want:   true,
+		},
+		{
+			name:   "",
+			nums:   []int{1, 3},
+			target: 0,
+			want:   false,
+		},
+		{
+			name:   "",
+			nums:   []int{1, 1},
+			target: 2,
+			want:   false,
+		},
+		{
+			name:   "",
+			nums:   []int{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+			target: 2,
+			want:   false,
+		},
+		{
+			name:   "",
+			nums:   []int{1, 1, 1, 1, 1, 1, 1, 1, 1, 13, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+			target: 13,
+			want:   true,
+		},
+		{
+			name:   "",
 			nums:   []int{4, 5, 6, 7, 0, 1, 2},
 			target: 0,
 			want:   true,
@@ -77,12 +107,6 @@ func Test_search81(t *testing.T) {
 			name:   "",
 			nums:   []int{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1},
 			target: 2,
-			want:   true,
-		},
-		{
-			name:   "",
-			nums:   []int{1, 1, 1, 1, 1, 1, 1, 1, 1, 13, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-			target: 13,
 			want:   true,
 		},
 	}
