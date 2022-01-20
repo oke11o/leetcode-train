@@ -4,6 +4,15 @@ package _1xx
 // Medium
 // Array, Math, Two Pointers
 // https://leetcode.com/problems/rotate-array/
+//
+// Step 1.
+// - how big array is possible?
+// - how big k is possible? May be k == 0? Or may be k is negative?
+
+// First solution.
+// 1. Keep last k elements to tmp storage.
+// 2. Save to slots removing el (using tmp val)
+// 3. Set el to nums[i] from slots
 func rotate(nums []int, k int) {
 	N := len(nums)
 	k = k % N
