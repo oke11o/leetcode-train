@@ -6,8 +6,9 @@ package _4xx
  * Medium
  * [#hash_table, #string, #sliding_window]
  *
+ * Ознакомиться с алгоритмом поиска подстроки Rabin-Karp https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm
  */
-func findAnagrams(input string, pattern string) []int {
+func findAnagrams_two_maps(input string, pattern string) []int {
 	paLength := len(pattern)
 	in := []rune(input)
 	paDict := make(map[rune]int, 26)
@@ -42,4 +43,32 @@ func isMapEq(a, b map[rune]int) bool {
 		}
 	}
 	return true
+}
+
+func findAnagrams_wrong(input string, pattern string) []int {
+	count := len(pattern)
+	in := []rune(input)
+	dict := make(map[rune]int, 26)
+	for _, s := range pattern {
+		dict[s]++
+	}
+	result := []int{}
+	p1 := 0
+	for p2 := 0; p2 < len(in); p2++ {
+		if _, exists := dict[in[p2]]; exists {
+			dict[in[p2]]--
+			count--
+		}
+		if p2-p1 == len(pattern) {
+			if _, exists := dict[in[p1]]; exists {
+				dict[in[p1]]++
+				count++
+			}
+			p1++
+		}
+		if count == 0 {
+			result = append(result, p1)
+		}
+	}
+	return result
 }
