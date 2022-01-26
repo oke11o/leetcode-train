@@ -18,7 +18,7 @@ package _1xx
 // 1. Keep last k elements to tmp storage.
 // 2. Save to slots removing el (using tmp val)
 // 3. Set el to nums[i] from slots
-func rotate(nums []int, k int) {
+func rotate_with_mem(nums []int, k int) {
 	N := len(nums)
 	k = k % N
 	if k == 0 {
@@ -32,5 +32,33 @@ func rotate(nums []int, k int) {
 		nums[i] = slots[kPointer%k]
 		slots[kPointer%k] = tmp
 		kPointer++
+	}
+}
+
+//Tricky swap
+//[1, 2, 3, 4, 5] -> [1, 2, 1, 4, 5] -> [1, 2, 1, 4, 3] -> [1, 5, 1, 4, 3] -> [1, 5, 1, 2, 3] -> [4, 5, 1, 2, 3]
+//[1, 2, 3, 4] -> [1, 2, 1, 4] -> [3, 2, 1, 4]; [3, 2, 1, 2] -> [3, 4, 1, 2]
+func rotate(nums []int, k int) {
+	n := len(nums)
+	k = k % n
+	if k == 0 {
+		return
+	}
+	// start - для того, чтобы сдвинуться не 1 вперед, если мы попали на туже позицию с которой начали.
+	// Это может быть, если у нас длинна nums и k имеют общий делитель.
+	counter, start, prevPos := 0, 0, 0
+	swappingVal := nums[prevPos]
+	for counter < n {
+		if prevPos == start && counter > 0 {
+			prevPos++
+			start = prevPos
+			swappingVal = nums[prevPos]
+		}
+		newPos := (prevPos + k) % n
+		tmp := nums[newPos]
+		nums[newPos] = swappingVal
+		swappingVal = tmp
+		prevPos = newPos
+		counter++
 	}
 }

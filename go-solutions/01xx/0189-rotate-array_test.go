@@ -1,8 +1,9 @@
 package _1xx
 
 import (
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 func Test_rotate(t *testing.T) {
@@ -12,6 +13,12 @@ func Test_rotate(t *testing.T) {
 		k    int
 		want []int
 	}{
+		{
+			name: "",
+			nums: []int{1, 2, 3, 4, 5, 6},
+			k:    3,
+			want: []int{4, 5, 6, 1, 2, 3},
+		},
 		{
 			name: "",
 			nums: []int{1, 2, 3, 4, 5, 6, 7},
