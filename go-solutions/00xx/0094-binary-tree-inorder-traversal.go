@@ -17,7 +17,7 @@ func travel(node *TreeNode) {
 
 // 0094. Binary Tree Inorder Traversal
 // Easy
-// Stack, Tree, DBS, Binary Tree
+// Stack, Tree, DFS, Binary Tree
 // https://leetcode.com/problems/binary-tree-inorder-traversal/
 func inorderTraversal(root *TreeNode) []int {
 	inorderTraversalResult = []int{}
