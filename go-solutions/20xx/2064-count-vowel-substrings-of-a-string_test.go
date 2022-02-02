@@ -14,6 +14,11 @@ func Test_countVowelSubstrings(t *testing.T) {
 	}{
 		{
 			name: "",
+			word: "xxaiioueaiixx",
+			want: 12,
+		},
+		{
+			name: "",
 			word: "xxaiioueiiaxx",
 			want: 7,
 		},

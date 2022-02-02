@@ -12,22 +12,18 @@ package _2xx
  */
 func minSubArrayLen(target int, nums []int) int {
 	result := len(nums) + 1
-	windowLen := 0
-	windowSum := 0
-	leftP := 0
-	for rightP := 0; rightP < len(nums); rightP++ {
-		windowLen++
-		windowSum += nums[rightP]
-		for windowSum > target {
+	var windowSum, leftP int
+	for rightP, n := range nums {
+		windowSum += n
+		for windowSum >= target {
+			if result > rightP-leftP+1 {
+				result = rightP - leftP + 1 // 15
+			}
 			windowSum -= nums[leftP]
 			leftP++
-			windowLen--
-		}
-		if windowSum == target && result > windowLen {
-			result = windowLen
 		}
 	}
-	if result > len(nums) {
+	if result == len(nums)+1 {
 		return 0
 	}
 	return result
