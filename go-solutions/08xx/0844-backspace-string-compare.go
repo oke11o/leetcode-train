@@ -2,7 +2,12 @@ package _8xx
 
 import "strings"
 
-// 0844. Backspace String Compare
+/**
+ *0844. Backspace String Compare
+ *Easy
+ ***Tags:** [Two Pointers, String, Stack, Simulation]
+ * https://leetcode.com/problems/backspace-string-compare/
+ */
 func backspaceCompare(s string, t string) bool {
 	var backspace = func(s string, r uint8) string {
 		var result []string
@@ -23,4 +28,29 @@ func backspaceCompare(s string, t string) bool {
 	}
 
 	return backspace(s, '#') == backspace(t, '#')
+}
+
+func backspaceCompare2(s string, t string) bool {
+	return backspace(s, '#') == backspace(t, '#')
+}
+
+func backspace(s string, back rune) string {
+	ss := []rune(s)
+	result := make([]rune, len(ss))
+	cnt := 0
+	curCnt := 0
+	rIdx := len(ss) - 1
+	for i := len(ss) - 1; i >= 0; i-- {
+		if ss[i] == back {
+			curCnt++
+			cnt++
+		} else if curCnt > 0 {
+			curCnt--
+			cnt++
+		} else {
+			result[rIdx] = ss[i]
+			rIdx--
+		}
+	}
+	return string(result[cnt:])
 }

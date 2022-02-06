@@ -1,14 +1,5 @@
 
-# 0844. Backspace String Compare
 
-    Easy
-
-**Tags:** [Two Pointers, String, Stack, Simulation]
-
-**Links:**
-
-- [go solution](./0844-backspace-string-compare.go)
-- [leetcode](https://leetcode.com/problems/backspace-string-compare/)
 
 
 # 0852. Peak Index in a Mountain Array

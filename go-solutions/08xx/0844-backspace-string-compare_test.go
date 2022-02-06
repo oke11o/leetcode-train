@@ -1,8 +1,9 @@
 package _8xx
 
 import (
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 func Test_backspaceCompare(t *testing.T) {
@@ -44,8 +45,55 @@ func Test_backspaceCompare(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := backspaceCompare(tt.s, tt.t)
+			got := backspaceCompare2(tt.s, tt.t)
 			require.Equal(t, tt.want, got)
+		})
+	}
+}
+
+func Test_backspace(t *testing.T) {
+	tests := []struct {
+		name string
+		s    string
+		back rune
+		want string
+	}{
+		{
+			name: "",
+			s:    "a##c",
+			back: '#',
+			want: "c",
+		},
+		{
+			name: "",
+			s:    "#a#c",
+			back: '#',
+			want: "c",
+		},
+		{
+			name: "",
+			s:    "ab##",
+			back: '#',
+			want: "",
+		},
+		{
+			name: "",
+			s:    "ab#######",
+			back: '#',
+			want: "",
+		},
+		{
+			name: "",
+			s:    "asdffwefew##awf3#faf#####",
+			back: '#',
+			want: "asdffwefa",
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := backspace(tt.s, tt.back); got != tt.want {
+				t.Errorf("backspace() = %v, want %v", got, tt.want)
+			}
 		})
 	}
 }
