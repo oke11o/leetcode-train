@@ -7,6 +7,8 @@ import "strings"
  *Easy
  ***Tags:** [Two Pointers, String, Stack, Simulation]
  * https://leetcode.com/problems/backspace-string-compare/
+ *
+ * !!Without two pointers
  */
 func backspaceCompare(s string, t string) bool {
 	var backspace = func(s string, r uint8) string {
@@ -30,13 +32,15 @@ func backspaceCompare(s string, t string) bool {
 	return backspace(s, '#') == backspace(t, '#')
 }
 
+/**
+ * !!Without two pointers
+ */
 func backspaceCompare2(s string, t string) bool {
 	return backspace(s, '#') == backspace(t, '#')
 }
 
 func backspace(s string, back rune) string {
 	ss := []rune(s)
-	result := make([]rune, len(ss))
 	cnt := 0
 	curCnt := 0
 	rIdx := len(ss) - 1
@@ -48,9 +52,9 @@ func backspace(s string, back rune) string {
 			curCnt--
 			cnt++
 		} else {
-			result[rIdx] = ss[i]
+			ss[rIdx] = ss[i]
 			rIdx--
 		}
 	}
-	return string(result[cnt:])
+	return string(ss[cnt:])
 }

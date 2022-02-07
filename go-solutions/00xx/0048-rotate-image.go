@@ -2,7 +2,7 @@ package _0xx
 
 func rotate(matrix [][]int) {
 	transpose(matrix)
-	reflect(matrix)
+	reflectMatrix(matrix)
 }
 
 func transpose(matrix [][]int) {
@@ -14,7 +14,7 @@ func transpose(matrix [][]int) {
 	}
 }
 
-func reflect(matrix [][]int) {
+func reflectMatrix(matrix [][]int) {
 	l := len(matrix)
 	for i := 0; i < l; i++ {
 		for j := 0; j < l/2; j++ {
