@@ -11,6 +11,10 @@ https://leetcode.com/problems/two-sum/
 Easy
 [#array, #hash_table]
 
+Simular:
+https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+0167-two-sum-ii-input-array-is-sorted_test.go
+
 */
 // Brute force
 // TC: O(n^2)

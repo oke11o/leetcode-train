@@ -7,29 +7,37 @@ import (
 )
 
 /**
- * 0015. 3Sum
- * https://leetcode.com/problems/3sum/
- * Medium
- *
- * [#array, #two_pointers, #sorting]
- *
- */
+0015. 3Sum
+https://leetcode.com/problems/3sum/
+Medium
+
+[#array, #two_pointers, #sorting]
+#TODO: wip
+*/
 func threeSum(nums []int) [][]int {
+	var twoSum_twoPointers = func(numbers []int, curIdx int) []int {
+		target := 0 - numbers[curIdx]
+		right := len(numbers) - 1
+		left := curIdx + 1
+		for left < right {
+			sum := numbers[left] + numbers[right]
+			if sum == target {
+				return []int{numbers[curIdx], numbers[left], numbers[right]}
+			} else if sum > target {
+				right--
+			} else {
+				left++
+			}
+		}
+		return nil
+	}
+	_ = twoSum_twoPointers
+
 	sort.Ints(nums)
 	result := make([][]int, 0)
 	for i := 0; i < len(nums)-2; i++ {
-		target := nums[i]
-		j := i + 1
-		k := len(nums) - 1
-		for j < k || -target != nums[j]+nums[k] {
-			if nums[j]+nums[k] > 0-target {
-				k--
-			} else {
-				j++
-			}
-		}
-		if -target == nums[j]+nums[k] {
-			result = append(result, []int{nums[i], nums[j], nums[k]})
+		if res := twoSum_twoPointers(nums, i); res != nil {
+			result = append(result, res)
 		}
 	}
 	return result
@@ -43,7 +51,7 @@ func Test_threeSum(t *testing.T) {
 	}{
 		{
 			name: "",
-			nums: []int{-1, 0, 1, 2, -1, -4},
+			nums: []int{-1, 0, 1, 2, -1, -4}, // -4,-1,-1,0,1,2
 			want: [][]int{{-1, -1, 2}, {-1, 0, 1}},
 		},
 		{
@@ -55,6 +63,16 @@ func Test_threeSum(t *testing.T) {
 			name: "",
 			nums: []int{0},
 			want: [][]int{},
+		},
+		{
+			name: "",
+			nums: []int{0, 0, 0, 0},
+			want: [][]int{{0, 0, 0}},
+		},
+		{
+			name: "",
+			nums: []int{-4, -1, -1, -1, 0, 1, 2, 3}, // -4,-1,-1,0,1,2
+			want: [][]int{{-4, 1, 3}, {-1, -1, 2}, {-1, 0, 1}},
 		},
 	}
 	for _, tt := range tests {
