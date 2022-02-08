@@ -28,7 +28,7 @@ func Test_findAnagrams(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := findAnagrams(tt.s, tt.p)
+			got := findAnagrams_two_maps(tt.s, tt.p)
 			require.Equal(t, tt.want, got)
 		})
 	}
