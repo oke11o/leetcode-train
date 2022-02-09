@@ -36,6 +36,10 @@ func compress(chars []byte) int {
 	return prevP
 }
 
+/*********************************/
+/************* TESTS *************/
+/*********************************/
+
 func Test_compress(t *testing.T) {
 	tests := []struct {
 		name    string
@@ -64,7 +68,7 @@ func Test_compress(t *testing.T) {
 		{
 			name:    "",
 			chars:   []byte("aaabbaa"),
-			want:    4,
+			want:    6,
 			wantArr: []byte{'a', '3', 'b', '2', 'a', '2'},
 		},
 	}

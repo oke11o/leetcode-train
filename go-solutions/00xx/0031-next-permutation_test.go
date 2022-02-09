@@ -1,9 +1,8 @@
 package _0xx
 
 import (
+	"reflect"
 	"testing"
-
-	"github.com/stretchr/testify/require"
 )
 
 /**
@@ -41,6 +40,10 @@ func reverse(nums []int) {
 	}
 }
 
+/*********************************/
+/************* TESTS *************/
+/*********************************/
+
 func Test_nextPermutation(t *testing.T) {
 	tests := []struct {
 		name string
@@ -76,7 +79,9 @@ func Test_nextPermutation(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			nextPermutation(tt.nums)
-			require.Equal(t, tt.want, tt.nums)
+			if !reflect.DeepEqual(tt.want, tt.nums) {
+				t.Errorf("nextPermutation: want=%+v; got=%+v", tt.want, tt.nums)
+			}
 		})
 	}
 }
