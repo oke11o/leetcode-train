@@ -9,6 +9,7 @@ import (
 Sort an array of 0s, 1s and 2s
 Medium
 https://www.geeksforgeeks.org/sort-an-array-of-0s-1s-and-2s/
+[#sliding_window]
 */
 func sort012(flag []int) {
 	zeroP := 0
