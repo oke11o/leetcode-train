@@ -54,13 +54,13 @@ func (u *UnionFind) connect(a, b int) bool {
 		return false
 	}
 	if u.rating[parentA] == u.rating[parentB] {
-		u.parents[parentA] = b
+		u.parents[parentA] = parentB
 		u.rating[parentB]++
 	} else if u.rating[parentA] < u.rating[parentB] {
-		u.parents[parentA] = b
+		u.parents[parentA] = parentB
 		u.rating[parentB]++
 	} else {
-		u.parents[parentB] = a
+		u.parents[parentB] = parentA
 		u.rating[parentA]++
 	}
 
