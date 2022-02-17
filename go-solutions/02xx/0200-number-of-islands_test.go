@@ -14,7 +14,7 @@ func numIslands(grid [][]byte) int {
 	units := make(map[int]struct{}, colLen*rowLen)
 	for row := 0; row < rowLen; row++ {
 		for col := 0; col < colLen; col++ {
-			pos := row*colLen + col
+			pos := row*colLen + col // !!! Важно правильно вычислять позицию
 			if grid[row][col] == '1' {
 				units[pos] = struct{}{}
 			}
@@ -33,12 +33,12 @@ func numIslands(grid [][]byte) int {
 		}
 	}
 	// calc zeroes island count
-	m := make(map[int]int)
+	m := make(map[int]struct{})
 	for k := range uf.parents {
 		_, ok := units[k]
 		if ok {
 			par := uf.find(k)
-			m[par]++
+			m[par] = struct{}{}
 		}
 	}
 
@@ -46,44 +46,47 @@ func numIslands(grid [][]byte) int {
 }
 
 type UnionFind struct {
-	rating  []int
-	parents []int
+	unitCount int
+	rating    []int
+	parents   []int
 }
 
 func NewUnionFind(n int) *UnionFind {
-	parents := make([]int, n)
-	for i := range parents {
-		parents[i] = i
-	}
-	return &UnionFind{
+	uf := &UnionFind{
 		rating:  make([]int, n),
-		parents: parents,
+		parents: make([]int, n),
 	}
+	for i := range uf.parents {
+		uf.parents[i] = i
+	}
+	return uf
 }
 
 // connect return flag. Is already connected
-func (u *UnionFind) connect(a, b int) bool {
-	parentA := u.find(a)
-	parentB := u.find(b)
+func (uf *UnionFind) connect(a, b int) bool {
+	parentA := uf.find(a)
+	parentB := uf.find(b)
 	if parentA == parentB {
 		return false
 	}
-	if u.rating[parentA] == u.rating[parentB] {
-		u.parents[parentA] = parentB
-		u.rating[parentB]++
-	} else if u.rating[parentA] < u.rating[parentB] {
-		u.parents[parentA] = parentB
+	if uf.rating[parentA] == uf.rating[parentB] {
+		uf.parents[parentA] = parentB
+		uf.rating[parentB]++
+	} else if uf.rating[parentA] < uf.rating[parentB] {
+		uf.parents[parentA] = parentB
 	} else {
-		u.parents[parentB] = parentA
+		uf.parents[parentB] = parentA
 	}
+	uf.unitCount--
 
 	return true
 }
-func (u *UnionFind) find(a int) int {
-	if u.parents[a] == a {
+
+func (uf *UnionFind) find(a int) int {
+	if uf.parents[a] == a {
 		return a
 	}
-	return u.find(u.parents[a])
+	return uf.find(uf.parents[a])
 }
 
 /*********************************/
@@ -132,8 +135,9 @@ func Test_numIslands(t *testing.T) {
 			name: "",
 			args: args{
 				grid: [][]byte{
-					{'1', '1', '1', '1', '0'},
-					{'1', '1', '0', '1', '0'},
+					// unitsLen == 9
+					{'1', '1', '1', '1', '0'}, //2,4,5,6
+					{'1', '1', '0', '1', '0'}, //7,8
 					{'1', '1', '0', '0', '0'},
 					{'0', '0', '0', '0', '0'},
 				},
