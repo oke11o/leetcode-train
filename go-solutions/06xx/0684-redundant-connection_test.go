@@ -19,7 +19,6 @@ func findRedundantConnection(edges [][]int) []int {
 			result = []int{edge[0], edge[1]}
 		}
 	}
-	_ = uf
 	return result
 }
 
@@ -92,6 +91,27 @@ func Test_findRedundantConnection(t *testing.T) {
 				edges: [][]int{{1, 2}, {2, 3}, {3, 4}, {1, 4}, {1, 5}},
 			},
 			want: []int{1, 4},
+		},
+		{
+			name: "",
+			args: args{
+				edges: [][]int{{1, 5}, {1, 4}, {1, 2}, {2, 3}, {3, 4}},
+			},
+			want: []int{3, 4},
+		},
+		{
+			name: "",
+			args: args{
+				edges: [][]int{{1, 2}, {3, 4}, {1, 4}, {2, 3}, {1, 5}, {1, 6}, {5, 6}, {4, 6}},
+			},
+			want: []int{4, 6},
+		},
+		{
+			name: "",
+			args: args{
+				edges: [][]int{{1, 2}, {3, 4}, {1, 4}, {2, 3}, {1, 5}, {5, 6}},
+			},
+			want: []int{2, 3},
 		},
 	}
 	for _, tt := range tests {
