@@ -50,10 +50,8 @@ func (uf *UnionFind) connect(a, b int) bool {
 		uf.rating[parentB]++
 	} else if uf.rating[parentA] < uf.rating[parentB] {
 		uf.parents[parentA] = parentB
-		uf.rating[parentB]++
 	} else {
 		uf.parents[parentB] = parentA
-		uf.rating[parentA]++
 	}
 
 	return true
