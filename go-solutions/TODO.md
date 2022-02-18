@@ -12,7 +12,7 @@
 
 ### Union Find
 
-1. [ ] [200. Number of Islands `(Medium)`](https://leetcode.com/problems/number-of-islands/)
+1. [x] [200. Number of Islands `(Medium)`](https://leetcode.com/problems/number-of-islands/)
 2. [ ] [695. Max Area of Island `(Medium)`](https://leetcode.com/problems/max-area-of-island/)
 3. [x] [684. Redundant Connection `(Medium)`](https://leetcode.com/problems/redundant-connection)
 4. [x] [261. Graph Valid Tree `(Medium)`](https://leetcode.com/problems/graph-valid-tree/)
