@@ -16,7 +16,7 @@
 2. [ ] [695. Max Area of Island `(Medium)`](https://leetcode.com/problems/max-area-of-island/)
 3. [x] [684. Redundant Connection `(Medium)`](https://leetcode.com/problems/redundant-connection)
 4. [x] [261. Graph Valid Tree `(Medium)`](https://leetcode.com/problems/graph-valid-tree/)
-5. [ ] [547. Number of Provinces `(Medium)`](https://leetcode.com/problems/number-of-provinces/)
+5. [x] [547. Number of Provinces `(Medium)`](https://leetcode.com/problems/number-of-provinces/)
 
 ## Unit 2
 
