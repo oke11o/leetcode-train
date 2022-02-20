@@ -29,6 +29,19 @@ For index 4 - [2]
 So, the answer for the above input is [1, 3, 1, 5, 1]
 */
 // We don’t provide test cases in this language yet, but have outlined the signature for you. Please write your code below, and don’t forget to test edge cases!
+func countSubarrays_bruteForce(arr []int) []int {
+	result := make([]int, len(arr))
+	for i, v := range arr {
+		for j := i; j >= 0 && arr[j] <= v; j-- {
+			result[i]++
+		}
+		for j := i; j < len(arr) && arr[j] <= v; j++ {
+			result[i]++
+		}
+		result[i]--
+	}
+	return result
+}
 func countSubarrays(arr []int) []int {
 	result := make([]int, len(arr))
 	for i, v := range arr {
@@ -43,10 +56,17 @@ func countSubarrays(arr []int) []int {
 	return result
 }
 
-//3, 4, 1, 6, 2
-//   ^
-//1
-//0
+// 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+//15,14,16,11,12,13,12,11,10, 9,
+//-1, 1,-1, 2, 2, 2, 5, 6, 7, 8
+//               1  0
+//Изначально у всех 1
+//1, 1, 1, 1, 1, 1
+//2, 1, 1, 1, 1, 1
+//3, 2, 1, 1, 1, 1
+//1 -- сколько элементов слева больше чем arr[i]?
+//  ^ -- 2 больше 3? - да. У 3 добавляем 1. У 2 ставим 0
+//     ^ -- 4 больше 3? - нет. Закончили с 3.
 
 /*********************************/
 /************* TESTS *************/
