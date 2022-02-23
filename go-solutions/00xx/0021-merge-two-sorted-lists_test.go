@@ -6,6 +6,40 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
+/**
+ * 0021. Merge Two Sorted Lists
+ * Easy
+ * Linked List, Recursion
+ * https://leetcode.com/problems/merge-two-sorted-lists/
+ */
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+	result := &ListNode{}
+	current := result
+
+	for l1 != nil && l2 != nil {
+		if l1.Val < l2.Val {
+			current.Next = l1
+			current = current.Next
+			l1 = l1.Next
+		} else {
+			current.Next = l2
+			current = current.Next
+			l2 = l2.Next
+		}
+	}
+	if l1 != nil {
+		current.Next = l1
+	}
+	if l2 != nil {
+		current.Next = l2
+	}
+
+	return result.Next
+}
+
+/*********************************/
+/************* TESTS *************/
+/*********************************/
 func Test_mergeTwoLists(t *testing.T) {
 	var buildList = func(list []int) *ListNode {
 		if len(list) == 0 {
