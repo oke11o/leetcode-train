@@ -1,4 +1,4 @@
-package go_solutions
+package _2xx
 
 import (
 	"testing"
@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_middleNode(t *testing.T) {
+func Test_isPalindrome(t *testing.T) {
 	var buildList = func(in []int) *ListNode {
 		if len(in) == 0 {
 			return nil
@@ -27,34 +27,22 @@ func Test_middleNode(t *testing.T) {
 	tests := []struct {
 		name string
 		list []int
-		want []int
+		want bool
 	}{
 		{
 			name: "",
-			list: []int{1, 2, 3, 4, 5},
-			want: []int{3, 4, 5},
+			list: []int{1, 2, 2, 1},
+			want: true,
 		},
 		{
 			name: "",
-			list: []int{1, 2, 3, 4, 5, 6},
-			want: []int{4, 5, 6},
+			list: []int{1, 2},
+			want: false,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-
-			rev := middleNode(buildList(tt.list))
-			if len(tt.want) == 0 {
-				require.Nil(t, rev)
-				return
-			}
-
-			var got []int
-			for rev.Next != nil {
-				got = append(got, rev.Val)
-				rev = rev.Next
-			}
-			got = append(got, rev.Val)
+			got := isPalindrome(buildList(tt.list))
 			require.Equal(t, tt.want, got)
 		})
 	}

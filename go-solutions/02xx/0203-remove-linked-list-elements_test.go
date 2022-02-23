@@ -1,13 +1,12 @@
-package _0xx
+package _2xx
 
 import (
 	"testing"
 
-	. "github.com/oke11o/leetcode-train/go-solutions/01xx"
 	"github.com/stretchr/testify/require"
 )
 
-func Test_addTwoNumbers(t *testing.T) {
+func Test_removeElements(t *testing.T) {
 	var buildList = func(list []int) *ListNode {
 		if len(list) == 0 {
 			return nil
@@ -21,36 +20,36 @@ func Test_addTwoNumbers(t *testing.T) {
 		}
 		return root
 	}
-
 	tests := []struct {
 		name string
-		l1   []int
-		l2   []int
+		head []int
+		val  int
 		want []int
 	}{
 		{
 			name: "",
-			l1:   []int{2, 4, 3},
-			l2:   []int{5, 6, 4},
-			want: []int{7, 0, 8},
+			head: []int{1, 2, 6, 3, 4, 5, 6},
+			val:  6,
+			want: []int{1, 2, 3, 4, 5},
 		},
 		{
 			name: "",
-			l1:   []int{0},
-			l2:   []int{0},
-			want: []int{0},
+			head: []int{},
+			val:  1,
+			want: []int{},
 		},
 		{
 			name: "",
-			l1:   []int{9, 9, 9, 9, 9, 9, 9},
-			l2:   []int{9, 9, 9, 9},
-			want: []int{8, 9, 9, 9, 0, 0, 0, 1},
+			head: []int{7, 7, 7, 7},
+			val:  7,
+			want: []int{},
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := addTwoNumbers(buildList(tt.l1), buildList(tt.l2))
-			require.Equal(t, buildList(tt.want), got)
+			got := removeElements(buildList(tt.head), tt.val)
+			want := buildList(tt.want)
+			require.Equal(t, want, got)
 		})
 	}
 }

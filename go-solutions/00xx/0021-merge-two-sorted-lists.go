@@ -1,15 +1,13 @@
 package _0xx
 
-import "github.com/oke11o/leetcode-train/go-solutions"
-
 /**
  * 0021. Merge Two Sorted Lists
  * Easy
  * Linked List, Recursion
  * https://leetcode.com/problems/merge-two-sorted-lists/
  */
-func mergeTwoLists(l1 *go_solutions.ListNode, l2 *go_solutions.ListNode) *go_solutions.ListNode {
-	result := &go_solutions.ListNode{}
+func mergeTwoLists(l1 *_1xx.ListNode, l2 *_1xx.ListNode) *_1xx.ListNode {
+	result := &_1xx.ListNode{}
 	current := result
 
 	for l1 != nil && l2 != nil {

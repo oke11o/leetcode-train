@@ -1,9 +1,5 @@
 package _1xx
 
-import (
-	. "github.com/oke11o/leetcode-train/go-solutions"
-)
-
 // 0102. Binary Tree Level Order Traversal
 // Medium
 // Tree, BFS, Binary Tree

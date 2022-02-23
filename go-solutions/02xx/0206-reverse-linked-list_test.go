@@ -1,4 +1,4 @@
-package go_solutions
+package _2xx
 
 import (
 	"testing"
@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_middleNode(t *testing.T) {
+func Test_reverseList(t *testing.T) {
 	var buildList = func(in []int) *ListNode {
 		if len(in) == 0 {
 			return nil
@@ -32,18 +32,23 @@ func Test_middleNode(t *testing.T) {
 		{
 			name: "",
 			list: []int{1, 2, 3, 4, 5},
-			want: []int{3, 4, 5},
+			want: []int{5, 4, 3, 2, 1},
 		},
 		{
 			name: "",
-			list: []int{1, 2, 3, 4, 5, 6},
-			want: []int{4, 5, 6},
+			list: []int{1, 2},
+			want: []int{2, 1},
+		},
+		{
+			name: "",
+			list: []int{},
+			want: []int{},
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 
-			rev := middleNode(buildList(tt.list))
+			rev := reverseList(buildList(tt.list))
 			if len(tt.want) == 0 {
 				require.Nil(t, rev)
 				return

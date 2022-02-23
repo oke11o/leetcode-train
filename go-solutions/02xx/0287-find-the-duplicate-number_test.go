@@ -1,4 +1,4 @@
-package _1xx
+package _2xx
 
 import (
 	"testing"
@@ -6,36 +6,36 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_maxDepth(t *testing.T) {
+func Test_findDuplicate(t *testing.T) {
 	tests := []struct {
 		name string
-		tree []int
+		nums []int
 		want int
 	}{
 		{
 			name: "",
-			tree: []int{3, 9, 20, Null, Null, 15, 7},
-			want: 3,
-		},
-		{
-			name: "",
-			tree: []int{1, Null, 2},
+			nums: []int{1, 3, 4, 2, 2},
 			want: 2,
 		},
 		{
 			name: "",
-			tree: []int{},
-			want: 0,
+			nums: []int{3, 1, 3, 4, 2},
+			want: 3,
 		},
 		{
 			name: "",
-			tree: []int{0},
+			nums: []int{1, 1},
+			want: 1,
+		},
+		{
+			name: "",
+			nums: []int{1, 1, 2},
 			want: 1,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := maxDepth(CreateTreeNodeFromSlice(tt.tree))
+			got := findDuplicate(tt.nums)
 			require.Equal(t, tt.want, got)
 		})
 	}

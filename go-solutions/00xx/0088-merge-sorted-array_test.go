@@ -1,11 +1,12 @@
 package _0xx
 
 import (
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
-func Test_merge(t *testing.T) {
+func Test_mergeSortedArray(t *testing.T) {
 	tests := []struct {
 		name  string
 		nums1 []int
@@ -49,7 +50,7 @@ func Test_merge(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			merge(tt.nums1, tt.m, tt.nums2, tt.n)
+			mergeSortedArray(tt.nums1, tt.m, tt.nums2, tt.n)
 			require.Equal(t, tt.want, tt.nums1)
 		})
 	}

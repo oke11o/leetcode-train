@@ -6,36 +6,36 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_maxDepth(t *testing.T) {
+func Test_findMinInRotatedSortedArray(t *testing.T) {
 	tests := []struct {
 		name string
-		tree []int
+		nums []int
 		want int
 	}{
 		{
 			name: "",
-			tree: []int{3, 9, 20, Null, Null, 15, 7},
-			want: 3,
+			nums: []int{3, 4, 5, 1, 2},
+			want: 1,
 		},
 		{
 			name: "",
-			tree: []int{1, Null, 2},
-			want: 2,
-		},
-		{
-			name: "",
-			tree: []int{},
+			nums: []int{4, 5, 6, 7, 0, 1, 2},
 			want: 0,
 		},
 		{
 			name: "",
-			tree: []int{0},
-			want: 1,
+			nums: []int{11, 13, 15, 17},
+			want: 11,
+		},
+		{
+			name: "",
+			nums: []int{44},
+			want: 44,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := maxDepth(CreateTreeNodeFromSlice(tt.tree))
+			got := findMinInRotatedSortedArray(tt.nums)
 			require.Equal(t, tt.want, got)
 		})
 	}

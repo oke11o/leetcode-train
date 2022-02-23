@@ -1,8 +1,9 @@
 package _0xx
 
-import (
-	. "github.com/oke11o/leetcode-train/go-solutions"
-)
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
 
 /**
  * Definition for singly-linked list.
