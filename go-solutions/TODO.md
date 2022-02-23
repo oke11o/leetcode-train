@@ -32,7 +32,7 @@
 
 #### Homework
 
-1. [ ] [23. Merge k Sorted Lists (Hard)](https://leetcode.com/problems/merge-k-sorted-lists/) - follow `148. Sort List`
+1. [x] [23. Merge k Sorted Lists (Hard)](https://leetcode.com/problems/merge-k-sorted-lists/) - follow `148. Sort List`
 2. [ ] [315. Count of Smaller Numbers After Self (Hard)](https://leetcode.com/problems/count-of-smaller-numbers-after-self/)
 
 [Other tasks](https://github.com/FLG-MANGA-BACKEND/prep-materials/blob/main/dsa_syllabus.md#leetcode-1)
