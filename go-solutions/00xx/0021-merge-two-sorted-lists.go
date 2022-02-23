@@ -6,8 +6,8 @@ package _0xx
  * Linked List, Recursion
  * https://leetcode.com/problems/merge-two-sorted-lists/
  */
-func mergeTwoLists(l1 *_1xx.ListNode, l2 *_1xx.ListNode) *_1xx.ListNode {
-	result := &_1xx.ListNode{}
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+	result := &ListNode{}
 	current := result
 
 	for l1 != nil && l2 != nil {

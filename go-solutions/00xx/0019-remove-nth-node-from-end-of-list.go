@@ -1,9 +1,5 @@
 package _0xx
 
-import (
-	. "github.com/oke11o/leetcode-train/go-solutions/common"
-)
-
 // 0019. Remove Nth Node From End of List
 // Medium
 // Linked List, Two Pointers

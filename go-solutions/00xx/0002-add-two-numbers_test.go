@@ -3,7 +3,6 @@ package _0xx
 import (
 	"testing"
 
-	. "github.com/oke11o/leetcode-train/go-solutions/01xx"
 	"github.com/stretchr/testify/require"
 )
 

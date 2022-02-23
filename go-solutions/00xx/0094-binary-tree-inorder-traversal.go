@@ -1,9 +1,5 @@
 package _0xx
 
-import (
-	. "github.com/oke11o/leetcode-train/go-solutions"
-)
-
 var inorderTraversalResult []int
 
 func travel(node *TreeNode) {

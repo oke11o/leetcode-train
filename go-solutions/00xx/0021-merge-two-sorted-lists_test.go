@@ -7,14 +7,14 @@ import (
 )
 
 func Test_mergeTwoLists(t *testing.T) {
-	var buildList = func(list []int) *_1xx.ListNode {
+	var buildList = func(list []int) *ListNode {
 		if len(list) == 0 {
 			return nil
 		}
-		root := &_1xx.ListNode{Val: list[0]}
+		root := &ListNode{Val: list[0]}
 		prev := root
 		for i := 1; i < len(list); i++ {
-			node := &_1xx.ListNode{Val: list[i]}
+			node := &ListNode{Val: list[i]}
 			prev.Next = node
 			prev = node
 		}

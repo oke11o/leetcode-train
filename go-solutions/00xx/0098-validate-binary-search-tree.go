@@ -1,9 +1,5 @@
 package _0xx
 
-import (
-	. "github.com/oke11o/leetcode-train/go-solutions"
-)
-
 func isValidBSTTraverseAndCheck(node *TreeNode, min, max int) bool {
 	if node == nil {
 		return true

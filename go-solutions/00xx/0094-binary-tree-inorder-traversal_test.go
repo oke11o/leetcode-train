@@ -1,9 +1,9 @@
 package _0xx
 
 import (
-	. "github.com/oke11o/leetcode-train/go-solutions"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 func Test_inorderTraversal(t *testing.T) {
