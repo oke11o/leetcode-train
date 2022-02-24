@@ -36,3 +36,7 @@
 2. [ ] [315. Count of Smaller Numbers After Self (Hard)](https://leetcode.com/problems/count-of-smaller-numbers-after-self/)
 
 [Other tasks](https://github.com/FLG-MANGA-BACKEND/prep-materials/blob/main/dsa_syllabus.md#leetcode-1)
+
+# Additional
+
+[Mock interview](https://www.pramp.com/dashboard#/schedule)
