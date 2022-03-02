@@ -7,27 +7,36 @@ import (
 )
 
 /**
-https://leetcode.com/problems/remove-duplicates-from-sorted-array/
-26. Remove Duplicates from Sorted Array
-Easy
+https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
+80. Remove Duplicates from Sorted Array II
+Medium
 
-
+Similar - https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 */
-func removeDuplicates_easy(nums []int) int {
-	cnt := 1
+func removeDuplicates(nums []int) int {
+	if len(nums) < 2 {
+		return len(nums)
+	}
+	flag := false
+	pos := 1
 	for i := 1; i < len(nums); i++ {
 		if nums[i-1] != nums[i] {
-			nums[cnt] = nums[i]
-			cnt++
+			nums[pos] = nums[i]
+			pos++
+			flag = false
+		} else if !flag {
+			nums[pos] = nums[i]
+			pos++
+			flag = true
 		}
 	}
-	return cnt
+	return pos
 }
 
 /*********************************/
 /************* TESTS *************/
 /*********************************/
-func Test_removeDuplicates_easy(t *testing.T) {
+func Test_removeDuplicates(t *testing.T) {
 	type args struct {
 		nums []int
 	}
@@ -39,16 +48,16 @@ func Test_removeDuplicates_easy(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: []int{1, 1, 2},
+				nums: []int{1, 1, 1, 2, 2, 3},
 			},
-			want: []int{1, 2},
+			want: []int{1, 1, 2, 2, 3},
 		},
 		{
 			name: "",
 			args: args{
-				nums: []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4},
+				nums: []int{0, 0, 1, 1, 1, 1, 2, 3, 3},
 			},
-			want: []int{0, 1, 2, 3, 4},
+			want: []int{0, 0, 1, 1, 2, 3, 3},
 		},
 	}
 	for _, tt := range tests {
