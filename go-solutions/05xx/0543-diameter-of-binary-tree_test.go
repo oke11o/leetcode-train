@@ -12,7 +12,7 @@ https://leetcode.com/problems/diameter-of-binary-tree/
 Easy
 #facebook #dfs
 */
-func diameterOfBinaryTree(root *TreeNode) int {
+func diameterOfBinaryTree_hardSolution(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
@@ -64,6 +64,34 @@ func diameterOfBinaryTree(root *TreeNode) int {
 	}
 
 	return diameter
+}
+
+/*********************************/
+/********** Solution 2 ***********/
+/*********************************/
+var diameterOfBinaryTreeResult int
+
+func longestPath(node *TreeNode) int {
+	if node == nil {
+		return 0
+	}
+	leftPath := longestPath(node.Left)
+	rightPath := longestPath(node.Right)
+
+	if diameterOfBinaryTreeResult < leftPath+rightPath {
+		diameterOfBinaryTreeResult = leftPath + rightPath
+	}
+
+	if leftPath > rightPath {
+		return leftPath + 1
+	}
+	return rightPath + 1
+}
+
+func diameterOfBinaryTree(root *TreeNode) int {
+	diameterOfBinaryTreeResult = 0
+	longestPath(root)
+	return diameterOfBinaryTreeResult
 }
 
 /*********************************/
