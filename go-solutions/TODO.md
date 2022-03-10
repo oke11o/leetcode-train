@@ -40,3 +40,11 @@
 # Additional
 
 [Mock interview](https://www.pramp.com/dashboard#/schedule)
+
+# Facebook Preparing (leetcode)
+
+[Top Facebook questions](https://leetcode.com/problem-list/top-facebook-questions/?page=1)
+
+## DFS
+
+1. [ ] [543. Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
