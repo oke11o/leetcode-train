@@ -49,7 +49,7 @@ func levelOrder_hardSolution(root *TreeNode) [][]int {
 /**
 recursive
 */
-func levelOrder(root *TreeNode) [][]int {
+func levelOrder_recursive(root *TreeNode) [][]int {
 	levels := [][]int{}
 	if root == nil {
 		return levels
@@ -68,6 +68,34 @@ func levelOrder(root *TreeNode) [][]int {
 	}
 
 	travel(root, 0)
+
+	return levels
+}
+
+//iterative
+func levelOrder(root *TreeNode) [][]int {
+	levels := [][]int{}
+	if root == nil {
+		return levels
+	}
+	level := 0
+	queue := []*TreeNode{root}
+	for len(queue) != 0 {
+		levels = append(levels, []int{})
+		levelCnt := len(queue)
+		for i := 0; i < levelCnt; i++ {
+			node := queue[0]
+			queue = queue[1:]
+			levels[level] = append(levels[level], node.Val)
+			if node.Left != nil {
+				queue = append(queue, node.Left)
+			}
+			if node.Right != nil {
+				queue = append(queue, node.Right)
+			}
+		}
+		level++
+	}
 
 	return levels
 }
