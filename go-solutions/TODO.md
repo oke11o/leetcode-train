@@ -47,4 +47,8 @@
 
 ## DFS
 
-1. [ ] [543. Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
+### [Cards](https://leetcode.com/explore/learn/card/data-structure-tree/134/traverse-a-tree/931/)
+
+1. [x] [543. Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
+2. [ ] [102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+3. [ ] [107. Binary Tree Level Order Traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/)
