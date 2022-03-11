@@ -11,7 +11,7 @@ import (
 // Tree, BFS, Binary Tree
 // https://leetcode.com/problems/binary-tree-level-order-traversal/
 // Amazon - https://www.educative.io/blog/crack-amazon-coding-interview-questions
-func levelOrder(root *TreeNode) [][]int {
+func levelOrder_hardSolution(root *TreeNode) [][]int {
 	if root == nil {
 		return [][]int{}
 	}
@@ -44,6 +44,32 @@ func levelOrder(root *TreeNode) [][]int {
 	}
 
 	return result
+}
+
+/**
+recursive
+*/
+func levelOrder(root *TreeNode) [][]int {
+	levels := [][]int{}
+	if root == nil {
+		return levels
+	}
+	var travel func(node *TreeNode, level int)
+	travel = func(node *TreeNode, level int) {
+		if node == nil {
+			return
+		}
+		if level > len(levels)-1 {
+			levels = append(levels, []int{})
+		}
+		levels[level] = append(levels[level], node.Val)
+		travel(node.Left, level+1)
+		travel(node.Right, level+1)
+	}
+
+	travel(root, 0)
+
+	return levels
 }
 
 /*********************************/
