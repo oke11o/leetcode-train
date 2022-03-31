@@ -14,39 +14,29 @@ func removeKdigits(num string, k int) string {
 	}
 	monoStack := make([]byte, 0, k)
 	for i := 0; i < len(num); i++ {
-		for len(monoStack) > 0 && monoStack[len(monoStack)-1] < num[i] {
+		for len(monoStack) > 0 && k > 0 && monoStack[len(monoStack)-1] > num[i] {
 			monoStack = monoStack[:len(monoStack)-1]
+			k--
 		}
 
 		monoStack = append(monoStack, num[i])
-		if len(monoStack) == k {
-			break
-		}
-	}
-	k = k - len(monoStack) //обнулю K. Зачему? Чтобы потом обрезать с конца строку, если убывающий символов не достаточно
-	// сконвертирую stack 2 map. Чтобы было проще проверять и удалять.
-	m := make(map[byte]int, len(monoStack))
-	for _, v := range monoStack {
-		m[v]++
-	}
-	// Добавлю в результат только те, кого нет в мапе
-	result := make([]byte, 0, len(num)-len(m))
-	for i := 0; i < len(num); i++ {
-		digit := num[i]
-		if _, ok := m[digit]; ok {
-			m[digit]--
-			if m[digit] == 0 {
-				delete(m, digit)
-			}
-		} else {
-			if !(len(result) == 0 && digit == '0') {
-				result = append(result, digit)
-			}
-		}
 	}
 
-	// Если убывающий символов недостаточно, обрезу
-	result = result[0 : len(result)-k]
+	/* remove the remaining digits from the tail. */
+	for i := 0; i < k; i++ {
+		monoStack = monoStack[:len(monoStack)-1]
+	}
+	// build the final string, while removing the leading zeros.
+	leadingZero := true
+	result := make([]byte, 0)
+	for i := 0; i < len(monoStack); i++ {
+		if leadingZero && monoStack[i] == '0' {
+			continue
+		}
+		leadingZero = false
+		result = append(result, monoStack[i])
+	}
+
 	if len(result) == 0 {
 		return "0"
 	}
