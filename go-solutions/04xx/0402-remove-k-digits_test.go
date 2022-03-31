@@ -7,6 +7,9 @@ https://leetcode.com/problems/remove-k-digits/
 402. Remove K Digits
 Medium
 #stack, #greedy, #string, #facebook
+
+Суть в том, что мы должны делать возрастающий (не убывающий) моностек.
+То есть выкидывать все предыдущие значения, если нашли меньшее число. Но делать это всего k раз.
 */
 func removeKdigits(num string, k int) string {
 	if len(num) <= k {
@@ -14,6 +17,8 @@ func removeKdigits(num string, k int) string {
 	}
 	monoStack := make([]byte, 0, k)
 	for i := 0; i < len(num); i++ {
+		// Суть в том, что мы должны делать возрастающий (не убывающий) моностек.
+		// То есть выкидывать все предыдущие значения, если нашли меньшее число. Но делать это всего k раз.
 		for len(monoStack) > 0 && k > 0 && monoStack[len(monoStack)-1] > num[i] {
 			monoStack = monoStack[:len(monoStack)-1]
 			k--
@@ -22,10 +27,9 @@ func removeKdigits(num string, k int) string {
 		monoStack = append(monoStack, num[i])
 	}
 
-	/* remove the remaining digits from the tail. */
-	for i := 0; i < k; i++ {
-		monoStack = monoStack[:len(monoStack)-1]
-	}
+	// remove the remaining digits from the tail.
+	monoStack = monoStack[:len(monoStack)-k]
+
 	// build the final string, while removing the leading zeros.
 	leadingZero := true
 	result := make([]byte, 0)
