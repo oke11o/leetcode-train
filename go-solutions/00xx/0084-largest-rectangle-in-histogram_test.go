@@ -22,11 +22,52 @@ Ok. How we can calculate left and right bars?
 Oh.
 
 */
+/**
+Monotonic stack
+Короче, тут стоить почитать объяснение на leetcode. И важно первый коммент.
+Но кратко для себя. Мы накидываем на стек в порядке возрастания.
+Когда находим первый элемент меньше вершины - это наш правый барьер. Дальше надо найти левый барьер.
+Достаем из стека элементы пока наш элемент нельзя добавить на стек (классический монотон стек).
+На каждой итерации доставания считаем площадь.
+Так как стек возрастающий, то пред-предыдущий элемент будет левой границе предыдущего. (Правая - это тот i, на котором мы находимся, и мы знаем что он точно меньше кандидата)
+
+
+ВАЖНО:
+1. На стеке храним индексы. Это позволяет считать ширину. Но надо не забыть про это, когда нужно получить высоту.
+*/
+func largestRectangleArea(heights []int) int {
+	Len := len(heights)
+	result := 0
+	stack := []int{-1}
+	for i := 0; i < Len; i++ {
+		for len(stack) != 1 && heights[i] < heights[stack[len(stack)-1]] {
+			top := stack[len(stack)-1]            // Элемент, кандидат на подсчет площади. (на текущем положении i)
+			prev := stack[len(stack)-2]           // левая граница
+			area := heights[top] * (i - prev - 1) //Тут -1 потому что наш i-й элемент не надо считать. На самом деле и предыдущий не надо. Но все равно достаточно -1
+			if result < area {
+				result = area
+			}
+			stack = stack[0 : len(stack)-1]
+		}
+		stack = append(stack, i)
+	}
+	for len(stack) != 1 {
+		top := stack[len(stack)-1]
+		prev := stack[len(stack)-2]
+		area := heights[top] * (Len - prev - 1)
+		if result < area {
+			result = area
+		}
+
+		stack = stack[0 : len(stack)-1]
+	}
+	return result
+}
 
 /**
 Divide and Conquer Approach
 */
-func largestRectangleArea(heights []int) int {
+func largestRectangleArea_2(heights []int) int {
 	const maxInt32 = 1<<31 - 1
 	var calculateArea func(start, end int) int
 	calculateArea = func(start, end int) int {
@@ -87,6 +128,13 @@ func Test_largestRectangleArea(t *testing.T) {
 		args args
 		want int
 	}{
+		{
+			name: "",
+			args: args{
+				heights: []int{6, 7, 5, 2, 4, 5, 9, 3},
+			},
+			want: 16,
+		},
 		{
 			name: "",
 			args: args{
