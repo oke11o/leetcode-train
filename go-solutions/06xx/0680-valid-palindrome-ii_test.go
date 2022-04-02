@@ -6,30 +6,33 @@ import "testing"
 680. Valid Palindrome II
 Easy
 https://leetcode.com/problems/valid-palindrome-ii/
+
+В начале решал с передачей в helper function isPali()  строку.
+Но в решениях предложено передвать индексы и строку. Но так как мы можем сделать функцию 2го порядка. Можно использовать замыкание.
+Код стал чуть проще
 */
 func validPalindrome(s string) bool {
-	var isPali = func(s string) bool {
-		left := 0
-		right := len(s) - 1
-		for left < right {
-			if s[left] != s[right] {
+	var checkPalindrome = func(i, j int) bool {
+		for i < j {
+			if s[i] != s[j] {
 				return false
 			}
-			left++
-			right--
+			i++
+			j--
 		}
 		return true
 	}
-	left := 0
-	right := len(s) - 1
-	for left < right {
-		if s[left] == s[right] {
-			left++
-			right--
-			continue
+
+	i := 0
+	j := len(s) - 1
+	for i < j {
+		if s[i] != s[j] {
+			return checkPalindrome(i+1, j) || checkPalindrome(i, j-1)
 		}
-		return isPali(s[left:right]) || isPali(s[left+1:right+1])
+		i++
+		j--
 	}
+
 	return true
 }
 
