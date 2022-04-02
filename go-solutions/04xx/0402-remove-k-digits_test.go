@@ -8,39 +8,51 @@ https://leetcode.com/problems/remove-k-digits/
 Medium
 #stack, #greedy, #string, #facebook
 
+Brute force.
+1. Helper func for compare string with same length. Just comparing letters from string start. And first not equal letter is our result.
+12 3 412  smaller
+12 5 412  bigger
+2. Brute force approch. Use stratagy for removing k elements. And on each iteration of removing we should compare string. And store the smallest.
+3. What strategy? Using permutation algo. 123 412, 124 312, 121 342...
+4. But time complexity is really, really high. It is factorial of length of string
+
+The another approch - is use monotonic stack. We can represent input string as subsequnce of monotonic increasing and monotonic decreasing sequeces.
+1234312
+31
+43
+23412 - bigger.
+13412
+
+1432219
+4>3 - should remove
+
+
 Суть в том, что мы должны делать возрастающий (не убывающий) моностек.
 То есть выкидывать все предыдущие значения, если нашли меньшее число. Но делать это всего k раз.
 */
 func removeKdigits(num string, k int) string {
-	if len(num) <= k {
+	if k >= len(num) {
 		return "0"
 	}
-	monoStack := make([]byte, 0, k)
+	result := []byte{}
+	// convert input to custom monotonic stack
 	for i := 0; i < len(num); i++ {
 		// Суть в том, что мы должны делать возрастающий (не убывающий) моностек.
 		// То есть выкидывать все предыдущие значения, если нашли меньшее число. Но делать это всего k раз.
-		for len(monoStack) > 0 && k > 0 && monoStack[len(monoStack)-1] > num[i] {
-			monoStack = monoStack[:len(monoStack)-1]
+		for k > 0 && len(result) > 0 && result[len(result)-1] > num[i] {
+			result = result[0 : len(result)-1]
 			k--
 		}
-
-		monoStack = append(monoStack, num[i])
+		result = append(result, num[i])
 	}
-
+	// if input monotonic increasing more than k times
 	// remove the remaining digits from the tail.
-	monoStack = monoStack[:len(monoStack)-k]
+	result = result[0 : len(result)-k]
 
-	// build the final string, while removing the leading zeros.
-	leadingZero := true
-	result := make([]byte, 0)
-	for i := 0; i < len(monoStack); i++ {
-		if leadingZero && monoStack[i] == '0' {
-			continue
-		}
-		leadingZero = false
-		result = append(result, monoStack[i])
+	// remove leading zeroes
+	for len(result) > 0 && result[0] == '0' {
+		result = result[1:]
 	}
-
 	if len(result) == 0 {
 		return "0"
 	}
