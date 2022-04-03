@@ -10,6 +10,13 @@ import (
 Medium
 https://leetcode.com/problems/next-permutation/
 
+Как по мне, тут прям сложно. Надо просто запомнить.
+1. Идем с конца
+2. Ищем первый убывающий элемент
+3. Ищем первый больший элемент в правой части (где мы прошли уже)
+4. Свапаем эти элементы
+5. Разворачиваем эту убывающую последовательность. (она была возрастающей, когда мы шли с конца, но на самом деле она убывающая),
+так как возрастающая последовательность и есть самая маленькая
 */
 func nextPermutation(nums []int) {
 	// HELPER
@@ -24,7 +31,7 @@ func nextPermutation(nums []int) {
 	}
 
 	// START
-	idx := len(nums) - 2
+	idx := len(nums) - 2 // идем с предпоследнего элемента. Так как будем сравнивать с idx+1
 	// Find the largest index idx such that nums[idx] >= nums[idx + 1]. If no such index exists, just reverse nums and done.
 	for idx >= 0 && nums[idx+1] <= nums[idx] {
 		idx--
