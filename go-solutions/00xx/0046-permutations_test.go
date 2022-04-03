@@ -6,31 +6,31 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-var resultPermute [][]int
-
 /**
  * 0046. Permutations
  * Medium
  * #backtracking
  */
 func permute(nums []int) [][]int {
-	resultPermute = make([][]int, 0)
+	resultPermute := make([][]int, 0)
+
+	var permuteBacktrack func(current int, nums []int)
+	permuteBacktrack = func(current int, nums []int) {
+		if current == len(nums) {
+			item := make([]int, len(nums))
+			copy(item, nums)
+			resultPermute = append(resultPermute, item)
+			return
+		}
+		for i := current; i < len(nums); i++ { // 1, 2, 3, 4
+			nums[i], nums[current] = nums[current], nums[i]
+			permuteBacktrack(current+1, nums)
+			nums[i], nums[current] = nums[current], nums[i]
+		}
+	}
+
 	permuteBacktrack(0, nums)
 	return resultPermute
-}
-
-func permuteBacktrack(current int, nums []int) {
-	if current == len(nums) {
-		item := make([]int, len(nums))
-		copy(item, nums)
-		resultPermute = append(resultPermute, item)
-		return
-	}
-	for i := current; i < len(nums); i++ {
-		nums[i], nums[current] = nums[current], nums[i]
-		permuteBacktrack(current+1, nums)
-		nums[i], nums[current] = nums[current], nums[i]
-	}
 }
 
 /*********************************/
@@ -75,7 +75,8 @@ func Test_permute(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := permute(tt.nums)
-			require.Equal(t, tt.want, got)
+			require.Equal(t, len(tt.want), len(got))
+			require.ElementsMatch(t, tt.want, got)
 		})
 	}
 }
