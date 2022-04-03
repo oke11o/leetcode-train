@@ -12,9 +12,21 @@ https://leetcode.com/problems/next-permutation/
 
 */
 func nextPermutation(nums []int) {
+	// HELPER
+	reverse := func(nums []int) {
+		left := 0
+		right := len(nums) - 1
+		for left < right {
+			nums[left], nums[right] = nums[right], nums[left]
+			left++
+			right--
+		}
+	}
+
+	// START
 	idx := len(nums) - 2
-	// Find the largest index idx such that nums[idx] < nums[idx + 1]. If no such index exists, just reverse nums and done.
-	for idx >= 0 && nums[idx] > nums[idx+1] {
+	// Find the largest index idx such that nums[idx] >= nums[idx + 1]. If no such index exists, just reverse nums and done.
+	for idx >= 0 && nums[idx+1] <= nums[idx] {
 		idx--
 	}
 	if idx >= 0 { // may be 0, for example [2,8,6,3,2,1]. And
@@ -27,17 +39,6 @@ func nextPermutation(nums []int) {
 	}
 	// idx == -1 when array is sorted desc
 	reverse(nums[idx+1:])
-
-}
-
-func reverse(nums []int) {
-	left := 0
-	right := len(nums) - 1
-	for left < right {
-		nums[left], nums[right] = nums[right], nums[left]
-		left++
-		right--
-	}
 }
 
 /*********************************/
