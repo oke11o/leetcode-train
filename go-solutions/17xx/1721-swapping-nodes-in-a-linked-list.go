@@ -9,39 +9,27 @@ import (
 // Linked List, Two Pointers
 // https://leetcode.com/problems/swapping-nodes-in-a-linked-list/
 func swapNodes(head *ListNode, k int) *ListNode {
-	result := &ListNode{Next: head}
-	prevLeft := result
-	finIndicator := head
-	total := 0
-	for finIndicator != nil {
-		total++
-		if total == k-1 {
-			prevLeft = finIndicator
+	// find length. (As backside effect, search prev for k from left)
+	var front *ListNode
+	var end *ListNode
+	current := head
+	length := 0
+	// set the front node and end node in single pass
+	for current != nil {
+		length++        // так как у нас 1 indexed list
+		if end != nil { // мы установим end, когда дойдем до k. А потом просто буду двигать end так же как current
+			end = end.Next
 		}
-		finIndicator = finIndicator.Next
-	}
-
-	prevRight := result
-	finIndicator = head
-	cnt := 0
-	for finIndicator != nil {
-		cnt++
-		if cnt == total-k {
-			prevRight = finIndicator
+		// check if we have reached kth node
+		if length == k {
+			front = current
+			end = head
 		}
-		finIndicator = finIndicator.Next
+		current = current.Next
 	}
-	if prevLeft == prevRight {
-		return result.Next
-	}
+	front.Val, end.Val = end.Val, front.Val
 
-	if k > total/2 {
-		switchNodes(prevRight, prevLeft)
-	} else {
-		switchNodes(prevLeft, prevRight)
-	}
-
-	return result.Next
+	return head
 }
 
 func switchNodes(prevLeft *ListNode, prevRight *ListNode) {
@@ -58,4 +46,12 @@ func switchNodes(prevLeft *ListNode, prevRight *ListNode) {
 	right.Next = left.Next
 	// 4. Set new nextLeft connect
 	left.Next = tmpRightNext
+
+	// Можно проще. По сути, мы знаем, куда и что вставлять.
+	// Удаляем текущую ноду.
+	// Вставляем в нужное место нужую ноду.
+	// Тогда не надо знать, какая из них левая, а какая правая
+
+	// А еще лучше, можно просто Val менять. А не указатели
+
 }
