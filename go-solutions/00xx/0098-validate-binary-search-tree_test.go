@@ -24,8 +24,8 @@ func isValidBST(node *TreeNode) bool {
 		return traverseAndCheck(node.Left, min, node.Val) && traverseAndCheck(node.Right, node.Val, max)
 	}
 
-	maxInt := 1<<31 - 1
-	minInt := -1 << 31
+	maxInt := 1<<63 - 1
+	minInt := -1 << 63
 	return traverseAndCheck(node, minInt, maxInt)
 }
 
