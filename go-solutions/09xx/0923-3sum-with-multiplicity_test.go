@@ -83,7 +83,22 @@ func Test_threeSumMulti(t *testing.T) {
 		args args
 		want int
 	}{
-		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				arr:    []int{1, 1, 2, 2, 3, 3, 4, 4, 5, 5},
+				target: 8,
+			},
+			want: 20,
+		},
+		{
+			name: "",
+			args: args{
+				arr:    []int{1, 1, 2, 2, 2, 2},
+				target: 5,
+			},
+			want: 12,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
