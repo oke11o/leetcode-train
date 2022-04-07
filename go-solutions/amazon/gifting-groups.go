@@ -17,7 +17,7 @@ func countGroups(related []string, w io.Writer) int32 {
 	// return int32(len(related))
 	uf := NewUnionFind(len(related))
 	for i := 0; i < len(related); i++ {
-		for j := 0; j < len(related); j++ {
+		for j := i + 1; j < len(related); j++ {
 			if i == j {
 				continue
 			}
@@ -27,9 +27,9 @@ func countGroups(related []string, w io.Writer) int32 {
 			}
 		}
 	}
-	m := make(map[int]struct{})
-	for _, i := range uf.parents {
-		m[i] = struct{}{}
+	m := make(map[int][]int)
+	for i, p := range uf.parents {
+		m[p] = append(m[p], i)
 	}
 	return int32(len(m))
 }
