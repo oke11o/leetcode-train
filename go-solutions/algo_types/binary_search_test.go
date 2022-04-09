@@ -10,10 +10,10 @@ func binarySearch(arr []int, x int) int {
 	right := len(arr)
 	for (right - left) > 1 {
 		i := (left + right) / 2
-		if arr[i] <= x {
-			left = i
-		} else {
+		if arr[i] > x {
 			right = i
+		} else {
+			left = i
 		}
 	}
 	if left == -1 {
@@ -41,6 +41,14 @@ func Test_binarySearch(t *testing.T) {
 			args: args{
 				arr: []int{2, 10, 10, 45, 46, 51, 66, 71, 73, 106, 157, 187, 212, 283, 303, 316, 398, 405, 425, 464, 477, 508, 590, 600, 604, 771, 828},
 				x:   57,
+			},
+			want: 5,
+		},
+		{
+			name: "",
+			args: args{
+				arr: []int{0, 1, 2, 3, 4, 5},
+				x:   6,
 			},
 			want: 5,
 		},
