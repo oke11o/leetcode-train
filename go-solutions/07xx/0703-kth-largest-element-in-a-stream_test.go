@@ -1,7 +1,8 @@
 package _7xx
 
 import (
-	"sort"
+	"container/heap"
+	"fmt"
 	"testing"
 )
 
@@ -11,61 +12,75 @@ https://leetcode.com/problems/kth-largest-element-in-a-stream/
 Easy
 */
 type KthLargest struct {
-	queue []int
-	k     int
+	heap *IntHeap
+	k    int
 }
 
 func Constructor(k int, nums []int) KthLargest {
-	sort.Ints(nums)
+	h := IntHeap(nums)
 	kl := KthLargest{
-		queue: make([]int, 0, k),
-		k:     k,
+		heap: &h,
+		k:    k,
 	}
-	if len(nums) < k {
-		kl.queue = append(kl.queue, nums...)
-	} else {
-		kl.queue = nums[len(nums)-k:]
+	heap.Init(kl.heap)
+	for kl.heap.Len() > k {
+		heap.Pop(kl.heap)
 	}
 
 	return kl
 }
 
-func (this *KthLargest) binSearch(val int) int {
-	left := -1
-	right := len(this.queue)
-	for right-left > 1 {
-		i := (right + left) / 2
-		if this.queue[i] > val {
-			right = i
-		} else {
-			left = i
-		}
-	}
-	return left
-}
-
 func (this *KthLargest) Add(val int) int {
-	i := this.binSearch(val)
-	if len(this.queue) < this.k {
-		if i == -1 {
-			this.queue = append([]int{val}, this.queue...)
-		} else {
-			this.queue = append(this.queue[:i+1], this.queue[i:len(this.queue)]...)
-			this.queue[i] = val
-		}
-	} else {
-		this.queue = append(this.queue[1:i+1], this.queue[i:]...)
-		this.queue[i] = val
+	heap.Push(this.heap, val)
+	if this.heap.Len() > this.k {
+		heap.Pop(this.heap)
 	}
 
-	return this.queue[0]
+	return (*this.heap)[0]
 }
 
 /**
- * Your KthLargest object will be instantiated and called as such:
- * obj := Constructor(k, nums);
- * param_1 := obj.Add(val);
- */
+HEAP
+*/
+type IntHeap []int
+
+func (h IntHeap) Len() int           { return len(h) }
+func (h IntHeap) Less(i, j int) bool { return h[i] < h[j] }
+func (h IntHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+
+func (h *IntHeap) Push(x interface{}) {
+	// Push and Pop use pointer receivers because they modify the slice's length,
+	// not just its contents.
+	*h = append(*h, x.(int))
+}
+
+func (h *IntHeap) Pop() interface{} {
+	old := *h
+	n := len(old)
+	x := old[n-1]
+	*h = old[0 : n-1]
+	return x
+}
+
+/*********************************/
+/************* TESTS *************/
+/*********************************/
+func TestHead(t *testing.T) {
+	h := &IntHeap{2, 1, 5}
+	heap.Init(h)
+	heap.Push(h, 3)
+	fmt.Printf("minimum: %d\n", (*h)[0])
+	tests := []int{1, 2, 3, 5}
+	for i, want := range tests {
+		l := len(tests) - i
+		if l != h.Len() {
+			t.Errorf("Len() = %v, want %v", h.Len(), l)
+		}
+		if got := heap.Pop(h); got != want {
+			t.Errorf("Pop() = %v, want %v", got, want)
+		}
+	}
+}
 
 /*********************************/
 /************* TESTS *************/
@@ -94,13 +109,27 @@ func TestKthLargest_Add(t *testing.T) {
 				{4, 8},
 			},
 		},
+		{
+			name: "",
+			init: init{
+				k:   1,
+				arr: []int{},
+			},
+			want: [][2]int{
+				{-3, -3},
+				{-2, -2},
+				{-4, -2},
+				{0, 0},
+				{4, 4},
+			},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			kl := Constructor(tt.init.k, tt.init.arr)
 			for _, w := range tt.want {
 				if got := kl.Add(w[0]); got != w[1] {
-					t.Errorf("Add() = %v, want %v", w[0], w[1])
+					t.Errorf("Add() = %v, want %v", got, w[1])
 				}
 			}
 		})
