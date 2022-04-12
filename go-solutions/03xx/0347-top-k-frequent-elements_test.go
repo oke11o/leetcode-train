@@ -13,6 +13,21 @@ https://leetcode.com/problems/top-k-frequent-elements/
 Medium
 */
 func topKFrequent(nums []int, k int) []int {
+	counter := make(map[int]int)
+	for _, num := range nums {
+		counter[num] += 1
+	}
+
+	uniqNums := make([]int, 0, len(counter))
+	for num := range counter {
+		uniqNums = append(uniqNums, num)
+	}
+
+	sort.Slice(uniqNums, func(i, j int) bool {
+		return counter[uniqNums[i]] > counter[uniqNums[j]]
+	})
+
+	return uniqNums[:k]
 	numFreq := make(map[int]int)
 	for _, n := range nums {
 		numFreq[n]++
