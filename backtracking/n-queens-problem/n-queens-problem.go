@@ -12,6 +12,30 @@ func queensProblems(n int) [][]int {
 	return result
 }
 
+func convert(in [][]int) [][]string {
+	if len(in) < 1 {
+		return nil
+	}
+	n := len(in[0])
+	res := make([][]string, len(in))
+
+	base := make([]byte, n)
+	for i := 0; i < n; i++ {
+		base[i] = '.'
+	}
+	for i, poses := range in {
+		res[i] = make([]string, n)
+		for j, pos := range poses {
+			str := make([]byte, n)
+			copy(str, base)
+			str[pos] = 'Q'
+			res[i][j] = string(str)
+		}
+	}
+
+	return res
+}
+
 // Состояние = какую королеву можно поставить на какую клетку?
 func backtrack(row int, current []int) {
 	if row == len(current) {
@@ -28,8 +52,6 @@ func backtrack(row int, current []int) {
 			backtrack(row+1, tmp)
 		}
 	}
-	a := 1
-	_ = a
 }
 
 // check attack
