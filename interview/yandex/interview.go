@@ -89,15 +89,15 @@ func marshal(expr string) string {
 			stack = append(stack, []rune{}) // stack {}{}
 			state = 3
 		case ')':
-			arg = stack[len(stack)-1]       // arg = {}
-			stack = stack[1 : len(stack)-1] // stack {}
+			arg = stack[len(stack)-1]    // arg = {}
+			stack = stack[:len(stack)-1] // stack {}
 		case '[':
 			state = 1
 		case ']':
 			mult, _ = strconv.Atoi(string(multBuf)) // 1
 			multBuf = []rune{}
-			val := arg //arg {}
-			if len(val) != 0 {
+			if len(arg) != 0 { //RESET multBuf
+				val := []rune{}
 				for i := 0; i < mult; i++ {
 					val = append(val, arg...)
 				}
