@@ -6,6 +6,8 @@ import "testing"
 https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/
 325. Maximum Size Subarray Sum Equals k
 Medium
+
+Next: 1658 - https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/
 */
 
 /**
