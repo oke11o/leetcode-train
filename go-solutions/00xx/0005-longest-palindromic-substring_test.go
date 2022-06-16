@@ -13,7 +13,7 @@ Medium
 
 TC: O(n^3)
 */
-func longestPalindrome(s string) string {
+func longestPalindrome_bruteForce(s string) string {
 	isPalindrome := func(i, j int) bool {
 		for i < j {
 			if s[i] != s[j] {
@@ -45,6 +45,42 @@ func longestPalindrome(s string) string {
 	return s[left : right+1]
 }
 
+/**
+Тут просто.
+Первым циклом бежим по всем символам.
+На каждом шаге пытаемся найти максимально длинный палиндром, считая, что i - это центр палиндрома
+ВАЖНО: центр может быть посередине (aba, abba). Поэтому еще проверяем втору позицию.
+TC: O(n^2)
+*/
+func longestPalindrome(s string) string {
+	var expandAroundCenter = func(left, right int) int {
+		for left >= 0 && right < len(s) && s[left] == s[right] {
+			left--
+			right++
+		}
+		return right - left - 1
+	}
+
+	if len(s) < 2 {
+		return s
+	}
+	start := 0
+	end := 0
+	for i := 0; i < len(s); i++ {
+		len1 := expandAroundCenter(i, i)
+		len2 := expandAroundCenter(i, i+1)
+		length := len1
+		if length < len2 {
+			length = len2
+		}
+		if length > end-start {
+			start = i - (length-1)/2
+			end = i + length/2
+		}
+	}
+	return s[start : end+1]
+}
+
 /*********************************/
 /************* TESTS *************/
 /*********************************/
@@ -62,7 +98,8 @@ func Test_longestPalindrome(t *testing.T) {
 		{
 			name: "",
 			s:    "babad",
-			want: "bab",
+			//want: "bab",
+			want: "aba",
 		},
 		{
 			name: "",
