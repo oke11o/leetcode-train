@@ -34,7 +34,3 @@ func run(args []string, stdout *os.File, stderr *os.File) error {
 	}
 	return err
 }
-
-func scanFile(cfg *Config) error {
-	return nil
-}
