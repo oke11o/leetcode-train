@@ -1,7 +1,6 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 	"github.com/joho/godotenv"
 	"os"
@@ -21,16 +20,17 @@ func run(args []string, stdout *os.File, stderr *os.File) error {
 	}
 	cfg := initConfig()
 
-	if len(args) < 2 {
-		return errors.New("choose one of commands: 'build-state', 'scan-file'")
+	var arg string
+	if len(args) > 1 {
+		arg = args[1]
 	}
-	switch args[1] {
+	switch arg {
 	case "build-state":
 		err = buildState(cfg)
 	case "scan-file":
-		err = scanFile(cfg)
+		err = scanFile(cfg, false)
 	default:
-		return errors.New("choose one of commands: 'build-state', 'scan-file'")
+		err = scanFile(cfg, true)
 	}
 	return err
 }

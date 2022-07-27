@@ -3,12 +3,37 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 	"os"
 	"strings"
+	"text/template"
 	"unicode"
 )
 
-func scanFile(cfg *Config) error {
+const defaultTemplate = `---
+type: eng_card
+anki: [1]
+---
+
+# [{{.CapitalizeWord|}}](https://context.reverso.net/translation/english-russian/{{.LowerWord}})
+
+---
+### Translate:
+{{.Translate}}
+
+[Sound](https://api.lingvolive.com/sounds?uri=LingvoUniversal%20(En-Ru)%2F{{.Sound}})
+
+`
+
+func scanFile(cfg *Config, needRebuildState bool) error {
+	if needRebuildState {
+		err := buildState(cfg)
+		if err != nil {
+			return fmt.Errorf("cant buildState; err: %w", err)
+		}
+	}
+
 	text, err := os.ReadFile(cfg.TextFilepath)
 	if err != nil {
 		return fmt.Errorf("cant getFileText; err: %w", err)
@@ -33,13 +58,42 @@ func scanFile(cfg *Config) error {
 	if err != nil {
 		return fmt.Errorf("cant getTranslations; err: %w", err)
 	}
-	err = saveTranslations(translations)
+	err = saveTranslations(translations, cfg.WorkDir)
+	if err != nil {
+		return fmt.Errorf("cant saveTranslations; err: %w", err)
+	}
+	showResult(translations)
 
 	return nil
 }
 
-func saveTranslations(translations []Translation) error {
-	panic("TODO")
+func showResult(translations []Translation) {
+	for i, trans := range translations {
+		fmt.Printf("%03d - %14s - %s \n", i+1, trans.Heading, trans.Translation)
+	}
+}
+
+func saveTranslations(translations []Translation, workDir string) error {
+	t := template.New("translation")
+	templ, _ := t.Parse(defaultTemplate)
+	for _, trans := range translations {
+		capitalizeWord := cases.Title(language.English).String(trans.Heading)
+		fpath := workDir + "/" + capitalizeWord + ".md"
+		file, err := os.Create(fpath)
+		if err != nil {
+			return fmt.Errorf("cant create file %s; err: %w", fpath, err)
+		}
+		tdata := TemplTranslation{
+			CapitalizeWord: capitalizeWord,
+			LowerWord:      trans.Heading,
+			Translate:      trans.Translation,
+			Sound:          trans.SoundName,
+		}
+		err = templ.Execute(file, tdata)
+		if err != nil {
+			return fmt.Errorf("cant execute template; err: %w", fpath, err)
+		}
+	}
 	return nil
 }
 
@@ -50,7 +104,7 @@ func getTranslations(translator *Translator, words []string) ([]Translation, err
 		if err != nil {
 			return nil, fmt.Errorf("cant translate word %s; err: %w", word, err)
 		}
-		if resp.Heading != "" {
+		if resp.Heading != "" { // TODO: may be error.NotFound
 			result = append(result, convertTranslation(resp))
 		}
 	}
@@ -72,7 +126,9 @@ func intersect(words []string, states map[string]State) []string {
 	result := []string{}
 	for _, w := range words {
 		if _, ok := states[w]; !ok {
-			result = append(result, w)
+			if _, ok := blackList[w]; !ok {
+				result = append(result, w)
+			}
 		}
 	}
 	return result

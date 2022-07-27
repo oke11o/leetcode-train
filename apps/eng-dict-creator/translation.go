@@ -8,3 +8,10 @@ type Translation struct {
 	Type           int    `json:"Type"`
 	OriginalWord   string `json:"OriginalWord"`
 }
+
+type TemplTranslation struct {
+	CapitalizeWord string
+	LowerWord      string
+	Translate      string
+	Sound          string
+}

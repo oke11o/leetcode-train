@@ -3,3 +3,10 @@
 ## Config
 
 Use env
+
+
+## Usage
+
+```shell
+./
+```
