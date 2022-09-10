@@ -9,18 +9,18 @@ import (
 func main() {
 	var err error
 	in := bufio.NewReader(os.Stdin)
+	out := bufio.NewWriter(os.Stdout)
+	defer out.Flush()
+
 	var cnt int
 	_, err = fmt.Fscan(in, &cnt)
 	panicErr(err)
 
 	for i := 0; i < cnt; i++ {
-		var a int
-		_, err = fmt.Fscan(in, &a)
+		var n, m int
+		_, err = fmt.Fscan(in, &n, &m)
 		panicErr(err)
-		var b int
-		_, err = fmt.Fscan(in, &b)
-
-		fmt.Println(fn(a, b))
+		fmt.Println(out, n+m)
 	}
 }
 
