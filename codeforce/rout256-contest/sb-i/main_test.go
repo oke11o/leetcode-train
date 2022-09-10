@@ -39,11 +39,54 @@ func Test_problemI(t *testing.T) {
 			dict: []string{"task", "decide", "id"},
 			want: "task",
 		},
+
+		{
+			name: "",
+			word: "uuauuauuau",
+			dict: []string{"ua", "u", "uauaauuu", "auauauua", "aauuau"},
+			want: "aauuau",
+		},
+		{
+			name: "",
+			word: "aaau",
+			dict: []string{"ua", "u", "uauaauuu", "auauauua", "aauuau"},
+			want: "aauuau",
+		},
+		{
+			name: "",
+			word: "a",
+			dict: []string{"ua", "u", "uauaauuu", "auauauua", "aauuau"},
+			want: "ua",
+		},
+		{
+			name: "",
+			word: "uuuaaauaaa",
+			dict: []string{"ua", "u", "uauaauuu", "auauauua", "aauuau"},
+			want: "ua",
+		},
 		{
 			name: "",
 			word: "aauaua",
 			dict: []string{"ua", "u", "uauaauuu", "auauauua", "aauuau"},
+			want: "ua", // "auauauua",
+		},
+		{
+			name: "",
+			word: "uaaa",
+			dict: []string{"ua", "u", "uauaauuu", "auauauua", "aauuau"},
 			want: "ua",
+		},
+		{
+			name: "",
+			word: "auuuu",
+			dict: []string{"ua", "u", "uauaauuu", "auauauua", "aauuau"},
+			want: "uauaauuu",
+		},
+		{
+			name: "",
+			word: "auuaaauu",
+			dict: []string{"ua", "u", "uauaauuu", "auauauua", "aauuau"},
+			want: "uauaauuu",
 		},
 	}
 	for _, tt := range tests {
@@ -52,7 +95,7 @@ func Test_problemI(t *testing.T) {
 			for i, d := range tt.dict {
 				trie.Insert(reverseString(d), i)
 			}
-			if got := problemI(tt.word, tt.dict, trie); got != tt.want {
+			if got := problemI(tt.word, tt.dict); got != tt.want {
 				t.Errorf("problemI() = %v, want %v", got, tt.want)
 			}
 		})

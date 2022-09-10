@@ -34,7 +34,7 @@ func main() {
 		_, err = fmt.Fscan(in, &word)
 		panicErr(err)
 
-		res := problemI(word, dict, trie)
+		res := problemI(word, dict)
 		fmt.Print(res, "\r\n")
 	}
 
@@ -54,33 +54,21 @@ func reverseString(in string) string {
 	return string(out)
 }
 
-func problemI(word string, dict []string, trie *Trie) string {
-	rev := reverseString(word)
-	var resIdx []int
-	for i := 1; i < len(rev); i++ {
-		if ok, idxs := trie.StartsWith(rev[:i]); ok {
-			if i == len(rev)-1 { // Слова не должны совпадать полностью
-				var tmp = make([]int, 0, len(idxs))
-				for _, idx := range idxs {
-					if dict[idx] != word {
-						tmp = append(tmp, idx)
-					}
-				}
-				if len(tmp) > 0 {
-					idxs = tmp
-				}
-			} else {
-				resIdx = idxs
-			}
-		} else {
-			break
+func problemI(word string, dict []string) string {
+	result := dict[0]
+	max := 0
+	for _, d := range dict {
+		if word == d {
+			continue
+		}
+		zarif := findZarif(word, d)
+		if max < zarif {
+			max = zarif
+			result = d
 		}
 	}
-	if len(resIdx) > 0 {
-		return dict[resIdx[0]]
-	}
 
-	return dict[0]
+	return result
 }
 
 func findZarif(word string, d string) int {
@@ -104,58 +92,55 @@ type Trie struct {
 	indeces  []int
 }
 
-func NewTrie() *Trie {
-	return &Trie{}
+func NewTrie() Trie {
+	return Trie{}
 }
 
-func (t *Trie) Insert(word string, idx int) {
-	cur := t
+func (this *Trie) Insert(word string, idx int) {
+	cur := this
 	for i, c := range word {
 		n := c - 'a'
 
 		if cur.children[n] == nil {
 			cur.children[n] = &Trie{}
 		}
-		cur = cur.children[n]
 		if i == 0 {
 			cur.indeces = append(cur.indeces, idx)
 		}
+		cur = cur.children[n]
 		if i == len(word)-1 {
 			cur.isWord = true
 		}
+
 	}
 }
 
-func (t *Trie) Search(word string) (bool, []int) {
-	var indices []int
-	cur := t
+func (this *Trie) Search(word string) (bool, []int) {
+	var indeces []int
+	cur := this
 	for i, c := range word {
 		n := c - 'a'
 		if cur.children[n] == nil {
-			return false, indices
+			return false, indeces
+		}
+		if i == 0 {
+			indeces = cur.indeces
 		}
 		cur = cur.children[n]
-		if i == 0 {
-			indices = cur.indeces
-		}
 	}
-	return cur.isWord, indices
+	return cur.isWord, indeces
 }
 
-func (t *Trie) StartsWith(prefix string) (bool, []int) {
-	var indices []int
-	cur := t
-	for i, c := range prefix {
+func (this *Trie) StartsWith(prefix string) bool {
+	cur := this
+	for _, c := range prefix {
 		n := c - 'a'
 		if cur.children[n] == nil {
-			return false, indices
+			return false
 		}
 		cur = cur.children[n]
-		if i == 0 {
-			indices = cur.indeces
-		}
 	}
-	return true, indices
+	return true
 }
 
 /**
