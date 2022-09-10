@@ -1,0 +1,39 @@
+test:
+	cat tests/01 | go run main.go > tests/01.b
+	cat tests/02 | go run main.go > tests/02.b
+	cat tests/03 | go run main.go > tests/03.b
+	cat tests/04 | go run main.go > tests/04.b
+	cat tests/05 | go run main.go > tests/05.b
+	cat tests/06 | go run main.go > tests/06.b
+	cat tests/07 | go run main.go > tests/07.b
+	cat tests/08 | go run main.go > tests/08.b
+	cat tests/09 | go run main.go > tests/09.b
+	cat tests/10 | go run main.go > tests/10.b
+	cat tests/11 | go run main.go > tests/11.b
+	cat tests/12 | go run main.go > tests/12.b
+	cat tests/13 | go run main.go > tests/13.b
+	cat tests/14 | go run main.go > tests/14.b
+	cat tests/15 | go run main.go > tests/15.b
+	cat tests/16 | go run main.go > tests/16.b
+	cat tests/17 | go run main.go > tests/17.b
+	cat tests/18 | go run main.go > tests/18.b
+	cat tests/19 | go run main.go > tests/19.b
+	cat tests/20 | go run main.go > tests/20.b
+	cat tests/21 | go run main.go > tests/21.b
+	cat tests/22 | go run main.go > tests/22.b
+	cat tests/23 | go run main.go > tests/23.b
+	cat tests/24 | go run main.go > tests/24.b
+	cat tests/25 | go run main.go > tests/25.b
+	cat tests/26 | go run main.go > tests/26.b
+	cat tests/27 | go run main.go > tests/27.b
+	cat tests/28 | go run main.go > tests/28.b
+	cat tests/29 | go run main.go > tests/29.b
+	cat tests/30 | go run main.go > tests/30.b
+	cat tests/31 | go run main.go > tests/31.b
+	cat tests/32 | go run main.go > tests/32.b
+	cat tests/33 | go run main.go > tests/33.b
+	cat tests/34 | go run main.go > tests/34.b
+	cat tests/35 | go run main.go > tests/35.b
+	cat tests/36 | go run main.go > tests/36.b
+
+
