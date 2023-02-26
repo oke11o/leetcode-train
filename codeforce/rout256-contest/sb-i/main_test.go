@@ -9,6 +9,32 @@ func Test_problemI(t *testing.T) {
 		dict []string
 		want string
 	}{
+		{name: "", word: "vwlldlswl", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "svwl"},
+		{name: "", word: "slvlvdldw", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "svdw"},
+		{name: "", word: "vwls", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "lvvlvsdss"},
+		{name: "", word: "dl", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "vwswll"},
+		{name: "", word: "lvs", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "sss"},
+		{name: "", word: "ldvsl", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "svwl"},
+		{name: "", word: "ddlsw", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "wsvvlsw"},
+		{name: "", word: "d", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "ddvlwswlsd"},
+		{name: "", word: "svsvvwsdwl", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "svwl"},
+		{name: "", word: "vlssldswlw", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "wsvvlsw"},
+		{name: "", word: "lvlsdl", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "dl"},
+		{name: "", word: "s", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "wslswds"},
+		{name: "", word: "vlwlssld", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "ddvlwswlsd"},
+		{name: "", word: "ldvl", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "svwl"},
+		{name: "", word: "dvvvwsssww", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "swvw"},
+		{name: "", word: "vdlvldw", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "svdw"},
+		{name: "", word: "wwv", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "ldlddvddvv"},
+		{name: "", word: "dlwlwwsvdl", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "dl"},
+		{name: "", word: "swsw", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "wsvvlsw"},
+		{name: "", word: "dwldddwwl", dict: []string{"sss", "ddvlwswlsd", "swvw", "dl", "llwllvw", "swdsdwsvd", "vwvsv", "wslswds", "vwswll", "wwvdsslwd", "wsvvlsw", "lvvlvsdss", "ldwlvsd", "v", "wvldwd", "ldlddvddvv", "vsswwll", "svwl", "sldwdsvsv", "svdw"}, want: "svwl"},
+
+		{name: "", word: "v", dict: []string{"ve", "neeevzzv"}, want: "neeevzzv"},
+		{name: "", word: "vnveneezve", dict: []string{"ve", "neeevzzv"}, want: "ve"},
+		{name: "", word: "evzz", dict: []string{"ve", "neeevzzv"}, want: "neeevzzv"},
+		{name: "", word: "ezenne", dict: []string{"ve", "neeevzzv"}, want: "ve"},
+		{name: "", word: "nneenn", dict: []string{"ve", "neeevzzv"}, want: "neeevzzv"},
 		{
 			name: "",
 			word: "flask",
@@ -95,7 +121,7 @@ func Test_problemI(t *testing.T) {
 			for i, d := range tt.dict {
 				trie.Insert(reverseString(d), i)
 			}
-			if got := problemI(tt.word, tt.dict); got != tt.want {
+			if got := problemI(tt.word, tt.dict, trie); got != tt.want {
 				t.Errorf("problemI() = %v, want %v", got, tt.want)
 			}
 		})

@@ -1,9 +1,22 @@
 package _0xx
 
 import (
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
+
+// 0055. Jump Game
+func canJump(nums []int) bool {
+	lastOKPosition := len(nums) - 1
+	for i := lastOKPosition - 1; i >= 0; i-- {
+		v := i + nums[i]
+		if v >= lastOKPosition {
+			lastOKPosition = i
+		}
+	}
+	return lastOKPosition == 0
+}
 
 func Test_canJump(t *testing.T) {
 	tests := []struct {
