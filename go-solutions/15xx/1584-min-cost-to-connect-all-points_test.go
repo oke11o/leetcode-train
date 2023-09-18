@@ -1,12 +1,14 @@
 package _5xx
 
 import (
+	"container/heap"
 	"math"
 	"sort"
 	"testing"
 )
 
-/**
+/*
+*
 https://leetcode.com/problems/min-cost-to-connect-all-points/
 1584. Min Cost to Connect All Points
 Medium
@@ -93,6 +95,55 @@ func (uf *UnionFind) find(a int) int {
 	return uf.find(uf.parents[a])
 }
 
+type item struct {
+	node   int
+	weight int
+	index  int
+}
+
+type priorityQueue []*item
+
+func (pq priorityQueue) Len() int { return len(pq) }
+
+func (pq priorityQueue) Less(i, j int) bool {
+	return pq[i].weight > pq[j].weight
+}
+
+func (pq priorityQueue) Swap(i, j int) {
+	pq[i], pq[j] = pq[j], pq[i]
+	pq[i].index = i
+	pq[j].index = j
+}
+
+func (pq *priorityQueue) Push(x any) {
+	n := len(*pq)
+	i := x.(*item)
+	i.index = n
+	*pq = append(*pq, i)
+}
+
+func (pq *priorityQueue) Pop() any {
+	old := *pq
+	n := len(old)
+	item := old[n-1]
+	old[n-1] = nil  // avoid memory leak
+	item.index = -1 // for safety
+	*pq = old[0 : n-1]
+	return item
+}
+
+func (pq *priorityQueue) update(item *item, node int, weight int) {
+	item.node = node
+	item.weight = weight
+	heap.Fix(pq, item.index)
+}
+
+func minCostConnectPoints2(points [][]int) int {
+
+	//heap.Fix()
+	return 0
+}
+
 /*********************************/
 /************* TESTS *************/
 /*********************************/
@@ -122,7 +173,7 @@ func Test_minCostConnectPoints(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := minCostConnectPoints(tt.args.points); got != tt.want {
+			if got := minCostConnectPoints2(tt.args.points); got != tt.want {
 				t.Errorf("minCostConnectPoints() = %v, want %v", got, tt.want)
 			}
 		})

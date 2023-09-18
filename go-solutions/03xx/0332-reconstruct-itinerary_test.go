@@ -8,6 +8,7 @@ import (
 
 /*
 *
+NOT WORKING
 https://leetcode.com/problems/reconstruct-itinerary/
 332. Reconstruct Itinerary
 Hard
@@ -21,18 +22,12 @@ For example, the itinerary ["JFK", "LGA"] has a smaller lexical order than ["JFK
 You may assume all tickets form at least one valid itinerary. You must use all the tickets once and only once.
 */
 func findItinerary(tickets [][]string) []string {
+	sort.Slice(tickets, func(i, j int) bool { return tickets[i][1] > tickets[j][1] })
 	graph := make(map[string][]string)
 	for _, t := range tickets {
 		from := t[0]
 		to := t[1]
-		_, ok := graph[from]
-		ch := []string{to}
-		if !ok {
-			graph[from] = ch
-		} else {
-			ch = append(ch, graph[from]...)
-			graph[from] = ch
-		}
+		graph[from] = append(graph[from], to)
 	}
 
 	st := []string{"JFK"}
@@ -125,8 +120,8 @@ func Test_findItinerary(t *testing.T) {
 		{
 			name:    "",
 			tickets: [][]string{{"JFK", "SFO"}, {"JFK", "ATL"}, {"SFO", "ATL"}, {"ATL", "JFK"}, {"ATL", "SFO"}},
-			want:    []string{"JFK", "SFO", "ATL", "JFK", "ATL", "SFO"},
-			//want:    []string{"JFK", "ATL", "JFK", "SFO", "ATL", "SFO"},
+			//want:    []string{"JFK", "SFO", "ATL", "JFK", "ATL", "SFO"},
+			want: []string{"JFK", "ATL", "JFK", "SFO", "ATL", "SFO"},
 		},
 	}
 	for _, tt := range tests {

@@ -1,6 +1,10 @@
 package _1xx
 
-func maxProfit(prices []int) int {
+/*
+121. Best Time to Buy and Sell Stock
+[7,1,5,3,6,4]
+*/
+func maxProfit2(prices []int) int {
 	if len(prices) == 0 {
 		return 0
 	}
@@ -16,4 +20,12 @@ func maxProfit(prices []int) int {
 		}
 	}
 	return result
+}
+
+func maxProfit(prices []int) int {
+	dp := make([]int, len(prices)+1)
+	for i := 1; i < len(prices); i++ {
+
+	}
+	return dp[len(dp)-1]
 }
