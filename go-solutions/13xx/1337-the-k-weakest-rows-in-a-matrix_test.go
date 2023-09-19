@@ -26,11 +26,11 @@ func kWeakestRows(mat [][]int, k int) []int {
 	for i := 0; i < len(mat); i++ {
 		weights[i][0] = i
 		l := 0
-		r := len(mat[i]) - 1
-		if mat[i][r] == 1 {
-			weights[i][1] = r + 1
-			continue
-		}
+		r := len(mat[i])
+		//if mat[i][r] == 1 {
+		//	weights[i][1] = r + 1
+		//	continue
+		//}
 		for l+1 < r {
 			idx := (l + r) / 2
 			if mat[i][idx] == 1 {
