@@ -1,6 +1,6 @@
 module github.com/oke11o/leetcode-train/go-solutions
 
-go 1.17
+go 1.20
 
 require github.com/stretchr/testify v1.7.0
 
