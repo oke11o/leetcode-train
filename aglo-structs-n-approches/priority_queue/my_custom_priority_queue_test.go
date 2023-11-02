@@ -6,11 +6,20 @@ import (
 	"testing"
 )
 
+type el [2]int
+
+func (e el) Val() int {
+	return e[0]
+}
+func (e el) Less(v item) bool {
+	return e.Val() < v.Val()
+}
+
 func TestMyPriorityQueue(t *testing.T) {
-	h := MyPriorityQueue{}
+	h := MyPriorityQueue[el]{}
 	ints := []int{7, 29, 42, 18, 18, 12, 11, 14}
 	for _, v := range ints {
-		h.Insert([2]int{v, v})
+		h.Insert(el{v, v})
 	}
 	sort.Slice(ints, func(i, j int) bool {
 		return ints[i] > ints[j]
