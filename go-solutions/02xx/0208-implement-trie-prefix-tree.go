@@ -1,23 +1,12 @@
 package _2xx
 
 // 0208. Implement Trie (Prefix Tree)
+type node struct {
+	children [26]*node
+	end      bool
+}
 type Trie struct {
 	root *node
-}
-
-type node struct {
-	children []*node
-	val      rune
-	isFinal  bool
-}
-
-func (n *node) childrenExists(v rune) (*node, bool) {
-	for _, c := range n.children {
-		if c.val == v {
-			return c, true
-		}
-	}
-	return nil, false
 }
 
 func Constructor() Trie {
@@ -25,43 +14,41 @@ func Constructor() Trie {
 }
 
 func (this *Trie) Insert(word string) {
-	parent := this.root
-	var j int
-	for i, s := range word {
-		j = i
-		if c, ok := parent.childrenExists(s); ok {
-			parent = c
-		} else {
-			n := &node{val: rune(word[j])}
-			parent.children = append(parent.children, n)
-			parent = n
+	cur := this.root
+	for _, ch := range word {
+		v := ch - 'a'
+		n := cur.children[v]
+		if n == nil {
+			cur.children[v] = &node{}
+			n = cur.children[v]
 		}
+		cur = n
 	}
-
-	parent.isFinal = true
-
+	cur.end = true
 }
 
 func (this *Trie) Search(word string) bool {
-	n := this.root
-	for _, s := range word {
-		if c, ok := n.childrenExists(s); ok {
-			n = c
-		} else {
+	cur := this.root
+	for _, ch := range word {
+		v := ch - 'a'
+		n := cur.children[v]
+		if n == nil {
 			return false
 		}
+		cur = n
 	}
-	return n.isFinal
+	return cur.end
 }
 
 func (this *Trie) StartsWith(prefix string) bool {
-	n := this.root
-	for _, s := range prefix {
-		if c, ok := n.childrenExists(s); ok {
-			n = c
-		} else {
+	cur := this.root
+	for _, ch := range prefix {
+		v := ch - 'a'
+		n := cur.children[v]
+		if n == nil {
 			return false
 		}
+		cur = n
 	}
 	return true
 }
