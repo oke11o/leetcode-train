@@ -11,6 +11,36 @@ https://leetcode.com/problems/duplicate-zeros/
 1089. Duplicate Zeros
 */
 func duplicateZeros(arr []int) {
+	zeroCnt := 0
+	length := len(arr) - 1
+	for i := 0; i <= length-zeroCnt; i++ {
+		if arr[i] == 0 {
+			// Edge case: This zero can't be duplicated. We have no more space,
+			// as left is pointing to the last element which could be included
+			if i == length-zeroCnt {
+				// For this zero we just copy it without duplication.
+				arr[length] = 0
+				length -= 1
+				break
+			}
+			zeroCnt++
+		}
+	}
+	if zeroCnt == 0 {
+		return
+	}
+	last := length - zeroCnt
+	for i := last; i >= 0; i-- {
+		if arr[i] == 0 {
+			arr[i+zeroCnt] = 0
+			zeroCnt--
+			arr[i+zeroCnt] = 0
+		} else {
+			arr[i+zeroCnt] = arr[i]
+		}
+	}
+}
+func duplicateZerosd(arr []int) {
 	possibleDups := 0
 	length_ := len(arr) - 1
 
@@ -76,6 +106,11 @@ func Test_duplicateZeros(t *testing.T) {
 			name: "",
 			arr:  []int{0, 0, 0, 0, 0},
 			want: []int{0, 0, 0, 0, 0},
+		},
+		{
+			name: "",
+			arr:  []int{0, 1, 7, 6, 0, 2, 0, 7},
+			want: []int{0, 0, 1, 7, 6, 0, 0, 2},
 		},
 	}
 	for _, tt := range tests {
