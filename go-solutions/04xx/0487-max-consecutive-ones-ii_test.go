@@ -1,6 +1,12 @@
 package _4xx
 
-/**
+import (
+	"github.com/stretchr/testify/require"
+	"testing"
+)
+
+/*
+*
 https://leetcode.com/problems/max-consecutive-ones-ii/
 487. Max Consecutive Ones II
 Medium
@@ -42,4 +48,29 @@ func findMaxConsecutiveOnes_ii(nums []int) int {
 	}
 
 	return ans
+}
+
+func Test_findMaxConsecutiveOnes_ii(t *testing.T) {
+	tests := []struct {
+		name string
+		nums []int
+		want int
+	}{
+		{
+			name: "",
+			nums: []int{1, 0, 1, 1, 0},
+			want: 4,
+		},
+		{
+			name: "",
+			nums: []int{1, 0, 1, 1, 0, 1},
+			want: 4,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got := findMaxConsecutiveOnes_ii(tt.nums)
+			require.Equal(t, tt.want, got)
+		})
+	}
 }

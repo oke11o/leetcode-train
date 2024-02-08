@@ -5,6 +5,28 @@ import (
 	"testing"
 )
 
+// 0485. Max Consecutive Ones
+// https://leetcode.com/problems/max-consecutive-ones
+func findMaxConsecutiveOnes(nums []int) int {
+	result := 0
+	current := 0
+	for _, n := range nums {
+		if n != 0 {
+			current++
+			continue
+		}
+		if result < current {
+			result = current
+		}
+		current = 0
+	}
+	if result < current {
+		result = current
+	}
+	current = 0
+	return result
+}
+
 func Test_findMaxConsecutiveOnes(t *testing.T) {
 	tests := []struct {
 		name string
