@@ -9,6 +9,29 @@ type ListNode struct {
 	Next *ListNode
 }
 
+func buildListFromInt(list []int) *ListNode {
+	if len(list) == 0 {
+		return nil
+	}
+	dummy := &ListNode{}
+	var prev *ListNode
+	prev = dummy
+	for _, v := range list {
+		prev.Next = &ListNode{Val: v}
+		prev = prev.Next
+	}
+	return dummy.Next
+}
+
+func buildIntFromList(node *ListNode) []int {
+	var ans []int
+	for node != nil {
+		ans = append(ans, node.Val)
+		node = node.Next
+	}
+	return ans
+}
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
