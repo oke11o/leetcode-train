@@ -33,9 +33,7 @@ class ATM {
                 returnedBills.push(bill);
             }
         }
-        return returnedBills.length > 0
-            ? `Внесено ${acceptedSum}, Заберите нераспознанные купюры [${returnedBills}]`
-            : `Внесено ${acceptedSum}`;
+        return {acceptedSum:acceptedSum, returnedBills:returnedBills};
     }
 
     whithdrow(amount) {
@@ -45,38 +43,33 @@ class ATM {
         if (amount > this.total) {
             return Error("Не могу выдать нужную сумму, недостаточно средств");
         }
+        let acceptReverse = this.accept.reverse();
+        const result = []; // [1000]
+        // while (amount > 0) { // 1100
+        //     let abort = true;
+        //     for (let bill of acceptReverse) { // {5000:2,2000:0,1000:1,500:2,100:1,50:2}
+        //         if (bill <= amount && this.vault[bill] > 0) { //1000 < 2100
+        //             result.push(bill);
+        //             this.vault[bill]--;
+        //             amount -= bill;
+        //             abort = false;
+        //             break;
+        //         }
+        //     }
+        //     if (abort) {
+        //         return Error('Error: Не могу выдать нужную сумму, недостаточно купюр')
+        //     }
+        // }
 
-        const result = [];
-        while (amount > 0 || this.total > 0) {
-            //   let abort = true;
-            let acceptReverse = this.accept.reverse();
-            console.log("qq", acceptReverse);
-            for (let i = this.accept.length - 1; i >= 0; i--) {
-                if (this.accept[i] > amount) {
-                    console.log("cc", this.accept[i], amount);
-
-                    i--;
-                } else if (this.accept[i] < amount && this.vault[this.accept[i]] > 0) {
-                    result.push(this.accept[i]);
-                    this.vault[this.accept[i]] -= 1;
-                    amount -= this.accept[i];
-                } else {
-                    return Error("Не могу выдать нужную сумму, недостаточно купюр");
-                }
+        for (let bill of acceptReverse) { // {5000:2,2000:0,1000:1,500:1,100:1,50:2}
+            while (bill <= amount && amount > 0 && this.vault[bill] > 0) {
+                result.push(bill);
+                this.vault[bill]--;
+                amount -= bill;
             }
-            //   for (let bill of acceptReverse) {
-            //     if (bill < amount && this.vault[bill] > 0) {
-            //       result.push(bill);
-            //       console.log("rr", result);
-            //       this.vault[bill]--;
-            //       amount -= bill;
-            //     }
-            //     if (bill > amount) {
-            //       continue;
-            //     } else {
-            //       return Error("Не могу выдать нужную сумму, недостаточно купюр");
-            //     }
-            //   }
+        }
+        if (amount > 0) {
+            return Error('Error: Не могу выдать нужную сумму, недостаточно купюр')
         }
         return result;
     }
@@ -89,8 +82,8 @@ class ATM {
     // возвращает сколько всего денег во внутреннем хранилище
     get total() {
         let sum = 0;
-        for (let banknotes in this.vault) {
-            sum += banknotes * this.vault[banknotes];
+        for (let bill in this.vault) {
+            sum += bill * this.vault[bill];
         }
         return sum;
     }
@@ -106,8 +99,9 @@ console.log(atm.accept); // [ 50, 100, 500, 1000, 2000, 5000 ]
 console.log(atm.whithdrow(3500)); // Error: Не могу выдать нужную сумму, недостаточно средств
 console.log(atm.deposit([])); // Error: Положите деньги в купюроприемник
 console.log(atm.deposit([5000, 1000, 5000, 500, 100, 50, 50])); // Внесено 11700
-console.log(atm.deposit([500, 10, 5])); // Внесено 500, Заберите нераспознанные купюры [10, 5]
-console.log(atm.whithdrow(3500)); // Error: Не могу выдать нужную сумму, недостаточно купюр
+let data = atm.deposit([500, 10, 5]);
+console.log(`Внесено ${data.acceptedSum}, Заберите нераспознанные купюры [${data.returnedBills}]`); // Внесено 500, Заберите нераспознанные купюры [10, 5]
+// console.log(atm.whithdrow(3500)); // Error: Не могу выдать нужную сумму, недостаточно купюр
 console.log(atm.whithdrow(2100)); // [1000, 500, 500, 100]
 console.log(atm.whithdrow(0)); // Error: Укажите корректную сумму
 console.log(atm.total); //10100
