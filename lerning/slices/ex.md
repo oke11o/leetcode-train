@@ -238,10 +238,31 @@ func main () {
 
 Реализуй стек на слайсах
 ```go
+package stack
 
+import "fmt"
+
+type Stack []int
+
+func NewStack() Stack {
+	return make(Stack, 0)
+}
+
+func (s *Stack) Push(data int) {
+	*s = append(*s, data)
+}
+
+func (s *Stack) Pop() (int, error) {
+	if len(*s) == 0 {
+		return 0, fmt.Errorf("stack is empty")
+	}
+	val := (*s)[len(*s)-1]
+	*s = (*s)[:len(*s)-1]
+	return val, nil
+}
 ```
 
-## 9
+## 9 Можно ли брать срез от среза меньшей длинны (если capacity достаточно)
 
 ```go
 package main
@@ -252,10 +273,32 @@ import (
 
 func main() {
 	array := []int{1, 2, 3, 4, 5, 6}
-	s := array[1:2:4]
-	fmt.Println(s, len(s), cap(s))
-	a := s[1:4]
-	fmt.Println(a, len(a), cap(a))
+	s := array[1:2:6]
+	fmt.Println(s, "lencap =", len(s), cap(s))
+	a := s[1:5]
+	fmt.Println(a, "lencap =", len(a), cap(a))
 }
+
 ```
 
+## 10 Можно ли менять размер слайса в цикле for range?
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	x := []string{"a", "b", "c", "d"}
+	for i, v := range x { // длина слайса рассчитывается на первой итерации
+		fmt.Printf("%d) %s [l=%d,c=%d]", i, v, len(x), cap(x))
+		// fmt.Println(i, v, len(x))
+		// fmt.Println(x[i]) // panic: runtime error: index out of range [3] with length 3
+		// получается что, по индексу мы обратиться не можем, но range проитерируется до конца, т.е. выйдет за len(x)
+		if v == "a" {
+			x = append(x[:i], x[i+1:]...)
+		}
+		fmt.Print("\n")
+	}
+}
+```
